@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rayanne Meirelles | Storymaker de casamentos em SC, PR e Chile</title>
+<meta name="description" content="Stories em tempo real para o seu casamento. Equipe de storymakers em Santa Catarina, Paraná e Chile. Cheque a disponibilidade da sua data pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Tokens gerados com o UI/UX Pro Max (paleta "Romantic pink + elegant gold") */
+  :root{
+    --color-primary:#DB2777; --color-on-primary:#FFFFFF;
+    --color-secondary:#F472B6;
+    --color-accent:#A16207; --color-on-accent:#FFFFFF;
+    --color-background:#FDF2F8; --color-foreground:#831843;
+    --color-card:#FFFFFF; --color-muted:#F0EDF4; --color-muted-foreground:#5B4552;
+    --color-border:#FBCFE8; --color-ring:#DB2777;
+    --font-heading:'Cormorant Infant',Georgia,serif; --font-script:'Great Vibes',cursive; --font-body:'Work Sans',system-ui,sans-serif;
+    --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px; --space-5:64px; --space-6:96px;
+    --shadow-soft:0 1px 2px rgba(131,24,67,.06),0 8px 24px rgba(131,24,67,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--color-foreground);background:var(--color-background);font-size:17px;line-height:1.6}
+  a{color:inherit}
+  button,a,select,input{font:inherit}
+  :focus-visible{outline:3px solid var(--color-ring);outline-offset:3px;border-radius:6px}
+  .demo-bar{background:var(--color-foreground);color:var(--color-border);font-size:13px;text-align:center;padding:8px var(--space-2)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 var(--space-3)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 26px;border-radius:999px;border:1.5px solid var(--color-primary);font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,transform .2s}
+  .btn-primary{background:var(--color-primary);color:var(--color-on-primary)}
+  .btn-primary:hover{background:#BE185D;border-color:#BE185D}
+  .btn-ghost{background:transparent;color:var(--color-primary)}
+  .btn-ghost:hover{background:#FCE7F3}
+  .btn svg{width:20px;height:20px;flex:none}
+
+  /* Topo */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0}
+  .logo{font-family:var(--font-heading);font-weight:600;font-size:24px;text-decoration:none}
+  .top nav{display:flex;gap:var(--space-3);align-items:center}
+  .top nav a{text-decoration:none;font-size:15px;color:var(--color-muted-foreground)}
+  .top nav a:hover{color:var(--color-foreground)}
+  .top nav a.btn-primary,.top nav a.btn-primary:hover{color:var(--color-on-primary)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-5);align-items:center;padding:var(--space-4) 0 var(--space-6)}
+  .hero h1{font-family:var(--font-heading);font-weight:600;font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-.01em}
+  .hero p.sub{max-width:31em;margin:var(--space-3) 0 var(--space-4);color:var(--color-muted-foreground);font-size:18px}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .regions{display:flex;gap:10px;margin-top:var(--space-4);flex-wrap:wrap}
+  .regions span{border:1px solid var(--color-border);background:var(--color-card);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+
+  /* Story ao vivo: o elemento marcante */
+  .story{position:relative;width:min(100%,340px);aspect-ratio:9/16;margin-left:auto;border-radius:32px;overflow:hidden;background:linear-gradient(165deg,#F9A8D4 0%,#DB2777 55%,#831843 100%);box-shadow:var(--shadow-soft),0 30px 60px -20px rgba(131,24,67,.45);color:#fff}
+  .story .bars{position:absolute;top:14px;left:14px;right:14px;display:flex;gap:4px}
+  .story .bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+  .story .bars i b{display:block;height:100%;width:0;background:#fff}
+  .story .head{position:absolute;top:28px;left:14px;right:14px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+  .story .avatar{width:32px;height:32px;border-radius:50%;background:#fff;color:var(--color-primary);display:grid;place-items:center;font-family:var(--font-heading);font-size:16px}
+  .story .live{margin-left:auto;background:#fff;color:var(--color-primary);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+  .story .frame{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px 40px;opacity:0;transition:opacity .5s}
+  .story .frame.on{opacity:1}
+  .story .time{font-size:13px;font-weight:600;opacity:.85}
+  .story .moment{font-family:var(--font-heading);font-size:34px;line-height:1.05;margin-top:6px}
+  .story .couple{font-family:var(--font-script);font-size:30px;margin-top:10px;opacity:.95}
+  .story .pause{position:absolute;bottom:12px;right:12px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.2);color:#fff;cursor:pointer;display:grid;place-items:center}
+  .story .pause:hover{background:rgba(255,255,255,.32)}
+  .story .pause svg{width:18px;height:18px}
+
+  section.block{padding:var(--space-6) 0}
+  h2{font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.08;margin-bottom:var(--space-2)}
+  .lead{max-width:36em;color:var(--color-muted-foreground);margin-bottom:var(--space-4)}
+
+  /* Problema / solução */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);align-items:start}
+  .why ul{list-style:none;display:grid;gap:var(--space-3)}
+  .why li{display:grid;grid-template-columns:28px 1fr;gap:14px}
+  .why li svg{width:24px;height:24px;color:var(--color-primary);margin-top:2px}
+  .why li strong{display:block;font-weight:600}
+  .why li span{color:var(--color-muted-foreground);font-size:16px}
+
+  /* Casais (destaques) */
+  .reel-head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-2);flex-wrap:wrap}
+  .reel-nav{display:flex;gap:8px}
+  .reel-nav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--color-primary);background:var(--color-card);color:var(--color-primary);cursor:pointer;display:grid;place-items:center}
+  .reel-nav button:hover{background:#FCE7F3}
+  .reel-nav svg{width:20px;height:20px}
+  .reel{display:flex;gap:var(--space-2);overflow-x:auto;scroll-snap-type:x mandatory;padding:var(--space-2) 2px var(--space-3);scrollbar-width:thin}
+  .reel figure{flex:0 0 200px;scroll-snap-align:start;aspect-ratio:9/16;border-radius:22px;position:relative;overflow:hidden;color:#fff;box-shadow:var(--shadow-soft)}
+  .reel figcaption{position:absolute;left:16px;right:16px;bottom:18px}
+  .reel figcaption b{display:block;font-family:var(--font-script);font-weight:400;font-size:30px;line-height:1.1}
+  .reel figcaption span{font-size:13px;opacity:.85}
+  .note{font-size:13px;color:var(--color-muted-foreground)}
+
+  /* Pacotes */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+  .plan{background:var(--color-card);border:1px solid var(--color-border);border-radius:20px;padding:var(--space-4) var(--space-3);box-shadow:var(--shadow-soft)}
+  .plan.featured{border:2px solid var(--color-primary)}
+  .plan h3{font-family:var(--font-heading);font-weight:600;font-size:28px}
+  .plan .for{color:var(--color-muted-foreground);font-size:15px;margin:4px 0 var(--space-3)}
+  .plan ul{list-style:none;display:grid;gap:10px;font-size:16px;margin-bottom:var(--space-3)}
+  .plan li{display:grid;grid-template-columns:20px 1fr;gap:10px}
+  .plan li svg{width:18px;height:18px;color:var(--color-accent);margin-top:3px}
+  .plan .price{font-weight:600;color:var(--color-accent)}
+
+  /* Equipe */
+  .team{background:var(--color-card);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+  .team .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);align-items:center}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2)}
+  .stat-row div{border:1px solid var(--color-border);border-radius:16px;padding:var(--space-3) var(--space-2);text-align:center}
+  .stat-row b{display:block;font-family:var(--font-heading);font-size:34px;line-height:1}
+  .stat-row span{font-size:14px;color:var(--color-muted-foreground)}
+  .es{margin-top:var(--space-3);font-style:italic;color:var(--color-muted-foreground)}
+
+  /* Depoimentos */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+  .quotes blockquote{background:var(--color-card);border:1px solid var(--color-border);border-radius:20px;padding:var(--space-4) var(--space-3);font-family:var(--font-heading);font-size:24px;line-height:1.35}
+  .quotes cite{display:block;margin-top:var(--space-2);font-family:var(--font-body);font-style:normal;font-size:15px;color:var(--color-muted-foreground)}
+
+  /* Checar disponibilidade */
+  .check{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--space-5);align-items:start}
+  form.card{background:var(--color-card);border:1px solid var(--color-border);border-radius:24px;padding:var(--space-4);box-shadow:var(--shadow-soft)}
+  form label{display:block;font-weight:600;font-size:15px;margin:var(--space-2) 0 6px}
+  form label:first-child{margin-top:0}
+  form .help{font-size:13px;color:var(--color-muted-foreground);margin-top:4px}
+  form input,form select{width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--color-border);border-radius:12px;background:var(--color-background);color:var(--color-foreground)}
+  form input:focus,form select:focus{border-color:var(--color-primary)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2)}
+  form .btn{width:100%;margin-top:var(--space-3)}
+  .error{color:#B91C1C;font-size:14px;margin-top:6px;min-height:1.2em}
+
+  footer{padding:var(--space-4) 0 120px;font-size:14px;color:var(--color-muted-foreground);display:flex;justify-content:space-between;gap:var(--space-2);flex-wrap:wrap}
+
+  /* CTA fixo no celular */
+  .sticky{display:none}
+
+  @media (max-width:900px){
+    .hero,.why,.team .grid,.check{grid-template-columns:1fr}
+    .story{margin:0 auto;width:min(100%,300px)}
+    .plans,.quotes{grid-template-columns:1fr}
+    .top nav a:not(.btn){display:none}
+    section.block{padding:var(--space-5) 0}
+    .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:10;box-shadow:0 10px 30px rgba(131,24,67,.3);transition:opacity .2s,transform .2s}
+    .sticky.hide{opacity:0;transform:translateY(140%);pointer-events:none}
+  }
+  @media (max-width:480px){
+    .two{grid-template-columns:1fr}
+    form.card{padding:var(--space-3)}
+    .stat-row{grid-template-columns:1fr}
+    .stat-row div{display:flex;align-items:baseline;gap:12px;text-align:left;padding:var(--space-2) var(--space-3)}
+    .stat-row b{font-size:28px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Prévia criada pela FC Design para Rayanne Meirelles. Pacotes e depoimentos são de exemplo.</div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Rayanne Meirelles</a>
+    <nav aria-label="Principal">
+      <a href="#casais">Casais</a><a href="#pacotes">Pacotes</a><a href="#equipe">Equipe</a>
+      <a class="btn btn-primary" href="#data">Checar data</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>O seu casamento nos stories, no mesmo minuto em que acontece.</h1>
+      <p class="sub">Enquanto você vive o dia, a gente registra cada momento e posta em tempo real. Seus convidados acompanham ao vivo e você acorda no dia seguinte com tudo pronto para guardar.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Checar minha data</a>
+        <a class="btn btn-ghost" href="#casais">Ver casais</a>
+      </div>
+      <div class="regions" aria-label="Regiões atendidas"><span>Santa Catarina</span><span>Paraná</span><span>Chile</span></div>
+    </div>
+
+    <div class="story" id="story" role="region" aria-roledescription="story" aria-label="Exemplo de cobertura em tempo real">
+      <div class="bars" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+      <div class="head"><span class="avatar" aria-hidden="true">R</span>rayannestorymaker<span class="live">AO VIVO</span></div>
+      <div class="frame on"><span class="time">14:02</span><span class="moment">Making of da noiva</span><span class="couple">Paola &amp; Alex</span></div>
+      <div class="frame"><span class="time">16:30</span><span class="moment">O primeiro olhar</span><span class="couple">Paola &amp; Alex</span></div>
+      <div class="frame"><span class="time">17:05</span><span class="moment">A entrada na igreja</span><span class="couple">Paola &amp; Alex</span></div>
+      <div class="frame"><span class="time">22:40</span><span class="moment">Pista cheia até o fim</span><span class="couple">Paola &amp; Alex</span></div>
+      <button class="pause" id="pause" aria-label="Pausar story">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+    </div>
+  </section>
+</div>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap why">
+    <div>
+      <h2>Fotos e vídeo chegam semanas depois. O stories chega na hora.</h2>
+      <p class="lead">Quem não pôde ir acompanha tudo, quem está na festa reposta, e a noiva não precisa largar o buquê para pegar o celular.</p>
+    </div>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Tempo real</strong><span>Do making of à última música, postado enquanto acontece.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><div><strong>No seu perfil ou no do casal</strong><span>Você escolhe onde os stories vão aparecer.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg><div><strong>Reels no dia seguinte</strong><span>Um resumo editado do dia para guardar e compartilhar.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="casais" style="padding-top:0">
+  <div class="wrap">
+    <div class="reel-head">
+      <div><h2>Casais que contaram a história com a gente</h2><p class="lead" style="margin-bottom:0">Os mesmos casais dos destaques do Instagram.</p></div>
+      <div class="reel-nav">
+        <button type="button" data-dir="-1" aria-label="Casais anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button type="button" data-dir="1" aria-label="Próximos casais"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="reel" id="reel" tabindex="0" aria-label="Lista de casais"></div>
+    <p class="note">Na versão final, cada card abre o destaque real do casal.</p>
+  </div>
+</section>
+
+<section class="block" id="pacotes" style="padding-top:0">
+  <div class="wrap">
+    <h2>Pacotes</h2>
+    <p class="lead">Cobertura para casamentos e outros eventos. O valor depende da data, do local e do tempo de cobertura.</p>
+    <div class="plans">
+      <article class="plan"><h3>Essencial</h3><p class="for">Cerimônia e recepção</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Stories em tempo real</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Até 5 horas de cobertura</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Todos os vídeos entregues no dia</li></ul>
+        <p class="price">Valores sob consulta</p></article>
+      <article class="plan featured"><h3>Completo</h3><p class="for">Do making of à festa</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Tudo do Essencial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Making of da noiva e do noivo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Reels editado no dia seguinte</li></ul>
+        <p class="price">Valores sob consulta</p></article>
+      <article class="plan"><h3>Outros eventos</h3><p class="for">15 anos, chá revelação, aniversários</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Stories em tempo real</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cobertura no tempo do evento</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Vídeos entregues no dia</li></ul>
+        <p class="price">Valores sob consulta</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block team" id="equipe">
+  <div class="wrap grid">
+    <div>
+      <h2>Uma equipe, para a sua data nunca ficar sem storymaker</h2>
+      <p class="lead">Se a minha agenda já estiver cheia no seu dia, outra storymaker da equipe cobre o seu casamento, no mesmo padrão e com a mesma entrega.</p>
+      <a class="btn btn-primary" href="#data">Checar disponibilidade da equipe</a>
+      <p class="es" lang="es">¿Te casas en Chile? Atendemos también en español.</p>
+    </div>
+    <div class="stat-row">
+      <div><b>3</b><span>regiões atendidas</span></div>
+      <div><b>Ao vivo</b><span>do início ao fim</span></div>
+      <div><b>Equipe</b><span>para a sua data</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>O que os casais dizem</h2>
+    <p class="lead">Depoimentos de exemplo. Na versão final entram os feedbacks reais dos destaques.</p>
+    <div class="quotes">
+      <blockquote>"Nossa família de fora assistiu tudo pelo celular como se estivesse lá. Foi a melhor decisão do casamento."<cite>Noiva, Santa Catarina</cite></blockquote>
+      <blockquote>"Não precisei pegar o celular nenhuma vez e no outro dia o reels já estava pronto. Choramos vendo."<cite>Casal, Paraná</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="data" style="padding-top:0">
+  <div class="wrap check">
+    <div>
+      <h2>Cheque a sua data</h2>
+      <p class="lead">Preencha e a mensagem chega pronta no WhatsApp. Se eu já estiver com a data ocupada, te indico alguém da equipe na mesma conversa.</p>
+    </div>
+    <form class="card" id="form" novalidate>
+      <label for="date">Data do evento</label>
+      <input id="date" type="date" required aria-describedby="date-err">
+      <div class="error" id="date-err" aria-live="polite"></div>
+      <div class="two">
+        <div><label for="type">Tipo de evento</label>
+          <select id="type"><option>Casamento</option><option>15 anos</option><option>Chá revelação</option><option>Aniversário</option><option>Outro</option></select></div>
+        <div><label for="region">Estado ou país</label>
+          <select id="region"><option>Santa Catarina</option><option>Paraná</option><option>Chile</option><option>Outro lugar</option></select></div>
+      </div>
+      <label for="city">Cidade e local da festa</label>
+      <input id="city" type="text" autocomplete="address-level2">
+      <p class="help">Opcional. Ajuda a confirmar o deslocamento.</p>
+      <button class="btn btn-primary" type="submit">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+        Checar no WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Rayanne Meirelles, storymaker em SC, PR e Chile</span>
+    <a href="https://instagram.com/rayannestorymaker">@rayannestorymaker</a>
+  </footer>
+</div>
+
+<a class="btn btn-primary sticky" href="#data">Checar minha data</a>
+
+<script>
+  const WHATSAPP = '5547991498584';
+
+  // Casais dos destaques do Instagram
+  const couples = ['Roselis & João','Ana & Silvio','Fla & Djeison','Mari & Wander','Paola & Alex','Ana & Alex','Ray & Roberto'];
+  const tones = [['#F9A8D4','#BE185D'],['#FBCFE8','#9D174D'],['#F472B6','#831843'],['#FDE68A','#A16207'],['#F9A8D4','#831843'],['#FBCFE8','#BE185D'],['#F472B6','#9D174D']];
+  document.getElementById('reel').innerHTML = couples.map((c,i)=>
+    `<figure style="background:linear-gradient(170deg,${tones[i][0]},${tones[i][1]})"><figcaption><b>${c.replace('&','&amp;')}</b><span>Stories em tempo real</span></figcaption></figure>`).join('');
+  document.querySelectorAll('.reel-nav button').forEach(b=>b.addEventListener('click',()=>{
+    document.getElementById('reel').scrollBy({left:Number(b.dataset.dir)*216*2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }));
+
+  // Story ao vivo com pausa (para em foco, hover e reduced motion)
+  const story = document.getElementById('story'), frames=[...story.querySelectorAll('.frame')], bars=[...story.querySelectorAll('.bars b')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx=0, prog=0, paused=reduce, hover=false, timer;
+  const pauseBtn=document.getElementById('pause');
+  const icons={pause:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>',play:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>'};
+  function show(i){frames.forEach((f,k)=>f.classList.toggle('on',k===i));bars.forEach((b,k)=>b.style.width=k<i?'100%':'0');}
+  function sync(){pauseBtn.innerHTML=paused?icons.play:icons.pause;pauseBtn.setAttribute('aria-label',paused?'Continuar story':'Pausar story');}
+  function tick(){ if(!paused&&!hover){prog+=2; bars[idx].style.width=prog+'%'; if(prog>=100){prog=0;idx=(idx+1)%frames.length;show(idx);}} }
+  show(0); if(reduce) bars.forEach(b=>b.style.width='0'); sync(); timer=setInterval(tick,70);
+  pauseBtn.addEventListener('click',()=>{paused=!paused;sync();});
+  story.addEventListener('mouseenter',()=>hover=true); story.addEventListener('mouseleave',()=>hover=false);
+  story.addEventListener('focusin',()=>hover=true); story.addEventListener('focusout',()=>hover=false);
+
+  // Esconde o botão fixo quando o formulário está na tela
+  const sticky=document.querySelector('.sticky');
+  new IntersectionObserver(([en])=>{sticky.classList.toggle('hide',en.isIntersecting);sticky.toggleAttribute('inert',en.isIntersecting);},{threshold:0.15}).observe(document.getElementById('data'));
+
+  // Formulário -> WhatsApp
+  document.getElementById('form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const dateEl=document.getElementById('date'), err=document.getElementById('date-err');
+    if(!dateEl.value){err.textContent='Escolha a data do evento para checar a disponibilidade.';dateEl.focus();return;}
+    err.textContent='';
+    const d=dateEl.value.split('-').reverse().join('/');
+    const type=document.getElementById('type').value, region=document.getElementById('region').value, city=document.getElementById('city').value.trim();
+    const msg=`Oi, Rayanne! Vi seu site e queria checar a disponibilidade para ${type.toLowerCase()} no dia ${d}, em ${city?city+', ':''}${region}.`;
+    window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg),'_blank');
+  });
+</script>
+</body>
+</html>
