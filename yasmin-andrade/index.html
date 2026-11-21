@@ -22,6 +22,14 @@
     --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
     --ease:cubic-bezier(.34,1.3,.64,1);
     --ring:conic-gradient(from 210deg,#7C3AED,#EA580C,#FDBA74,#A78BFA,#7C3AED);
+    --ease-enter:cubic-bezier(.22,1,.36,1);
+    /* tokens que os momentos da Design Taste Frontend leem (photo-chapters, word-highlight) */
+    --bg:var(--color-background); --ink:var(--color-foreground); --muted:var(--color-muted-foreground);
+    --accent:var(--color-accent); --surface:var(--color-border);
+    --font-display:var(--font-heading); --font-text:var(--font-body); --display-weight:700; --display-tracking:-.02em;
+    --s-2:8px; --s-3:16px; --s-4:20px; --s-5:24px; --s-6:40px; --s-7:56px;
+    --r-md:20px; --r-lg:30px; --t-h2:clamp(34px,4.8vw,62px); --t-h3:30px; --t-lead:19px; --t-small:14px;
+    --nav:0px; --bar:0px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -51,7 +59,8 @@
   /* Hero */
   .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s4);align-items:center;padding:var(--s4) 0 var(--s6)}
   .hero h1{font-family:var(--font-heading);font-weight:700;font-size:clamp(54px,7.4vw,108px);line-height:.92;letter-spacing:-.02em;color:var(--color-foreground)}
-  .hero h1 span{display:block}
+  .hero h1 .ln{display:block;overflow:clip;padding-bottom:.1em;margin-bottom:-.1em}
+  .hero h1 .ln > i{display:block;font-style:normal}
   .hero h1 .o{color:var(--color-accent)}
   .hero p{font-size:19px;max-width:28em;color:var(--color-muted-foreground);margin:var(--s3) 0 var(--s4)}
   .hero .area{display:flex;align-items:center;gap:8px;margin-top:var(--s3);font-weight:600;color:var(--color-foreground)}
@@ -74,7 +83,11 @@
   .poll button span{font-size:13px;opacity:.75}
 
   /* Faixa de eventos */
-  .marquee-wrap{overflow:hidden;padding:12px 0}
+  .marquee-wrap{overflow:hidden;padding:12px 0;position:relative}
+  .marquee-wrap.paused .track{animation-play-state:paused}
+  .mq-pause{position:absolute;z-index:2;right:16px;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:var(--color-accent);color:var(--color-on-accent);display:grid;place-items:center;cursor:pointer}
+  .mq-pause svg{width:16px;height:16px}
+  .mq-pause .i-play{display:none}.paused .mq-pause .i-play{display:block}.paused .mq-pause .i-pause{display:none}
   .marquee{background:var(--color-foreground);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.5deg);margin:0 -20px}
   .marquee .track{display:flex;gap:48px;width:max-content;animation:slide 28s linear infinite;font-family:var(--font-heading);font-weight:600;font-size:28px}
   .marquee .track span{display:flex;align-items:center;gap:48px}
@@ -94,19 +107,12 @@
   .hl b{display:block;margin-top:10px;font-family:var(--font-heading);font-weight:600;font-size:16px;color:var(--color-ink)}
   .hl span{font-size:13px;color:var(--color-muted-foreground)}
 
-  /* Eventos */
-  .events{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--s3);margin-top:var(--s4)}
-  .event{position:relative;border-radius:30px;overflow:hidden;min-height:520px;color:#fff;display:flex;align-items:flex-end}
-  .event img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-  .event:hover img{transform:scale(1.04)}
-  .event::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(26,11,46,.88))}
-  .event div{position:relative;z-index:1;padding:var(--s3)}
-  .event h3{font-family:var(--font-heading);font-weight:700;font-size:34px;line-height:1}
-  .event p{margin-top:8px;font-size:16px;opacity:.92}
-  .event .pill{display:inline-block;margin-bottom:12px;background:var(--color-sun);color:var(--color-ink);font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px}
-  .more{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--s3);align-items:center}
-  .more b{font-family:var(--font-heading);font-weight:600;color:var(--color-foreground);margin-right:6px}
-  .more span{background:var(--color-card);border:2px solid var(--color-border);border-radius:999px;padding:6px 16px;font-weight:600;font-size:15px}
+  /* Eventos: momento photo-chapters (as fotos se descobrem uma sobre a outra conforme rola) */
+  #eventos:not(.is-live){padding:var(--s6) 0}
+  #eventos .mo-ph__head{max-width:900px;gap:12px}
+  #eventos .mo-ph__head h2{font-family:var(--font-heading);font-weight:700;font-size:var(--t-h2);line-height:1;letter-spacing:-.015em;color:var(--color-foreground)}
+  #eventos .mo-ph__head p{color:var(--color-muted-foreground)}
+  #eventos .mo-ph__ch p{color:var(--color-muted-foreground)}
 
   /* Como funciona (sequência real) */
   .how{background:var(--color-card);border-radius:40px;padding:var(--s5) var(--s4);display:grid;grid-template-columns:1fr 2fr;gap:var(--s4)}
@@ -118,11 +124,11 @@
   .steps h3{font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--color-ink);margin-bottom:6px}
   .steps p{color:var(--color-muted-foreground);font-size:16px}
 
-  /* Frase dela */
-  .voice{text-align:center;padding:var(--s6) 0}
-  .voice blockquote{font-family:var(--font-heading);font-weight:700;font-size:clamp(36px,5.6vw,76px);line-height:1;letter-spacing:-.02em;color:var(--color-foreground);max-width:14em;margin:0 auto}
-  .voice blockquote em{font-style:normal;color:var(--color-accent)}
-  .voice cite{display:block;margin-top:var(--s3);font-style:normal;color:var(--color-muted-foreground);font-weight:600}
+  /* Frase dela: momento word-highlight (as palavras acendem conforme rola) */
+  .voice{padding:var(--s6) 0;min-height:70vh;display:grid;align-content:center;gap:var(--s3)}
+  .voice .t-label{font-weight:700;font-size:15px;color:var(--color-accent);letter-spacing:.04em;text-transform:uppercase}
+  .voice .mo-wh__text{font-size:clamp(32px,4.6vw,60px)}
+  .voice.mo-wh .mo-w:not(.is-on){color:color-mix(in oklab,var(--ink) 64%,var(--bg))}
 
   /* Formulário */
   .book{background:var(--color-foreground);color:#fff;border-radius:40px;padding:var(--s5) var(--s4);display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:start}
@@ -147,19 +153,24 @@
   footer{padding:var(--s4) 0;display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;font-size:14px;color:var(--color-muted-foreground);font-weight:600}
   .sticky{display:none}
 
-  /* Entrada única: os stories "caem" na tela */
-  .drop{opacity:0}
-  .loaded .drop{opacity:1;transition:opacity .5s,translate .7s var(--ease);translate:0 0}
-  .drop{translate:0 30px}
-  .loaded .s2{transition-delay:.1s}.loaded .s3{transition-delay:.2s}.loaded .poll{transition-delay:.35s}
+  /* Entrada do hero (padrão da Design Taste Frontend): o título sobe linha por linha de dentro de máscaras,
+     depois o texto e os botões sobem 12px, e a colagem assenta de .98 para 1. Uma vez, cerca de 1,1 s. */
+  html.m-enter:not(.m-done) .hero[data-enter]:not(.is-entered) .ln > i{transform:translateY(110%)}
+  html.m-enter:not(.m-done) .hero[data-enter]:not(.is-entered) .fade{opacity:0;transform:translateY(12px)}
+  html.m-enter:not(.m-done) .hero[data-enter]:not(.is-entered) .collage{scale:.98}
+  .hero.is-entered .ln > i{transition:transform 700ms var(--ease-enter) calc(var(--i,0) * 80ms)}
+  .hero.is-entered .fade{transition:opacity 520ms var(--ease-enter) calc(400ms + var(--i,0) * 60ms),transform 520ms var(--ease-enter) calc(400ms + var(--i,0) * 60ms)}
+  .hero.is-entered .collage{transition:scale 900ms var(--ease-enter)}
 
   @media (max-width:980px){
     .wrap{padding:0 18px}
     .hero{grid-template-columns:1fr;padding-bottom:var(--s5)}
     .collage{height:560px;max-width:460px;width:100%;margin:0 auto}
     .story{width:190px}.s2{width:205px}
-    .events{grid-template-columns:1fr}
-    .event{min-height:420px}
+    :root{--bar:76px}
+    #eventos.is-live .mo-ph__panel{padding:14px 16px;gap:6px}
+    #eventos.is-live .mo-ph__ch h3{font-size:24px}
+    #eventos .mo-ph__ch p,#eventos .mo-ph__head p{font-size:15px;line-height:1.45}
     .how,.book{grid-template-columns:1fr;padding:var(--s4) var(--s3);border-radius:28px}
     .steps{grid-template-columns:1fr}
     .top nav a:not(.btn){display:none}
@@ -184,9 +195,12 @@
     html{scroll-behavior:auto}
     *{transition:none!important}
     .marquee .track{animation:none}
-    .drop{opacity:1;translate:0 0}
+    .mq-pause{display:none}
   }
 </style>
+<script>(()=>{const d=document.documentElement;d.classList.add('mo-js');setTimeout(()=>d.classList.add('mo-safe'),2500);if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('m-enter');setTimeout(()=>d.classList.add('m-done'),1200)}})()</script>
+<link rel="modulepreload" href="assets/moments/moments.js"><link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/photo-chapters/moment.js"><link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
 </head>
 <body>
 <div class="demo-bar">Prévia criada pela FC Design para Yasmin Andrade. Fotos ilustrativas e depoimentos de exemplo.</div>
@@ -199,22 +213,25 @@
       <a class="btn" href="#orcamento">Pedir orçamento</a>
     </nav>
   </header>
+</div>
 
-  <section class="hero">
+<main>
+<div class="wrap">
+  <section class="hero" data-enter>
     <div>
-      <h1><span>A Yas registra.</span><span class="o">Você curte</span><span>a festa.</span></h1>
-      <p>Cobertura de stories em tempo real para casamentos, chá revelação e aniversários. Cada momento postado na hora, enquanto você aproveita sem pegar no celular.</p>
-      <a class="btn" href="#orcamento">
+      <h1><span class="ln"><i style="--i:0">A Yas registra.</i></span><span class="ln o"><i style="--i:1">Você curte</i></span><span class="ln"><i style="--i:2">a festa.</i></span></h1>
+      <p class="fade" style="--i:0">Cobertura de stories em tempo real para casamentos, chá revelação e aniversários. Cada momento postado na hora, enquanto você aproveita sem pegar no celular.</p>
+      <a class="btn fade" style="--i:1" href="#orcamento">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         Ver se minha data está livre</a>
-      <p class="area"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>São Gonçalo, Niterói e todo o Rio</p>
+      <p class="area fade" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>São Gonçalo, Niterói e todo o Rio</p>
     </div>
 
     <div class="collage" aria-label="Exemplos de stories">
-      <figure class="story s1 drop"><span class="tag">Chá revelação</span><img src="https://images.unsplash.com/photo-1768776180290-81e0661b846f?auto=format&fit=crop&w=560&q=72" alt="Fumaça rosa e confete num chá revelação" width="560" height="996"></figure>
-      <figure class="story s2 drop"><span class="tag">Casamento</span><img src="https://images.unsplash.com/photo-1769230383260-69026dbb3abf?auto=format&fit=crop&w=600&q=72" alt="Casal dançando entre confetes na festa de casamento" width="600" height="1066"></figure>
-      <figure class="story s3 drop"><span class="tag">1 aninho</span><img src="https://images.unsplash.com/photo-1766770301468-0fff596420b0?auto=format&fit=crop&w=560&q=72" alt="Criança pequena brincando com balões no aniversário" width="560" height="996"></figure>
-      <div class="poll drop" role="group" aria-labelledby="poll-q">
+      <figure class="story s1"><span class="tag">Chá revelação</span><img src="https://images.unsplash.com/photo-1768776180290-81e0661b846f?auto=format&fit=crop&w=560&q=72" alt="Fumaça rosa e confete num chá revelação" width="560" height="996"></figure>
+      <figure class="story s2"><span class="tag">Casamento</span><img src="https://images.unsplash.com/photo-1769230383260-69026dbb3abf?auto=format&fit=crop&w=600&q=72" alt="Casal dançando entre confetes na festa de casamento" width="600" height="1066"></figure>
+      <figure class="story s3"><span class="tag">1 aninho</span><img src="https://images.unsplash.com/photo-1766770301468-0fff596420b0?auto=format&fit=crop&w=560&q=72" alt="Criança pequena brincando com balões no aniversário" width="560" height="996"></figure>
+      <div class="poll" role="group" aria-labelledby="poll-q">
         <h2 id="poll-q">E você, vai me chamar pra qual evento?</h2>
         <button type="button" data-event="Casamento" aria-pressed="false">Casamento <span>toque aqui</span></button>
         <button type="button" data-event="Chá revelação" aria-pressed="false">Chá revelação <span>toque aqui</span></button>
@@ -224,12 +241,17 @@
   </section>
 </div>
 
-<div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+<div class="marquee-wrap" id="mq"><div class="marquee" aria-hidden="true">
   <div class="track">
     <span>Casamentos</span><span>Chá revelação</span><span>Aniversários</span><span>15 anos</span><span>Batizados</span><span>Stories ao vivo</span><span>After movie</span>
     <span>Casamentos</span><span>Chá revelação</span><span>Aniversários</span><span>15 anos</span><span>Batizados</span><span>Stories ao vivo</span><span>After movie</span>
   </div>
-</div></div>
+</div>
+<button class="mq-pause" type="button" aria-label="Pausar a faixa de eventos" aria-pressed="false">
+  <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+  <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+</button>
+</div>
 
 <div class="wrap">
   <section class="block">
@@ -237,16 +259,33 @@
     <p class="lead">Os mesmos eventos dos destaques do Instagram. Na versão final, cada um abre o destaque real.</p>
     <div class="highlights" id="highlights"></div>
   </section>
+</div>
 
-  <section class="block" id="eventos" style="padding-top:0">
-    <h2 class="big">Pra qual festa você precisa da Yas?</h2>
-    <div class="events">
-      <article class="event"><img src="https://images.unsplash.com/photo-1757647630063-dd5cd82271f3?auto=format&fit=crop&w=900&q=72" alt="Casal caminhando num corredor de arcos" loading="lazy" width="900" height="1200"><div><span class="pill">Mais pedido</span><h3>Casamentos</h3><p>Stories do making of até a pista, e um after movie com os melhores momentos.</p></div></article>
-      <article class="event"><img src="https://images.unsplash.com/photo-1788462810693-78a5e75ecb36?auto=format&fit=crop&w=800&q=72" alt="Casal diante de um arco de balões com fumaça rosa" loading="lazy" width="800" height="1200"><div><h3>Chá revelação</h3><p>A reação de todo mundo na hora da revelação, ao vivo para quem não pôde ir.</p></div></article>
-      <article class="event"><img src="https://images.unsplash.com/photo-1608790672275-309c02d888ff?auto=format&fit=crop&w=800&q=72" alt="Crianças soprando as velas do bolo" loading="lazy" width="800" height="1200"><div><h3>Aniversários</h3><p>Do primeiro aninho aos 15 anos, do parabéns ao último balão.</p></div></article>
-    </div>
-    <div class="more"><b>Também cubro:</b><span>15 anos</span><span>Batizados</span><span>Festas de empresa</span><span>Ensaios</span></div>
-  </section>
+<!-- momento photo-chapters (Design Taste Frontend): ao rolar, cada foto se descobre sobre a anterior -->
+<section id="eventos" data-moment="photo-chapters" aria-labelledby="ev-h">
+  <div class="wrap mo-ph">
+    <div class="mo-ph__head"><h2 id="ev-h">Pra qual festa você precisa da Yas?</h2><p>Também cubro 15 anos, batizados, festas de empresa e ensaios.</p></div>
+    <ol class="mo-ph__list">
+      <li class="mo-ph__ch">
+        <figure class="mo-ph__pic"><img src="https://images.unsplash.com/photo-1757647630063-dd5cd82271f3?auto=format&fit=crop&w=1600&q=72" alt="Casal caminhando num corredor de arcos" loading="lazy" width="1600" height="1067"></figure>
+        <h3>Casamentos</h3>
+        <p>Stories do making of até a pista, e um after movie com os melhores momentos.</p>
+      </li>
+      <li class="mo-ph__ch">
+        <figure class="mo-ph__pic"><img src="https://images.unsplash.com/photo-1788462810693-78a5e75ecb36?auto=format&fit=crop&w=1600&q=72" alt="Casal diante de um arco de balões com fumaça rosa" loading="lazy" width="1600" height="1067"></figure>
+        <h3>Chá revelação</h3>
+        <p>A reação de todo mundo na hora da revelação, ao vivo para quem não pôde ir.</p>
+      </li>
+      <li class="mo-ph__ch">
+        <figure class="mo-ph__pic"><img src="https://images.unsplash.com/photo-1608790672275-309c02d888ff?auto=format&fit=crop&w=1600&q=72" alt="Crianças soprando as velas do bolo" loading="lazy" width="1600" height="1067"></figure>
+        <h3>Aniversários</h3>
+        <p>Do primeiro aninho aos 15 anos, do parabéns ao último balão.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="wrap">
 
   <section class="how" id="como">
     <div><h2 class="big">Como funciona</h2><p class="lead">Simples, do primeiro oi até o vídeo no seu celular.</p></div>
@@ -257,9 +296,10 @@
     </ol>
   </section>
 
-  <section class="voice">
-    <blockquote>"A Yas está aqui pra <em>registrar tudo!</em>"</blockquote>
-    <cite>Yas, no Instagram</cite>
+  <!-- momento word-highlight: as palavras acendem conforme a frase cruza o meio da tela -->
+  <section class="voice" data-moment="word-highlight" aria-label="A Yas no seu evento">
+    <p class="t-label">A Yas no seu evento</p>
+    <p class="mo-wh__text">A Yas está aqui pra <strong>registrar tudo!</strong> Enquanto você dança, abraça e se emociona, cada momento vai pro ar na hora, pra quem não pôde ir sentir que estava junto.</p>
   </section>
 
   <section class="book" id="orcamento">
@@ -293,7 +333,10 @@
         Mandar no WhatsApp</button>
     </form>
   </section>
+</div>
+</main>
 
+<div class="wrap">
   <footer>
     <span>Yas Andrade, storymaker em São Gonçalo, Niterói e RJ</span>
     <a href="https://instagram.com/storymaker.andrade">@storymaker.andrade</a>
@@ -305,7 +348,14 @@
 <script>
   const WHATSAPP = '5521971402787';
   const IMG = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=240&h=240&q=70`;
-  requestAnimationFrame(()=>document.body.classList.add('loaded'));
+  // Entrada do hero: uma vez, assim que a página pinta
+  const hero=document.querySelector('.hero[data-enter]');
+  if(document.documentElement.classList.contains('m-enter')) requestAnimationFrame(()=>requestAnimationFrame(()=>hero.classList.add('is-entered')));
+  else hero.classList.add('is-entered');
+
+  // Faixa de eventos: botão de pausar (anima por mais de 5 s)
+  const mq=document.getElementById('mq'), mqBtn=mq.querySelector('.mq-pause');
+  mqBtn.addEventListener('click',()=>{const p=mq.classList.toggle('paused');mqBtn.setAttribute('aria-pressed',p);mqBtn.setAttribute('aria-label',p?'Continuar a faixa de eventos':'Pausar a faixa de eventos');});
 
   // Destaques reais do Instagram (fotos ilustrativas)
   const hls = [
@@ -352,5 +402,6 @@
     window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg),'_blank');
   });
 </script>
+<script type="module" src="assets/moments/moments.js"></script>
 </body>
 </html>
