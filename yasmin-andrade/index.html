@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Yas Andrade | Storymaker em São Gonçalo, Niterói e RJ</title>
+<meta name="description" content="Cobertura de stories em tempo real para casamentos, chá revelação e aniversários em São Gonçalo, Niterói e Rio de Janeiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Direção do UI/UX Pro Max: padrão Hero-Centric, paleta "Excitement purple + action orange", par "Playful Creative" (Fredoka + Nunito) */
+  :root{
+    --color-primary:#7C3AED; --color-on-primary:#FFFFFF;
+    --color-secondary:#A78BFA; --color-accent:#EA580C; --color-on-accent:#1A0B2E;
+    --color-sun:#FDBA74; --color-background:#FAF5FF; --color-foreground:#4C1D95;
+    --color-ink:#1A0B2E; --color-muted-foreground:#5B4A75; --color-card:#FFFFFF; --color-border:#E9D5FF;
+    --color-ring:#EA580C;
+    --font-heading:'Fredoka',system-ui,sans-serif; --font-body:'Nunito',system-ui,sans-serif;
+    --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
+    --ease:cubic-bezier(.34,1.3,.64,1);
+    --ring:conic-gradient(from 210deg,#7C3AED,#EA580C,#FDBA74,#A78BFA,#7C3AED);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--color-ink);background:var(--color-background);font-size:17px;line-height:1.6}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  button,input,select{font:inherit;color:inherit}
+  :focus-visible{outline:3px solid var(--color-ring);outline-offset:3px;border-radius:10px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  .demo-bar{background:var(--color-ink);color:#D8C8F0;font-size:13px;text-align:center;padding:8px 16px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:none;background:var(--color-primary);color:var(--color-on-primary);font-family:var(--font-heading);font-weight:600;font-size:18px;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 var(--color-foreground);transition:transform .15s,box-shadow .15s,background-color .2s}
+  .btn:hover{background:#6D28D9;transform:translateY(-2px);box-shadow:0 6px 0 var(--color-foreground)}
+  .btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--color-foreground)}
+  .btn svg{width:22px;height:22px}
+
+  /* Topo */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-weight:700;font-size:22px;text-decoration:none;color:var(--color-foreground)}
+  .logo i{width:38px;height:38px;border-radius:50%;padding:3px;background:var(--ring);display:block}
+  .logo i b{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--color-background);font-style:normal;font-size:17px}
+  .top nav{display:flex;gap:28px;align-items:center;font-weight:600;font-size:15px}
+  .top nav a{text-decoration:none;color:var(--color-muted-foreground)}
+  .top nav a:hover{color:var(--color-foreground)}
+  .top nav a.btn,.top nav a.btn:hover{color:var(--color-on-primary)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s4);align-items:center;padding:var(--s4) 0 var(--s6)}
+  .hero h1{font-family:var(--font-heading);font-weight:700;font-size:clamp(54px,7.4vw,108px);line-height:.92;letter-spacing:-.02em;color:var(--color-foreground)}
+  .hero h1 span{display:block}
+  .hero h1 .o{color:var(--color-accent)}
+  .hero p{font-size:19px;max-width:28em;color:var(--color-muted-foreground);margin:var(--s3) 0 var(--s4)}
+  .hero .area{display:flex;align-items:center;gap:8px;margin-top:var(--s3);font-weight:600;color:var(--color-foreground)}
+  .hero .area svg{width:20px;height:20px;color:var(--color-accent)}
+
+  /* Colagem de stories + enquete: elemento marcante */
+  .collage{position:relative;height:620px}
+  .story{position:absolute;width:250px;aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:6px solid #fff;box-shadow:0 24px 50px -18px rgba(76,29,149,.45);background:var(--color-secondary)}
+  .story img{width:100%;height:100%;object-fit:cover}
+  .story::before{content:"";position:absolute;z-index:1;top:10px;left:10px;right:10px;height:3px;border-radius:3px;background:linear-gradient(90deg,#fff 0 55%,rgba(255,255,255,.4) 55%)}
+  .story .tag{position:absolute;z-index:1;top:22px;left:12px;background:#fff;color:var(--color-ink);font-family:var(--font-heading);font-weight:600;font-size:13px;padding:4px 10px;border-radius:999px}
+  .s1{left:0;top:70px;transform:rotate(-7deg)}
+  .s2{left:31%;top:0;transform:rotate(3deg);z-index:2;width:270px}
+  .s3{right:0;top:120px;transform:rotate(8deg)}
+  .poll{position:absolute;z-index:5;left:12%;bottom:0;width:min(340px,86%);background:#fff;border-radius:22px;padding:18px;box-shadow:0 20px 40px -14px rgba(26,11,46,.35);transform:rotate(-3deg)}
+  .poll h2{font-family:var(--font-heading);font-weight:600;font-size:21px;line-height:1.15;color:var(--color-ink);margin-bottom:12px;text-align:center}
+  .poll button{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;margin-top:8px;padding:0 16px;border-radius:14px;border:2px solid var(--color-border);background:var(--color-background);font-weight:700;cursor:pointer;transition:border-color .15s,background-color .15s,transform .15s}
+  .poll button:hover{border-color:var(--color-primary);transform:scale(1.02)}
+  .poll button[aria-pressed="true"]{background:var(--color-primary);border-color:var(--color-primary);color:#fff}
+  .poll button span{font-size:13px;opacity:.75}
+
+  /* Faixa de eventos */
+  .marquee-wrap{overflow:hidden;padding:12px 0}
+  .marquee{background:var(--color-foreground);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.5deg);margin:0 -20px}
+  .marquee .track{display:flex;gap:48px;width:max-content;animation:slide 28s linear infinite;font-family:var(--font-heading);font-weight:600;font-size:28px}
+  .marquee .track span{display:flex;align-items:center;gap:48px}
+  .marquee .track span::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--color-accent)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  section.block{padding:var(--s6) 0}
+  h2.big{font-family:var(--font-heading);font-weight:700;font-size:clamp(38px,5vw,66px);line-height:1;letter-spacing:-.015em;color:var(--color-foreground)}
+  .lead{max-width:34em;color:var(--color-muted-foreground);margin-top:var(--s2)}
+
+  /* Destaques */
+  .highlights{display:flex;gap:28px;overflow-x:auto;padding:var(--s4) 4px var(--s2);scroll-snap-type:x mandatory;scrollbar-width:none}
+  .highlights::-webkit-scrollbar{display:none}
+  .hl{flex:0 0 auto;scroll-snap-align:start;text-align:center;width:112px}
+  .hl .ring{width:112px;height:112px;border-radius:50%;padding:4px;background:var(--ring)}
+  .hl .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--color-background)}
+  .hl b{display:block;margin-top:10px;font-family:var(--font-heading);font-weight:600;font-size:16px;color:var(--color-ink)}
+  .hl span{font-size:13px;color:var(--color-muted-foreground)}
+
+  /* Eventos */
+  .events{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--s3);margin-top:var(--s4)}
+  .event{position:relative;border-radius:30px;overflow:hidden;min-height:520px;color:#fff;display:flex;align-items:flex-end}
+  .event img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  .event:hover img{transform:scale(1.04)}
+  .event::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(26,11,46,.88))}
+  .event div{position:relative;z-index:1;padding:var(--s3)}
+  .event h3{font-family:var(--font-heading);font-weight:700;font-size:34px;line-height:1}
+  .event p{margin-top:8px;font-size:16px;opacity:.92}
+  .event .pill{display:inline-block;margin-bottom:12px;background:var(--color-sun);color:var(--color-ink);font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px}
+  .more{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--s3);align-items:center}
+  .more b{font-family:var(--font-heading);font-weight:600;color:var(--color-foreground);margin-right:6px}
+  .more span{background:var(--color-card);border:2px solid var(--color-border);border-radius:999px;padding:6px 16px;font-weight:600;font-size:15px}
+
+  /* Como funciona (sequência real) */
+  .how{background:var(--color-card);border-radius:40px;padding:var(--s5) var(--s4);display:grid;grid-template-columns:1fr 2fr;gap:var(--s4)}
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);counter-reset:n}
+  .steps li{counter-increment:n}
+  .steps li::before{content:counter(n);display:grid;place-items:center;width:56px;height:56px;border-radius:18px;background:var(--color-accent);color:var(--color-on-accent);font-family:var(--font-heading);font-weight:700;font-size:28px;margin-bottom:14px;transform:rotate(-6deg)}
+  .steps li:nth-child(2)::before{background:var(--color-sun);transform:rotate(5deg)}
+  .steps li:nth-child(3)::before{background:var(--color-secondary);transform:rotate(-3deg)}
+  .steps h3{font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--color-ink);margin-bottom:6px}
+  .steps p{color:var(--color-muted-foreground);font-size:16px}
+
+  /* Frase dela */
+  .voice{text-align:center;padding:var(--s6) 0}
+  .voice blockquote{font-family:var(--font-heading);font-weight:700;font-size:clamp(36px,5.6vw,76px);line-height:1;letter-spacing:-.02em;color:var(--color-foreground);max-width:14em;margin:0 auto}
+  .voice blockquote em{font-style:normal;color:var(--color-accent)}
+  .voice cite{display:block;margin-top:var(--s3);font-style:normal;color:var(--color-muted-foreground);font-weight:600}
+
+  /* Formulário */
+  .book{background:var(--color-foreground);color:#fff;border-radius:40px;padding:var(--s5) var(--s4);display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:start}
+  .book h2{font-family:var(--font-heading);font-weight:700;font-size:clamp(38px,4.6vw,60px);line-height:1}
+  .book > div > p{color:#DDD0F7;margin-top:var(--s2);max-width:26em}
+  form{background:#fff;color:var(--color-ink);border-radius:28px;padding:var(--s4) var(--s3)}
+  fieldset{border:none}
+  legend,form label{display:block;font-weight:700;font-size:15px;margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--s3)}
+  .chips input{position:absolute;opacity:0;width:1px;height:1px}
+  .chips label{margin:0;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:2px solid var(--color-border);background:var(--color-background);font-weight:700;font-size:15px;transition:background-color .15s,border-color .15s}
+  .chips input:checked + label{background:var(--color-primary);border-color:var(--color-primary);color:#fff}
+  .chips input:focus-visible + label{outline:3px solid var(--color-ring);outline-offset:2px}
+  .field{margin-bottom:var(--s3)}
+  form input[type=date],form input[type=text]{width:100%;min-height:52px;padding:10px 16px;border:2px solid var(--color-border);border-radius:16px;background:var(--color-background)}
+  form input:focus{border-color:var(--color-primary);outline:none}
+  form input:focus-visible{outline:3px solid var(--color-ring);outline-offset:2px}
+  .help{font-size:13px;color:var(--color-muted-foreground);margin-top:6px}
+  .error{color:#B91C1C;font-size:14px;margin-top:6px;min-height:1.2em;font-weight:600}
+  form .btn{width:100%}
+
+  footer{padding:var(--s4) 0;display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;font-size:14px;color:var(--color-muted-foreground);font-weight:600}
+  .sticky{display:none}
+
+  /* Entrada única: os stories "caem" na tela */
+  .drop{opacity:0}
+  .loaded .drop{opacity:1;transition:opacity .5s,translate .7s var(--ease);translate:0 0}
+  .drop{translate:0 30px}
+  .loaded .s2{transition-delay:.1s}.loaded .s3{transition-delay:.2s}.loaded .poll{transition-delay:.35s}
+
+  @media (max-width:980px){
+    .wrap{padding:0 18px}
+    .hero{grid-template-columns:1fr;padding-bottom:var(--s5)}
+    .collage{height:560px;max-width:460px;width:100%;margin:0 auto}
+    .story{width:190px}.s2{width:205px}
+    .events{grid-template-columns:1fr}
+    .event{min-height:420px}
+    .how,.book{grid-template-columns:1fr;padding:var(--s4) var(--s3);border-radius:28px}
+    .steps{grid-template-columns:1fr}
+    .top nav a:not(.btn){display:none}
+    .top .btn{min-height:44px;font-size:16px;padding:0 18px}
+    section.block{padding:var(--s5) 0}
+    footer{padding-bottom:100px}
+    .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;transition:opacity .2s,transform .2s}
+    .sticky.hide{opacity:0;transform:translateY(150%);pointer-events:none}
+  }
+  @media (max-width:480px){
+    .collage{height:500px}
+    .story{width:160px;border-width:5px}.s2{width:175px;left:28%}.s3{right:8px}
+    .logo{white-space:nowrap}
+    .top nav .btn{display:none}
+    .book{padding:32px 14px}
+    form{padding:28px 16px}
+    form .btn{padding:0 16px;white-space:nowrap}
+    .poll{left:4%;width:92%}
+    .marquee .track{font-size:22px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+    .marquee .track{animation:none}
+    .drop{opacity:1;translate:0 0}
+  }
+</style>
+</head>
+<body>
+<div class="demo-bar">Prévia criada pela FC Design para Yasmin Andrade. Fotos ilustrativas e depoimentos de exemplo.</div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#"><i><b>Y</b></i>Yas Andrade</a>
+    <nav aria-label="Principal">
+      <a href="#eventos">Eventos</a><a href="#como">Como funciona</a>
+      <a class="btn" href="#orcamento">Pedir orçamento</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1><span>A Yas registra.</span><span class="o">Você curte</span><span>a festa.</span></h1>
+      <p>Cobertura de stories em tempo real para casamentos, chá revelação e aniversários. Cada momento postado na hora, enquanto você aproveita sem pegar no celular.</p>
+      <a class="btn" href="#orcamento">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Ver se minha data está livre</a>
+      <p class="area"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>São Gonçalo, Niterói e todo o Rio</p>
+    </div>
+
+    <div class="collage" aria-label="Exemplos de stories">
+      <figure class="story s1 drop"><span class="tag">Chá revelação</span><img src="https://images.unsplash.com/photo-1768776180290-81e0661b846f?auto=format&fit=crop&w=560&q=72" alt="Fumaça rosa e confete num chá revelação" width="560" height="996"></figure>
+      <figure class="story s2 drop"><span class="tag">Casamento</span><img src="https://images.unsplash.com/photo-1769230383260-69026dbb3abf?auto=format&fit=crop&w=600&q=72" alt="Casal dançando entre confetes na festa de casamento" width="600" height="1066"></figure>
+      <figure class="story s3 drop"><span class="tag">1 aninho</span><img src="https://images.unsplash.com/photo-1766770301468-0fff596420b0?auto=format&fit=crop&w=560&q=72" alt="Criança pequena brincando com balões no aniversário" width="560" height="996"></figure>
+      <div class="poll drop" role="group" aria-labelledby="poll-q">
+        <h2 id="poll-q">E você, vai me chamar pra qual evento?</h2>
+        <button type="button" data-event="Casamento" aria-pressed="false">Casamento <span>toque aqui</span></button>
+        <button type="button" data-event="Chá revelação" aria-pressed="false">Chá revelação <span>toque aqui</span></button>
+        <button type="button" data-event="Aniversário" aria-pressed="false">Aniversário <span>toque aqui</span></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+  <div class="track">
+    <span>Casamentos</span><span>Chá revelação</span><span>Aniversários</span><span>15 anos</span><span>Batizados</span><span>Stories ao vivo</span><span>After movie</span>
+    <span>Casamentos</span><span>Chá revelação</span><span>Aniversários</span><span>15 anos</span><span>Batizados</span><span>Stories ao vivo</span><span>After movie</span>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <section class="block">
+    <h2 class="big">Os destaques que já viraram história</h2>
+    <p class="lead">Os mesmos eventos dos destaques do Instagram. Na versão final, cada um abre o destaque real.</p>
+    <div class="highlights" id="highlights"></div>
+  </section>
+
+  <section class="block" id="eventos" style="padding-top:0">
+    <h2 class="big">Pra qual festa você precisa da Yas?</h2>
+    <div class="events">
+      <article class="event"><img src="https://images.unsplash.com/photo-1757647630063-dd5cd82271f3?auto=format&fit=crop&w=900&q=72" alt="Casal caminhando num corredor de arcos" loading="lazy" width="900" height="1200"><div><span class="pill">Mais pedido</span><h3>Casamentos</h3><p>Stories do making of até a pista, e um after movie com os melhores momentos.</p></div></article>
+      <article class="event"><img src="https://images.unsplash.com/photo-1788462810693-78a5e75ecb36?auto=format&fit=crop&w=800&q=72" alt="Casal diante de um arco de balões com fumaça rosa" loading="lazy" width="800" height="1200"><div><h3>Chá revelação</h3><p>A reação de todo mundo na hora da revelação, ao vivo para quem não pôde ir.</p></div></article>
+      <article class="event"><img src="https://images.unsplash.com/photo-1608790672275-309c02d888ff?auto=format&fit=crop&w=800&q=72" alt="Crianças soprando as velas do bolo" loading="lazy" width="800" height="1200"><div><h3>Aniversários</h3><p>Do primeiro aninho aos 15 anos, do parabéns ao último balão.</p></div></article>
+    </div>
+    <div class="more"><b>Também cubro:</b><span>15 anos</span><span>Batizados</span><span>Festas de empresa</span><span>Ensaios</span></div>
+  </section>
+
+  <section class="how" id="como">
+    <div><h2 class="big">Como funciona</h2><p class="lead">Simples, do primeiro oi até o vídeo no seu celular.</p></div>
+    <ol class="steps">
+      <li><h3>Você me chama</h3><p>Conta o evento, a data e o lugar. Eu confirmo se a data está livre.</p></li>
+      <li><h3>A gente combina</h3><p>Alinho os momentos que não podem faltar e o perfil onde vou postar.</p></li>
+      <li><h3>Eu registro tudo</h3><p>Posto em tempo real no dia e entrego os vídeos para você guardar.</p></li>
+    </ol>
+  </section>
+
+  <section class="voice">
+    <blockquote>"A Yas está aqui pra <em>registrar tudo!</em>"</blockquote>
+    <cite>Yas, no Instagram</cite>
+  </section>
+
+  <section class="book" id="orcamento">
+    <div>
+      <h2>Bora ver se a sua data está livre?</h2>
+      <p>Escolha o evento, a data e o lugar. A mensagem já chega pronta no meu WhatsApp e eu te respondo com o orçamento.</p>
+    </div>
+    <form id="form" novalidate>
+      <fieldset>
+        <legend>Qual evento?</legend>
+        <div class="chips">
+          <input type="radio" name="ev" id="ev1" value="Casamento" checked><label for="ev1">Casamento</label>
+          <input type="radio" name="ev" id="ev2" value="Chá revelação"><label for="ev2">Chá revelação</label>
+          <input type="radio" name="ev" id="ev3" value="Aniversário"><label for="ev3">Aniversário</label>
+          <input type="radio" name="ev" id="ev4" value="15 anos"><label for="ev4">15 anos</label>
+          <input type="radio" name="ev" id="ev5" value="Outro evento"><label for="ev5">Outro</label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="date">Data</label>
+        <input id="date" type="date" required aria-describedby="date-err">
+        <div class="error" id="date-err" aria-live="polite"></div>
+      </div>
+      <div class="field">
+        <label for="place">Bairro ou cidade</label>
+        <input id="place" type="text" autocomplete="address-level2">
+        <p class="help">Ex.: Alcântara, São Gonçalo</p>
+      </div>
+      <button class="btn" type="submit">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+        Mandar no WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <span>Yas Andrade, storymaker em São Gonçalo, Niterói e RJ</span>
+    <a href="https://instagram.com/storymaker.andrade">@storymaker.andrade</a>
+  </footer>
+</div>
+
+<a class="btn sticky" href="#orcamento">Ver se minha data está livre</a>
+
+<script>
+  const WHATSAPP = '5521971402787';
+  const IMG = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=240&h=240&q=70`;
+  requestAnimationFrame(()=>document.body.classList.add('loaded'));
+
+  // Destaques reais do Instagram (fotos ilustrativas)
+  const hls = [
+    ['Feedback!','o que dizem','photo-1760036120428-42742c16a23c'],
+    ['L | R','casamento','photo-1622277430358-f4d134452e2e'],
+    ['Chá rev | A','chá revelação','photo-1768776180141-5b80c53cd531'],
+    ['Manu | 25','aniversário','photo-1762912913371-ccc0a5fca0ae'],
+    ['Maria F | 1','1 aninho','photo-1766770301468-0fff596420b0'],
+    ['Pietra | 1','1 aninho','photo-1608790672275-309c02d888ff'],
+    ['C | R','casamento','photo-1596457221755-b96bc3a6df18'],
+    ['Mel','aniversário','photo-1635388114403-e1c51f9493db']
+  ];
+  document.getElementById('highlights').innerHTML = hls.map(([n,s,id])=>
+    `<div class="hl"><div class="ring"><img src="${IMG(id)}" alt="" width="240" height="240" loading="lazy"></div><b>${n}</b><span>${s}</span></div>`).join('');
+
+  // Enquete do hero escolhe o evento no formulário
+  document.querySelectorAll('.poll button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.poll button').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    const r=[...document.querySelectorAll('input[name=ev]')].find(i=>i.value===b.dataset.event); if(r) r.checked=true;
+    setTimeout(()=>{document.getElementById('orcamento').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});document.getElementById('date').focus({preventScroll:true});},350);
+  }));
+
+  // Botão fixo some quando o formulário aparece
+  // (só aparece depois que o botão do topo sai da tela, e some de novo perto do formulário)
+  const sticky=document.querySelector('.sticky'), seen=new Map();
+  const io=new IntersectionObserver(ens=>{
+    ens.forEach(en=>seen.set(en.target,en.isIntersecting));
+    const hide=[...seen.values()].some(Boolean);
+    sticky.classList.toggle('hide',hide); sticky.toggleAttribute('inert',hide);
+  },{threshold:.15});
+  io.observe(document.querySelector('.hero .btn')); io.observe(document.getElementById('orcamento'));
+
+  // Formulário -> WhatsApp
+  document.getElementById('form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const dateEl=document.getElementById('date'), err=document.getElementById('date-err');
+    if(!dateEl.value){err.textContent='Escolha a data do evento.';dateEl.focus();return;}
+    err.textContent='';
+    const ev=document.querySelector('input[name=ev]:checked').value;
+    const d=dateEl.value.split('-').reverse().join('/');
+    const place=document.getElementById('place').value.trim();
+    const msg=`Oi, Yas! Vi seu site e queria um orçamento de stories para ${ev.toLowerCase()} no dia ${d}${place?', em '+place:''}. Essa data está livre?`;
+    window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg),'_blank');
+  });
+</script>
+</body>
+</html>
