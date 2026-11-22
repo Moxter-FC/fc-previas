@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica D&amp;R Martinez · Dermatologia, alergia e cardiologia no Centro de Niterói</title>
+<meta name="description" content="Dra. Daniela Martinez (dermatologia e alergia) e Dra. Raphaela Martinez (cardiologia, clínica médica e ecocardiograma). Rua José Clemente, 73, Centro, Niterói. Agende pelo WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f0eb">
+<meta property="og:title" content="Clínica D&amp;R Martinez · Pele, alergia e coração no Centro de Niterói">
+<meta property="og:description" content="Duas irmãs médicas no mesmo consultório: dermatologia e alergia com a Dra. Daniela, cardiologia e clínica médica com a Dra. Raphaela.">
+<meta property="og:image" content="https://suporteskoupa-coder.github.io/fc-previas/dr-martinez/img/share.jpg">
+<meta property="og:url" content="https://suporteskoupa-coder.github.io/fc-previas/dr-martinez/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/raphaela.jpg">
+<link rel="preload" as="image" href="img/daniela.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalClinic","name":"Clínica D&R Martinez",
+ "address":{"@type":"PostalAddress","streetAddress":"Rua José Clemente, 73, sala 504","addressLocality":"Niterói","addressRegion":"RJ","addressCountry":"BR"},
+ "telephone":"+55 21 97496-9173","email":"clinicadermartinez@gmail.com",
+ "medicalSpecialty":["Dermatology","Cardiovascular","PrimaryCare"],
+ "employee":[{"@type":"Physician","name":"Dra. Daniela Martinez","medicalSpecialty":["Dermatology"]},{"@type":"Physician","name":"Dra. Raphaela Martinez","medicalSpecialty":["Cardiovascular","PrimaryCare"]}]}
+</script>
+<script>
+  // Motion only when the visitor allows it; if GSAP never loads, everything shows statically.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('m');
+    setTimeout(function(){ if(!window.gsap || !window.ScrollTrigger) document.documentElement.classList.remove('m'); }, 2500);
+  }
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --paper:#f7f0eb; --blush:#efdcd2; --blush-2:#e6cbbd; --rose:#d4a48c; --rose-d:#87503f;
+  --ink:#2e1c1f; --muted:#6a5357; --wine:#5a2a33; --wine-2:#47202a; --line:rgba(46,28,31,.14);
+  --serif:'Fraunces', Georgia, serif; --sans:'Figtree', system-ui, sans-serif;
+  --wrap:1240px; --gut:clamp(20px,4vw,48px); --navh:76px; --r:18px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--navh) + 12px)}
+body{background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--rose-d);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--wine);color:#fff;padding:10px 16px;border-radius:10px;z-index:100}
+.skip:focus{left:12px}
+.kicker{font:600 13px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d)}
+.h2{font:400 clamp(36px,4.4vw,64px)/1.04 var(--serif);letter-spacing:-.02em;font-variation-settings:'opsz' 120}
+.h2 em,.h1 em{font-style:italic;color:var(--rose-d);font-weight:300}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line > span{display:inline-block}
+.lead{font-size:clamp(18px,1.4vw,20px);color:var(--muted);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--sans);text-decoration:none;border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)} .btn:active{transform:translateY(0) scale(.98)}
+.btn--wine{background:var(--wine);color:#fff}
+.btn--wine:hover{background:var(--wine-2)}
+.btn--ghost{border-color:var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:20px;height:20px;flex:none}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease)}
+.ul:hover{background-size:100% 1.5px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav.is-solid{background:rgba(247,240,235,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:var(--navh)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand__mark{width:38px;height:38px}
+.brand__t{font:500 15px/1.1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.brand__t small{display:block;font-size:11px;letter-spacing:.24em;color:var(--muted);margin-top:3px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{font-size:15px;font-weight:500;text-decoration:none}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{min-height:100svh;padding:calc(var(--navh) + 28px) 0 40px;display:flex;align-items:center;position:relative}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,80px);align-items:center;width:100%}
+.hero .kicker{margin-bottom:22px}
+.h1{font:400 clamp(44px,5.4vw,86px)/1.0 var(--serif);letter-spacing:-.025em;font-variation-settings:'opsz' 144}
+.h1 .line > span{white-space:nowrap}
+.hero__lede{margin:26px 0 32px;font-size:clamp(18px,1.35vw,20px);color:var(--muted);max-width:50ch}
+.hero__lede b{color:var(--ink);font-weight:600}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-size:15px;color:var(--muted)}
+.hero__meta span{display:flex;align-items:center;gap:8px}
+.hero__meta svg{width:18px;height:18px;color:var(--rose-d)}
+
+/* the triptych: echoes the three bars of the clinic's logo */
+.tri{display:grid;grid-template-columns:1fr .42fr 1fr;gap:12px;height:min(70svh,640px);max-width:600px;justify-self:end;width:100%}
+.tri__p{position:relative;border-radius:var(--r);overflow:hidden;background:var(--blush)}
+.tri__p img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03) sepia(.08)}
+.tri__p::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(212,164,140,.08),rgba(90,42,51,.28) 100%);mix-blend-mode:multiply;pointer-events:none}
+.tri__p--r img{object-position:62% 20%}
+.tri__p--d img{object-position:50% 18%}
+.tri__mid{background:var(--rose);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 0;color:var(--wine)}
+.tri__mid::after{display:none}
+.tri__mono{font:400 30px/1 var(--serif);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.18em}
+.tri__mid small{font:600 10px/1 var(--sans);letter-spacing:.3em;writing-mode:vertical-rl;transform:rotate(180deg);text-transform:uppercase}
+.tri__ecg{width:100%;height:70px;overflow:visible}
+.tri__ecg path{fill:none;stroke:var(--paper);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tri__tag{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(247,240,235,.94);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.3;z-index:2}
+.tri__tag b{display:block;font:500 16px/1.15 var(--serif);margin-bottom:2px}
+
+/* marquee */
+.band{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--blush)}
+.band__track{display:flex;gap:44px;width:max-content;animation:mq 46s linear infinite}
+.band span{font:400 22px/1 var(--serif);font-style:italic;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.band span::after{content:"";width:8px;height:8px;border-radius:2px;background:var(--rose-d)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(88px,11vw,150px) 0}
+.sec__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec__head .kicker{margin-bottom:18px}
+
+/* signature: who takes care of you */
+.quem{background:var(--paper)}
+.quem__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px);align-items:start}
+.grp + .grp{margin-top:30px}
+.grp h3{font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.grp h3 i{width:10px;height:10px;border-radius:3px;background:var(--rose)}
+.grp--r h3 i{background:var(--wine)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{min-height:48px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:16px;font-weight:500;text-align:left;transition:transform .2s var(--ease),border-color .2s,background .2s,color .2s}
+.chip:hover{transform:translateY(-2px);border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.quem__note{margin-top:28px;font-size:15px;color:var(--muted);max-width:60ch}
+.card{position:sticky;top:calc(var(--navh) + 20px);background:#fff;border-radius:24px;padding:28px;box-shadow:0 30px 60px -30px rgba(46,28,31,.25);border:1px solid var(--line);min-height:420px}
+.card__viz{height:64px;margin:-6px 0 18px;border-bottom:1px dashed var(--line)}
+.card__viz svg{width:100%;height:100%}
+.viz-ecg{fill:none;stroke:var(--wine);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.viz-lens circle{fill:none;stroke:var(--rose-d);stroke-width:1.6}
+.card__who{display:flex;gap:16px;align-items:center}
+.card__who img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 18%;flex:none}
+.card__who .duo{display:flex;flex:none}
+.card__who .duo img{width:64px;height:64px;border:3px solid #fff}
+.card__who .duo img + img{margin-left:-18px}
+.card__area{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d);margin-bottom:6px}
+.card__name{font:400 26px/1.1 var(--serif)}
+.card__cred{font-size:14px;color:var(--muted);margin-top:4px}
+.card__what{margin:20px 0 22px;font-size:17px}
+.card .btn{width:100%;justify-content:center}
+.card__sos{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:#fbeceb;border:1px solid #f0c9c4;font-size:14px;line-height:1.45;color:#5b1d22}
+.card.is-sos .card__sos{display:block}
+.card__body{transition:opacity .25s}
+.card.is-swap .card__body{opacity:0}
+
+/* specialties */
+.esp{background:var(--blush)}
+.esp__row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.esp__row + .esp__row{margin-top:clamp(80px,10vw,130px)}
+.esp__row--flip .esp__media{order:2}
+.esp__media{position:relative}
+.ph{border-radius:var(--r);overflow:hidden;background:var(--blush-2)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ph:hover img{transform:scale(1.03)}
+.esp__big{aspect-ratio:5/4}
+.esp__small{position:absolute;width:38%;aspect-ratio:1;right:-18px;bottom:-34px;border:6px solid var(--blush);border-radius:22px}
+.esp__row--flip .esp__small{right:auto;left:-18px}
+.esp__who{display:inline-flex;align-items:center;gap:10px;margin:14px 0 26px;font-size:15px;color:var(--muted)}
+.esp__who img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 18%}
+.list{list-style:none;border-top:1px solid var(--line)}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list b{font:500 20px/1.25 var(--serif)}
+.list span{grid-column:2;font-size:16px;color:var(--muted)}
+.list li::before{content:attr(data-n);grid-row:span 2;font:500 13px/1.9 var(--sans);color:var(--rose-d);letter-spacing:.08em}
+
+/* doctors */
+.med__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px)}
+.doc{background:#fff;border-radius:26px;overflow:hidden;border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
+.doc__top{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px;align-items:start;background:linear-gradient(180deg,var(--blush),#fff)}
+.doc__top .ph{aspect-ratio:4/5}
+.doc__top .ph img{object-position:50% 15%;filter:saturate(.85) sepia(.06)}
+.doc h3{font:400 clamp(28px,2.6vw,38px)/1.05 var(--serif);letter-spacing:-.01em}
+.doc__esp{margin-top:8px;font-size:16px;color:var(--muted)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.creds span{font:600 12.5px/1 var(--sans);letter-spacing:.04em;padding:8px 10px;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+.doc__body{padding:4px 28px 28px}
+.doc__body ul{list-style:none}
+.doc__body li{padding:12px 0 12px 22px;border-bottom:1px solid var(--line);font-size:16px;position:relative}
+.doc__body li::before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:2px;background:var(--rose)}
+.prize{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px;border-radius:14px;background:var(--paper);font-size:15px}
+.prize svg{width:28px;height:28px;flex:none;color:var(--rose-d)}
+.doc__foot{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:22px;font-size:15px}
+
+/* clinic */
+.cli{background:var(--wine);color:var(--paper)}
+.cli .kicker{color:var(--rose)}
+.cli .h2 em{color:var(--rose)}
+.cli__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.cli__text p{color:rgba(247,240,235,.82);margin-top:22px;max-width:46ch}
+.cli__text .btn--ghost{border-color:var(--paper);color:var(--paper);margin-top:30px}
+.cli__text .btn--ghost:hover{background:var(--paper);color:var(--wine)}
+.cli__photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.cli__photos .ph{background:var(--wine-2)}
+.cli__photos .a{grid-row:span 2;aspect-ratio:4/5.6}
+.cli__photos .b,.cli__photos .c{aspect-ratio:5/4}
+.cli__photos figure{position:relative}
+.video{position:relative;margin-top:clamp(48px,6vw,80px);aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:var(--wine-2)}
+.video__poster{position:absolute;inset:0;display:block;color:var(--paper);text-decoration:none}
+.video__poster img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.video__poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,28,31,0) 40%,rgba(46,28,31,.55))}
+.video__poster:hover img{transform:scale(1.03)}
+.video__btn{position:absolute;left:50%;top:50%;width:clamp(72px,8vw,104px);aspect-ratio:1;margin:calc(clamp(72px,8vw,104px) / -2) 0 0 calc(clamp(72px,8vw,104px) / -2);border-radius:50%;background:var(--paper);color:var(--wine);display:grid;place-items:center;z-index:2;box-shadow:0 20px 40px -12px rgba(0,0,0,.45);transition:transform .35s var(--ease)}
+.video__btn::before{content:"";position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(247,240,235,.6);animation:ring 2.6s var(--ease) infinite}
+.video__btn svg{width:34%;height:34%;margin-left:6%}
+.video__poster:hover .video__btn{transform:scale(1.06)}
+.video__poster:active .video__btn{transform:scale(.97)}
+.video__label{position:absolute;left:clamp(18px,3vw,36px);bottom:clamp(16px,2.6vw,30px);z-index:2;font:400 clamp(20px,2.4vw,34px)/1.1 var(--serif);font-style:italic}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@keyframes ring{0%{transform:scale(.92);opacity:.9}70%,100%{transform:scale(1.25);opacity:0}}
+
+/* quotes */
+.dep__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.q{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;min-height:240px}
+.q p{font:400 24px/1.3 var(--serif);letter-spacing:-.01em}
+.q p::before{content:"“";display:block;font-size:56px;line-height:.6;color:var(--rose);margin-bottom:12px}
+.q small{margin-top:22px;font-size:14px;color:var(--muted)}
+
+/* faq + contact */
+.faq{background:var(--blush)}
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:400 22px/1.3 var(--serif)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 28px/1 var(--sans);color:var(--rose-d);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);max-width:62ch}
+.con__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,80px);align-items:start}
+.con__card{background:#fff;border-radius:24px;border:1px solid var(--line);padding:30px}
+.con__row{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
+.con__row:last-of-type{border-bottom:0}
+.con__row svg{width:22px;height:22px;color:var(--rose-d);margin-top:3px}
+.con__row small{display:block;font-size:14px;color:var(--muted)}
+.con__card .btn{width:100%;justify-content:center;margin-top:18px}
+.big-addr{font:400 clamp(40px,5vw,76px)/1 var(--serif);letter-spacing:-.025em;margin-top:22px}
+.big-addr em{font-style:italic;color:var(--rose-d);font-weight:300}
+
+/* footer */
+.foot{background:var(--ink);color:rgba(247,240,235,.78);padding:70px 0 110px;font-size:15px;overflow:hidden}
+.foot__word{font:300 clamp(70px,13vw,210px)/.9 var(--serif);color:var(--paper);letter-spacing:-.03em;white-space:nowrap}
+.foot__word em{font-style:italic;color:var(--rose)}
+.foot__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px;padding-top:30px;border-top:1px solid rgba(247,240,235,.16)}
+.foot b{color:var(--paper);font-weight:600;display:block;margin-bottom:6px}
+.foot a{color:var(--paper)}
+
+/* phone action bar */
+.abar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;transition:transform .35s var(--ease),opacity .35s}
+.abar .btn{width:100%;justify-content:center;box-shadow:0 14px 30px -10px rgba(46,28,31,.5)}
+.abar.is-off{transform:translateY(140%);opacity:0}
+
+/* motion gates (removed by the fallbacks) */
+html.m [data-rise]{opacity:0;transform:translateY(28px)}
+html.m .line > span{transform:translateY(106%)}
+html.m .tri__p{clip-path:inset(100% 0 0 0)}
+html.m .tri__ecg path{stroke-dasharray:1;stroke-dashoffset:1}
+html.m .clip{clip-path:inset(0 0 100% 0)}
+
+@media (max-width:1100px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+}
+@media (max-width:960px){
+  .hero{min-height:0;padding-top:calc(var(--navh) + 18px)}
+  .hero__grid,.quem__grid,.esp__row,.med__grid,.cli__grid,.faq__grid,.con__grid,.sec__head{grid-template-columns:1fr}
+  .tri{justify-self:stretch;max-width:none;height:440px}
+  .esp__row--flip .esp__media{order:0}
+  .card{position:relative;top:0}
+  .dep__grid{grid-template-columns:1fr}
+  .sec__head{gap:16px;margin-bottom:40px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  :root{--navh:66px}
+  .brand__t small{display:none}
+  .brand__t{font-size:13px;letter-spacing:.16em}
+  .nav .btn{display:none}
+  .h1{font-size:clamp(38px,10.4vw,48px)}
+  .h1 .line > span{white-space:normal}
+  .hero__actions .btn{width:100%;justify-content:center}
+  .tri{height:300px;gap:8px;grid-template-columns:1fr .3fr 1fr;order:-1}
+  .tri__mid small{display:none}
+  .tri__mid{justify-content:center;gap:14px}
+  .hero__grid{gap:26px}
+  .hero__lede{margin:20px 0 26px}
+  .tri__tag{left:6px;right:6px;bottom:6px;padding:8px 9px;font-size:11.5px}
+  .tri__tag b{font-size:14px}
+  .tri__mono{font-size:22px}
+  .doc__top{grid-template-columns:120px 1fr;gap:16px;padding:18px}
+  .doc__body{padding:4px 18px 22px}
+  .esp__small{width:42%;right:-6px;bottom:-26px}
+  .esp__row--flip .esp__small{left:-6px}
+  .cli__photos{grid-template-columns:1fr 1fr}
+  .foot__grid{grid-template-columns:1fr}
+  .abar{display:block}
+  .q p{font-size:21px}
+}
+@media (prefers-reduced-motion:reduce){
+  .band__track{animation:none}
+  .video__btn::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<!-- Prévia FC Design para a Clínica D&R Martinez. Fotos: Instagram @clinicadermartinez e site atual da clínica. -->
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#topo" aria-label="Clínica D&amp;R Martinez, início">
+      <svg class="brand__mark" viewBox="0 0 38 38" aria-hidden="true"><rect x="3" y="4" width="8" height="30" rx="2" fill="#e6cbbd"/><rect x="15" y="4" width="8" height="30" rx="2" fill="#d4a48c"/><rect x="27" y="4" width="8" height="30" rx="2" fill="#e6cbbd"/></svg>
+      <span class="brand__t">D &amp; R Martinez<small>Clínica médica</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a class="ul" href="#quem">Com quem marcar</a></li>
+      <li><a class="ul" href="#especialidades">Especialidades</a></li>
+      <li><a class="ul" href="#medicas">As médicas</a></li>
+      <li><a class="ul" href="#clinica">A clínica</a></li>
+      <li><a class="ul" href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn--wine" href="https://wa.me/5521974969173?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20D%26R%20Martinez." target="_blank" rel="noopener">Agendar consulta</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="kicker" data-rise>Clínica D&amp;R Martinez · Centro, Niterói</p>
+      <h1 class="h1">
+        <span class="line"><span>Dermatologia,</span></span>
+        <span class="line"><span>alergia <em>e cardiologia</em></span></span>
+        <span class="line"><span>no Centro de Niterói.</span></span>
+      </h1>
+      <p class="hero__lede" data-rise>Duas irmãs médicas, um só consultório. A <b>Dra. Daniela</b> cuida da pele, do cabelo e das alergias. A <b>Dra. Raphaela</b> cuida do coração e da saúde do dia a dia.</p>
+      <div class="hero__actions" data-rise>
+        <a class="btn btn--wine" href="https://wa.me/5521974969173?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20D%26R%20Martinez." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="#quem">Não sei com quem marcar</a>
+      </div>
+      <div class="hero__meta" data-rise>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Rua José Clemente, 73 · sala 504</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>CRM e RQE de cada médica nesta página</span>
+      </div>
+    </div>
+
+    <div class="tri" aria-label="As médicas da clínica">
+      <figure class="tri__p tri__p--r">
+        <img src="img/raphaela.jpg" alt="Dra. Raphaela Martinez, cardiologista, sorrindo no consultório" width="600" height="715">
+        <figcaption class="tri__tag"><b>Dra. Raphaela</b>Cardiologia · Clínica médica</figcaption>
+      </figure>
+      <div class="tri__p tri__mid" aria-hidden="true">
+        <small>Clínica</small>
+        <svg class="tri__ecg" viewBox="0 0 60 70" preserveAspectRatio="none"><path pathLength="1" d="M0 40 H14 L18 34 L22 40 H26 L29 12 L33 58 L36 40 H42 L45 35 L48 40 H60"/></svg>
+        <span class="tri__mono">D &amp; R</span>
+        <small>Martinez</small>
+      </div>
+      <figure class="tri__p tri__p--d">
+        <img src="img/daniela.jpg" alt="Dra. Daniela Martinez, dermatologista e alergista, de jaleco da SBD" width="600" height="715">
+        <figcaption class="tri__tag"><b>Dra. Daniela</b>Dermatologia · Alergia</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Dermatologia clínica</span><span>Câncer de pele e pintas</span><span>Cabelos e couro cabeludo</span><span>Alergia e imunologia</span><span>Dermatologia cirúrgica</span><span>Dermatologia estética</span><span>Cardiologia</span><span>Ecocardiograma</span><span>Eletrocardiograma</span><span>Risco cirúrgico</span><span>Clínica médica</span>
+    <span>Dermatologia clínica</span><span>Câncer de pele e pintas</span><span>Cabelos e couro cabeludo</span><span>Alergia e imunologia</span><span>Dermatologia cirúrgica</span><span>Dermatologia estética</span><span>Cardiologia</span><span>Ecocardiograma</span><span>Eletrocardiograma</span><span>Risco cirúrgico</span><span>Clínica médica</span>
+  </div>
+</div>
+
+<!-- signature: patient picks what bothers them, the page shows which doctor to book -->
+<section class="sec quem" id="quem">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>Com quem marcar</p>
+        <h2 class="h2"><span class="line"><span>Quem cuida</span></span><span class="line"><span><em>de você?</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Toque no que está te incomodando. A página mostra com qual das doutoras marcar e já deixa a mensagem pronta no WhatsApp.</p>
+    </div>
+
+    <div class="quem__grid">
+      <div data-rise>
+        <div class="grp grp--d">
+          <h3><i></i>Pele, cabelo e alergia</h3>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false" data-k="pinta">Pinta ou mancha que mudou</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="acne">Acne, rosácea ou manchas</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="cabelo">Queda de cabelo</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="alergia">Coceira, urticária ou alergia</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="cirurgia">Retirar um sinal ou cisto</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="estetica">Cuidados estéticos com a pele</button>
+          </div>
+        </div>
+        <div class="grp grp--r">
+          <h3><i></i>Coração e saúde geral</h3>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false" data-k="palpitacao">Palpitação ou coração acelerado</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="pressao">Pressão alta</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="risco">Vou fazer uma cirurgia</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="eco">Ecocardiograma ou eletro</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="checkup">Check-up e saúde do dia a dia</button>
+          </div>
+        </div>
+        <p class="quem__note">Isso só ajuda a escolher a especialidade. Não é diagnóstico e não substitui a consulta.</p>
+      </div>
+
+      <aside class="card" id="card" aria-live="polite" data-rise>
+        <div class="card__viz" aria-hidden="true">
+          <svg viewBox="0 0 400 64" preserveAspectRatio="none">
+            <path class="viz-ecg" id="viz-ecg" d="M0 34 H120 L130 26 L140 34 H158 L166 6 L176 58 L184 34 H214 L224 28 L234 34 H400"/>
+            <g class="viz-lens" id="viz-lens"><circle cx="200" cy="32" r="10"/><circle cx="200" cy="32" r="20" opacity=".55"/><circle cx="200" cy="32" r="30" opacity=".25"/></g>
+          </svg>
+        </div>
+        <div class="card__body" id="card-body">
+          <div class="card__who">
+            <span class="duo"><img src="img/daniela.jpg" alt="" width="64" height="64"><img src="img/raphaela.jpg" alt="" width="64" height="64"></span>
+            <div>
+              <p class="card__area">Duas especialistas</p>
+              <p class="card__name">Escolha ao lado</p>
+            </div>
+          </div>
+          <p class="card__what">Pele, cabelo e alergia ficam com a Dra. Daniela. Coração, pressão, exames do coração e check-up ficam com a Dra. Raphaela.</p>
+          <a class="btn btn--wine" id="card-cta" href="https://wa.me/5521974969173?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20D%26R%20Martinez." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        </div>
+        <p class="card__sos" role="note"><b>Dor forte no peito, falta de ar ou desmaio?</b> Não espere a consulta: procure uma emergência ou ligue 192.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec esp" id="especialidades">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>Especialidades</p>
+        <h2 class="h2"><span class="line"><span>Da pele <em>ao coração,</em></span></span><span class="line"><span>no mesmo endereço.</span></span></h2>
+      </div>
+      <p class="lead" data-rise>Cada área com a médica especialista dela, título registrado e exames feitos pela própria médica.</p>
+    </div>
+
+    <div class="esp__row">
+      <div class="esp__media">
+        <div class="ph esp__big clip"><img src="img/dermatoscopia.jpg" alt="Dra. Daniela examinando uma pinta nas costas de um paciente com o dermatoscópio" loading="lazy" width="900" height="762"></div>
+        <div class="ph esp__small clip"><img src="img/tricoscopia.jpg" alt="Dra. Daniela avaliando o couro cabeludo de um paciente" loading="lazy" width="945" height="945"></div>
+      </div>
+      <div>
+        <h3 class="h2" style="font-size:clamp(32px,3.4vw,48px)"><span class="line"><span>Pele, cabelo</span></span><span class="line"><span><em>e alergia</em></span></span></h3>
+        <p class="esp__who" data-rise><img src="img/daniela.jpg" alt="" width="40" height="40">Com a Dra. Daniela Martinez · RQE 29033 e 58208</p>
+        <ul class="list" data-rise>
+          <li data-n="01"><b>Dermatologia clínica</b><span>Acne, rosácea, psoríase, vitiligo, dermatites, micoses, unhas.</span></li>
+          <li data-n="02"><b>Pintas e câncer de pele</b><span>Avaliação com dermatoscopia, prevenção e diagnóstico precoce.</span></li>
+          <li data-n="03"><b>Cabelos e couro cabeludo</b><span>Queda de cabelo e doenças do couro cabeludo (tricologia, UERJ).</span></li>
+          <li data-n="04"><b>Alergia e imunologia</b><span>Urticária, dermatites e outras alergias, com teste de contato quando indicado.</span></li>
+          <li data-n="05"><b>Cirúrgica e estética</b><span>Retirada de sinais e cistos, e procedimentos estéticos feitos por dermatologista.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="esp__row esp__row--flip">
+      <div class="esp__media">
+        <div class="ph esp__big clip"><img src="img/ecg-mesa.jpg" alt="Dra. Raphaela analisando um eletrocardiograma na mesa do consultório" loading="lazy" width="960" height="762"></div>
+        <div class="ph esp__small clip"><img src="img/eco.jpg" alt="Aparelho de ecocardiograma em uso na clínica" loading="lazy" width="945" height="700"></div>
+      </div>
+      <div>
+        <h3 class="h2" style="font-size:clamp(32px,3.4vw,48px)"><span class="line"><span>Coração</span></span><span class="line"><span><em>e saúde geral</em></span></span></h3>
+        <p class="esp__who" data-rise><img src="img/raphaela.jpg" alt="" width="40" height="40">Com a Dra. Raphaela Martinez · RQE 30343, 30344 e 30345</p>
+        <ul class="list" data-rise>
+          <li data-n="01"><b>Cardiologia</b><span>Palpitação, pressão alta, colesterol e acompanhamento do coração.</span></li>
+          <li data-n="02"><b>Ecocardiograma</b><span>Feito pela própria cardiologista, com residência em ecocardiografia.</span></li>
+          <li data-n="03"><b>Eletrocardiograma</b><span>O exame básico do ritmo do coração, no consultório.</span></li>
+          <li data-n="04"><b>Risco cirúrgico</b><span>Avaliação antes de uma cirurgia, para operar com segurança.</span></li>
+          <li data-n="05"><b>Clínica médica</b><span>Check-up e acompanhamento da saúde como um todo.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec med" id="medicas">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>As médicas</p>
+        <h2 class="h2"><span class="line"><span>Irmãs na família,</span></span><span class="line"><span><em>especialistas no consultório.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Formação, títulos e registros de cada uma, do jeito que o paciente pode conferir.</p>
+    </div>
+    <div class="med__grid">
+      <article class="doc" data-rise>
+        <div class="doc__top">
+          <div class="ph"><img src="img/daniela.jpg" alt="Retrato da Dra. Daniela Martinez" loading="lazy" width="600" height="715"></div>
+          <div>
+            <h3>Dra. Daniela Martinez</h3>
+            <p class="doc__esp">Dermatologia clínica, cirúrgica e estética · Alergia e imunologia</p>
+            <div class="creds"><span>CRM 52.92730-9</span><span>RQE 29033 Dermatologia</span><span>RQE 58208 Alergia</span></div>
+          </div>
+        </div>
+        <div class="doc__body">
+          <ul>
+            <li>Medicina pela Faculdade de Medicina Souza Marques</li>
+            <li>Especialização em Dermatologia pela UNIRIO e título pela AMB</li>
+            <li>Sócia titular da Sociedade Brasileira de Dermatologia (SBD)</li>
+            <li>Alergista (RQE 58208, UFRJ)</li>
+            <li>Mestrado pela UNIRIO em Infecção HIV/AIDS e Hepatites Virais, com ênfase em câncer de pele</li>
+            <li>Tricologia pela UERJ · Medicina do Trabalho pela UFF</li>
+          </ul>
+          <div class="prize">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/></svg>
+            <p>Prêmio João Bosco de Magalhães Rios pelo melhor trabalho enviado ao <b>AlergoRio 2025</b>.</p>
+          </div>
+          <div class="doc__foot">
+            <a class="ul" href="https://www.instagram.com/dradanielamartinez/" target="_blank" rel="noopener">@dradanielamartinez</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="doc" data-rise>
+        <div class="doc__top">
+          <div class="ph"><img src="img/raphaela.jpg" alt="Retrato da Dra. Raphaela Martinez" loading="lazy" width="600" height="715"></div>
+          <div>
+            <h3>Dra. Raphaela Martinez</h3>
+            <p class="doc__esp">Cardiologia · Ecocardiografia · Clínica médica</p>
+            <div class="creds"><span>CRM 52.87128-1</span><span>RQE 30343 Cardiologia</span><span>RQE 30344 Clínica Médica</span><span>RQE 30345 Ecocardiografia</span></div>
+          </div>
+        </div>
+        <div class="doc__body">
+          <ul>
+            <li>Medicina pela Universidade Gama Filho</li>
+            <li>Residência em Clínica Médica no Hospital Federal de Bonsucesso</li>
+            <li>Residência em Cardiologia no Instituto Nacional de Cardiologia</li>
+            <li>Residência em Ecocardiografia no Hospital Federal dos Servidores do Estado</li>
+            <li>Título de especialista em Cardiologia pela AMB · membro da SBC</li>
+            <li>Curso de Ecodoppler vascular (FATESA)</li>
+          </ul>
+          <div class="doc__foot">
+            <a class="ul" href="https://www.instagram.com/clinicadermartinez/" target="_blank" rel="noopener">@clinicadermartinez</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec cli" id="clinica">
+  <div class="wrap cli__grid">
+    <div class="cli__text">
+      <p class="kicker" data-rise>A clínica</p>
+      <h2 class="h2"><span class="line"><span>Criada pelas duas,</span></span><span class="line"><span><em>pensada pra acolher.</em></span></span></h2>
+      <p data-rise>A Clínica D&amp;R Martinez nasceu da vontade das irmãs Daniela e Raphaela de atender num lugar confortável e acolhedor, com medicina integrada e ética. Fica no Centro de Niterói, numa sala clara, com recepção própria e consultório equipado para os exames do coração e da pele.</p>
+      <a class="btn btn--ghost" href="#video" data-play>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Ver o vídeo da clínica
+      </a>
+    </div>
+    <div class="cli__photos">
+      <figure class="ph a clip"><img src="img/recepcao.jpg" alt="Recepção da clínica com balcão de madeira, orquídea e luminária pendente" loading="lazy" width="745" height="932"></figure>
+      <figure class="ph b clip"><img src="img/irmas.jpg" alt="As irmãs Raphaela e Daniela brindando na inauguração da clínica" loading="lazy" width="720" height="720" style="object-position:50% 30%"></figure>
+      <figure class="ph c clip"><img src="img/consultorio.jpg" alt="Consultório com mesa de madeira e cadeiras brancas" loading="lazy" width="756" height="604"></figure>
+    </div>
+  </div>
+  <!-- the clinic's own video (YouTube channel D&R Martinez); YouTube only loads after the visitor presses play -->
+  <div class="wrap">
+    <div class="video clip" id="video">
+      <a class="video__poster" href="https://youtu.be/CiNxBFqca1A" target="_blank" rel="noopener" data-play aria-label="Assistir ao vídeo da Clínica D&amp;R Martinez">
+        <img src="img/video-capa.jpg" alt="" loading="lazy" width="1280" height="720">
+        <span class="video__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+        <span class="video__label" aria-hidden="true">Conheça a clínica em vídeo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec dep" id="depoimentos">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>Quem já passou por lá</p>
+        <h2 class="h2"><span class="line"><span>O que os pacientes</span></span><span class="line"><span><em>contam.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Relatos publicados pela clínica. Mantemos os pacientes anônimos.</p>
+    </div>
+    <div class="dep__grid">
+      <figure class="q" data-rise><p>Me consulto com as duas doutoras e só tenho a elogiar!</p><small>Paciente da clínica</small></figure>
+      <figure class="q" data-rise><p>Adorei a clínica desde a recepção até o atendimento.</p><small>Paciente da clínica</small></figure>
+      <figure class="q" data-rise><p>Atendimento humanizado de qualidade.</p><small>Paciente da clínica</small></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="duvidas">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="kicker" data-rise>Dúvidas</p>
+      <h2 class="h2"><span class="line"><span>Antes de</span></span><span class="line"><span><em>marcar.</em></span></span></h2>
+    </div>
+    <div data-rise>
+      <details open><summary>Como faço para agendar?</summary><p>Pelo WhatsApp (21) 97496-9173. Diga com qual doutora quer marcar, ou o que está sentindo, que a recepção encaixa no horário disponível.</p></details>
+      <details><summary>Vocês atendem convênio?</summary><p>A clínica atende particular e já divulgou atendimento por convênios como Allianz Saúde e Prevent Senior. Confirme o seu plano pelo WhatsApp antes da consulta.</p></details>
+      <details><summary>O ecocardiograma é feito na clínica?</summary><p>Sim. A Dra. Raphaela tem residência em ecocardiografia e faz o exame e o eletrocardiograma no consultório.</p></details>
+      <details><summary>Dá para marcar com as duas?</summary><p>Dá. Peça os dois atendimentos na mesma mensagem que a recepção organiza os horários.</p></details>
+      <details><summary>Posso tirar dúvidas de saúde pelo WhatsApp?</summary><p>O WhatsApp é para agendar e para dúvidas sobre o atendimento. Avaliação e orientação de tratamento acontecem na consulta.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec con" id="contato">
+  <div class="wrap con__grid">
+    <div>
+      <p class="kicker" data-rise>Onde fica</p>
+      <p class="big-addr" data-rise>Rua José<br>Clemente,&nbsp;73<br><em>sala 504, Centro.</em></p>
+      <p class="lead" data-rise style="margin-top:22px">No Centro de Niterói. Atendimento com hora marcada.</p>
+    </div>
+    <div class="con__card" data-rise>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>Rua José Clemente, 73, sala 504<small>Centro, Niterói · RJ</small><a class="ul" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Jos%C3%A9+Clemente+73+Centro+Niter%C3%B3i" target="_blank" rel="noopener">Abrir no mapa</a></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div>(21) 97496-9173<small>WhatsApp e telefone</small></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><a class="ul" href="mailto:clinicadermartinez@gmail.com">clinicadermartinez@gmail.com</a><small>E-mail</small></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><div><a class="ul" href="https://www.instagram.com/clinicadermartinez/" target="_blank" rel="noopener">@clinicadermartinez</a> · <a class="ul" href="https://www.instagram.com/dradanielamartinez/" target="_blank" rel="noopener">@dradanielamartinez</a><small>Instagram</small></div></div>
+      <a class="btn btn--wine" href="https://wa.me/5521974969173?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20D%26R%20Martinez." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__word">D <em>&amp;</em> R Martinez</p>
+    <div class="foot__grid">
+      <div><b>Dra. Daniela Martinez</b>CRM 52.92730-9 · RQE 29033 (Dermatologia) · RQE 58208 (Alergia e Imunologia)</div>
+      <div><b>Dra. Raphaela Martinez</b>CRM 52.87128-1 · RQE 30343 (Cardiologia) · RQE 30344 (Clínica Médica) · RQE 30345 (Ecocardiografia)</div>
+      <div><b>Clínica D&amp;R Martinez</b>Rua José Clemente, 73, sala 504 · Centro, Niterói/RJ<br><a class="ul" href="https://wa.me/5521974969173" target="_blank" rel="noopener">(21) 97496-9173</a></div>
+    </div>
+    <!-- CFM: confirmar qual das doutoras é a diretora técnica e incluir "Diretora técnica: Dra. ___ · CRM ___" aqui. -->
+  </div>
+</footer>
+
+<div class="abar" id="abar">
+  <a class="btn btn--wine" href="https://wa.me/5521974969173?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20D%26R%20Martinez." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var nav=document.getElementById('nav');
+  function setNavH(){ html.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  var onScroll=function(){ nav.classList.toggle('is-solid', scrollY>24); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  function hasMotion(){ return html.classList.contains('m') && window.gsap && window.ScrollTrigger; }
+
+  // phone action bar steps aside at the booking card and the contact block
+  var abar=document.getElementById('abar');
+  if('IntersectionObserver' in window){
+    var seen=new Set();
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+      abar.classList.toggle('is-off', seen.size>0);
+    },{threshold:0,rootMargin:'0px 0px -25% 0px'});
+    io.observe(document.getElementById('contato')); io.observe(document.getElementById('card'));
+  }
+
+  // ---- signature: "Quem cuida de você?" ----
+  var WA='https://wa.me/5521974969173?text=';
+  var DOC={
+    d:{name:'Dra. Daniela Martinez',img:'img/daniela.jpg',cred:'CRM 52.92730-9 · RQE 29033 · RQE 58208'},
+    r:{name:'Dra. Raphaela Martinez',img:'img/raphaela.jpg',cred:'CRM 52.87128-1 · RQE 30343 · 30344 · 30345'}
+  };
+  var K={
+    pinta:{d:'d',area:'Dermatologia clínica',what:'Avaliação das pintas com dermatoscopia, o exame que olha a pele de perto e ajuda a pegar cedo o que precisa de atenção.',ask:'uma consulta de dermatologia (avaliação de pintas)'},
+    acne:{d:'d',area:'Dermatologia clínica',what:'Consulta para entender a causa e montar o tratamento certo para a sua pele.',ask:'uma consulta de dermatologia'},
+    cabelo:{d:'d',area:'Cabelos e couro cabeludo',what:'Avaliação do couro cabeludo com a dermatologista que fez tricologia na UERJ, com tricoscopia quando indicado.',ask:'uma consulta de dermatologia (cabelo e couro cabeludo)'},
+    alergia:{d:'d',area:'Alergia e imunologia',what:'A Dra. Daniela também é alergista (RQE 58208): investiga o que está causando a reação, com teste de contato quando indicado.',ask:'uma consulta de alergia'},
+    cirurgia:{d:'d',area:'Dermatologia cirúrgica',what:'Avaliação do sinal ou cisto e, se indicado, retirada em pequena cirurgia de pele.',ask:'uma consulta de dermatologia cirúrgica'},
+    estetica:{d:'d',area:'Dermatologia estética',what:'Procedimentos estéticos indicados e feitos por médica dermatologista, depois de avaliar a sua pele.',ask:'uma consulta de dermatologia estética'},
+    palpitacao:{d:'r',area:'Cardiologia',sos:1,what:'Consulta com a cardiologista. Se precisar, eletro e ecocardiograma feitos por ela mesma.',ask:'uma consulta de cardiologia'},
+    pressao:{d:'r',area:'Cardiologia',sos:1,what:'Acompanhamento da pressão e do risco do coração, com ajuste do tratamento ao longo do tempo.',ask:'uma consulta de cardiologia'},
+    risco:{d:'r',area:'Risco cirúrgico',what:'Avaliação antes da cirurgia para o seu cirurgião operar com segurança. Leve os exames que você já tiver.',ask:'uma avaliação de risco cirúrgico'},
+    eco:{d:'r',area:'Exames do coração',what:'Ecocardiograma e eletrocardiograma feitos pela própria cardiologista, que tem residência em ecocardiografia.',ask:'um exame de ecocardiograma ou eletrocardiograma'},
+    checkup:{d:'r',area:'Clínica médica',what:'Consulta de clínica médica para acompanhar a saúde como um todo e pedir os exames de rotina.',ask:'uma consulta de clínica médica (check-up)'}
+  };
+  var card=document.getElementById('card'), body=document.getElementById('card-body');
+  var ecg=document.getElementById('viz-ecg'), lens=document.getElementById('viz-lens');
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var len=ecg.getTotalLength ? ecg.getTotalLength() : 600;
+  function viz(kind){
+    ecg.style.display = kind==='r' ? '' : 'none';
+    lens.style.display = kind==='d' ? '' : 'none';
+    if(window.gsap) gsap.killTweensOf([ecg].concat([].slice.call(lens.querySelectorAll('circle'))));
+    if(!hasMotion()){
+      ecg.style.strokeDasharray=''; ecg.style.strokeDashoffset='';
+      [].forEach.call(lens.querySelectorAll('circle'),function(c){ c.removeAttribute('style'); });
+      return;
+    }
+    if(kind==='r'){ gsap.fromTo(ecg,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,duration:1.1,ease:'power2.inOut'}); }
+    if(kind==='d'){ gsap.fromTo(lens.querySelectorAll('circle'),{scale:.4,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:function(i){return [1,.55,.25][i];},duration:.9,stagger:.08,ease:'expo.out'}); }
+  }
+  viz('r');
+  function pick(btn){
+    var k=K[btn.dataset.k], doc=DOC[k.d];
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c===btn ? 'true':'false'); });
+    card.classList.add('is-swap');
+    setTimeout(function(){
+      var msg='Olá! Gostaria de agendar '+k.ask+' com a '+doc.name+'.';
+      body.innerHTML=
+        '<div class="card__who"><img src="'+doc.img+'" alt="" width="84" height="84"><div>'+
+        '<p class="card__area">'+k.area+'</p><p class="card__name">'+doc.name+'</p><p class="card__cred">'+doc.cred+'</p></div></div>'+
+        '<p class="card__what">'+k.what+'</p>'+
+        '<a class="btn btn--wine" href="'+WA+encodeURIComponent(msg)+'" target="_blank" rel="noopener">Marcar com a '+doc.name.replace('Dra. ','Dra. ').split(' Martinez')[0]+'</a>';
+      card.classList.toggle('is-sos', !!k.sos);
+      card.classList.remove('is-swap');
+      viz(k.d);
+      // on a phone the answer sits under the chips: bring it into view
+      var r=card.getBoundingClientRect();
+      if(innerWidth<960 && (r.top>innerHeight*.55 || r.bottom<0)){
+        scrollTo({top:r.top+scrollY-(nav.offsetHeight+12),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      }
+    }, 200);
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ pick(c); }); });
+
+  // ---- clinic video: YouTube loads only when the visitor presses play ----
+  var video=document.getElementById('video');
+  function playVideo(){
+    if(video.querySelector('iframe')) return;
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/CiNxBFqca1A?autoplay=1&rel=0&playsinline=1';
+    f.title='Vídeo da Clínica D&R Martinez';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen=true;
+    video.innerHTML=''; video.appendChild(f);
+  }
+  [].forEach.call(document.querySelectorAll('[data-play]'),function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var r=video.getBoundingClientRect();
+      if(r.top<0 || r.bottom>innerHeight){
+        scrollTo({top:r.top+scrollY-Math.max(nav.offsetHeight+16,(innerHeight-r.height)/2),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      }
+      playVideo();
+    });
+  });
+
+  function motion(){
+    setNavH(); addEventListener('resize', setNavH);
+    if(!hasMotion()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var E='expo.out';
+    gsap.timeline({defaults:{ease:E}})
+      .to('.hero .kicker',{opacity:1,y:0,duration:.9},0)
+      .to('.hero .line > span',{y:0,duration:1.2,stagger:.1},0.1)
+      .to('.tri__p',{clipPath:'inset(0% 0 0 0)',duration:1.4,stagger:.12,ease:'expo.inOut'},0.05)
+      .from('.tri__p img',{scale:1.16,duration:2,stagger:.12,ease:'power3.out'},0.1)
+      .to('.tri__ecg path',{strokeDashoffset:0,duration:1.2,ease:'power2.inOut'},0.9)
+      .to('.hero__lede, .hero__actions, .hero__meta',{opacity:1,y:0,duration:1,stagger:.08},0.5);
+
+    gsap.utils.toArray('main section:not(.hero) .line').forEach(function(l){
+      gsap.to(l.querySelector('span'),{y:0,duration:1.2,ease:E,scrollTrigger:{trigger:l,start:'top 90%'}});
+    });
+    var rise=function(els){ gsap.to(els,{opacity:1,y:0,duration:1.05,stagger:.08,ease:E,overwrite:true}); };
+    ScrollTrigger.batch('main section:not(.hero) [data-rise]',{start:'top 92%',once:true,onEnter:rise,onLeave:rise});
+    gsap.utils.toArray('.clip').forEach(function(f){
+      var img=f.querySelector('img');
+      gsap.timeline({scrollTrigger:{trigger:f,start:'top 88%'}})
+        .to(f,{clipPath:'inset(0 0 0% 0)',duration:1.3,ease:'expo.inOut'})
+        .from(img,{scale:1.16,duration:1.8,ease:'power3.out'},0);
+    });
+    gsap.utils.toArray('.esp__small').forEach(function(el){
+      gsap.to(el,{yPercent:-14,ease:'none',scrollTrigger:{trigger:el.closest('.esp__row'),start:'top bottom',end:'bottom top',scrub:true}});
+    });
+    gsap.from('.foot__word',{xPercent:-8,opacity:0,duration:1.6,ease:E,scrollTrigger:{trigger:'.foot',start:'top 85%'}});
+
+    addEventListener('load', function(){ ScrollTrigger.refresh(); });
+    // safety net: if the browser stops painting frames, show everything statically
+    var f0=gsap.ticker.frame;
+    setTimeout(function(){
+      if(gsap.ticker.frame-f0 > 20) return;
+      ScrollTrigger.getAll().forEach(function(t){ t.kill(); });
+      gsap.globalTimeline.clear();
+      html.classList.remove('m');
+      gsap.set('[data-rise],.line > span,.tri__p,.tri__p img,.tri__ecg path,.clip,.clip img,.esp__small,.foot__word,#viz-ecg,#viz-lens circle',{clearProps:'all'});
+    }, 3500);
+  }
+  if(document.readyState!=='loading') motion(); else addEventListener('DOMContentLoaded', motion);
+})();
+</script>
+</body>
+</html>
