@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magda Curi · Design de interiores e arquitetura em Niterói</title>
+<meta name="description" content="Projetos de interiores para apartamentos, casas, clínicas e áreas comuns de condomínio em Niterói. Escritório em Icaraí. Peça seu orçamento.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#efede8">
+<meta property="og:title" content="Magda Curi · Interiores que parecem com quem mora">
+<meta property="og:description" content="Design de interiores e arquitetura em Niterói, desde 2006. Presente em todas as edições do The Book (CADN).">
+<meta property="og:image" content="https://suporteskoupa-coder.github.io/fc-previas/magda-curi/img/share.jpg">
+<meta property="og:url" content="https://suporteskoupa-coder.github.io/fc-previas/magda-curi/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg">
+<script>
+  // Motion only when the visitor allows it; if GSAP never loads, everything shows statically.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('m');
+    setTimeout(function(){ if(!window.gsap || !window.ScrollTrigger) document.documentElement.classList.remove('m'); }, 2500);
+  }
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --paper:#efede8; --stone:#e3dfd8; --cob:#d8d3ca; --white:#f8f7f4;
+  --ink:#26231f; --muted:#5f5a52; --line:rgba(38,35,31,.16);
+  --sage:#5f6b4e; --sage-f:#8e9a7a; --sage-l:#c9cfbd; --oak:#b98a5a;
+  --on-dark:#efede8; --on-dark-m:#bdb7ad;
+  --disp:"Bodoni Moda", "Didot", Georgia, serif;
+  --sans:"Jost", "Futura", system-ui, sans-serif;
+  --gut:clamp(20px, 4vw, 64px);
+  --sec:clamp(96px, 11vw, 168px);
+  --max:1320px;
+  --navh:76px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --cobogo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' fill='%23e3dfd8'/%3E%3Crect x='8' y='8' width='104' height='104' fill='%23dbd6ce'/%3E%3Cpath d='M8 8h104l-22 22H30z' fill='%23ebe8e2'/%3E%3Cpath d='M8 8v104l22-22V30z' fill='%23e5e1da'/%3E%3Cpath d='M112 112H8l22-22h60z' fill='%23d3cec5'/%3E%3Crect x='30' y='30' width='60' height='60' fill='%23cfc9bf'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--navh) + 12px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;text-decoration:none}
+.skip:focus{left:12px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+
+/* type */
+.caps{font:500 12.5px/1.3 var(--disp);letter-spacing:.42em;text-transform:uppercase}
+.kicker{display:inline-flex;align-items:center;gap:14px;color:var(--sage)}
+.kicker::before{content:"";width:9px;height:9px;background:var(--sage-f);box-shadow:inset 0 0 0 2px var(--paper),0 0 0 1px var(--sage-f)}
+.h2{font:400 clamp(40px,5.6vw,88px)/1.02 var(--disp);letter-spacing:-.02em}
+.h2 em, .h1 em{font-style:italic;color:var(--sage)}
+.line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.line > span{display:block}
+.lede{font-size:clamp(17px,1.35vw,20px);color:var(--muted);max-width:34em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:500 15px/1 var(--sans);letter-spacing:.04em;text-decoration:none;cursor:pointer;transition:transform .35s var(--ease),background .35s,color .35s}
+.btn:hover{transform:translateY(-2px);background:var(--sage);border-color:var(--sage)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn--sm{min-height:44px;padding:0 20px;font-size:14px}
+.link{position:relative;text-decoration:none;font-weight:500}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.link:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding-block:18px}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav.is-solid{background:rgba(239,237,232,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding-block:12px}
+.brand{text-decoration:none;display:flex;flex-direction:column;gap:5px}
+.brand b{font:500 19px/1 var(--disp);letter-spacing:.38em;text-transform:uppercase;white-space:nowrap}
+.brand small{font:400 10.5px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.nav__links{display:flex;gap:30px;list-style:none;font-size:14.5px}
+.nav__links a{text-decoration:none;position:relative;padding:6px 0}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* hero */
+.hero{min-height:100svh;padding-top:calc(var(--navh) + clamp(24px,4vw,56px));padding-bottom:clamp(40px,5vw,72px);display:flex;align-items:center}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,88px);align-items:center;width:100%}
+.hero .kicker{margin-bottom:28px}
+.h1{font:400 clamp(44px,5.5vw,94px)/1 var(--disp);letter-spacing:-.025em;margin-bottom:30px}
+.h1 .line > span{white-space:nowrap}
+.hero__lede{margin-bottom:36px}
+.hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-bottom:56px}
+.hero__meta{display:grid;grid-template-columns:repeat(3,auto);gap:28px;justify-content:start;border-top:1px solid var(--line);padding-top:24px;max-width:600px}
+.hero__meta b{display:block;font:400 clamp(22px,2vw,30px)/1.1 var(--disp);margin-bottom:6px}
+.hero__meta span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block;max-width:15em}
+.hero__media{position:relative;justify-self:end;width:min(100%,560px);aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;background:var(--cob)}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero__media::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(38,35,31,.08)}
+.hero__wrap{position:relative;justify-self:end;width:min(100%,560px)}
+.hero__tag{position:absolute;left:-28px;bottom:48px;background:var(--paper);padding:18px 22px;box-shadow:0 18px 50px -24px rgba(38,35,31,.45);display:flex;gap:16px;align-items:center}
+.hero__tag b{font:400 34px/1 var(--disp)}
+.hero__tag span{font-size:12.5px;line-height:1.35;color:var(--muted);max-width:11em}
+
+/* marquee */
+.marq{background:var(--stone);border-block:1px solid var(--line);overflow:hidden;padding:22px 0}
+.marq__track{display:flex;width:max-content;animation:marq 48s linear infinite}
+.marq__track span{font:400 21px/1 var(--disp);letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center}
+.marq__track span::after{content:"";width:8px;height:8px;margin:0 34px;background:var(--sage-f);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.marq__track{animation:none}}
+
+/* manifesto */
+.mani{background:var(--stone) var(--cobogo);background-size:96px;padding-block:var(--sec);position:relative}
+.mani::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(227,223,216,.55),rgba(227,223,216,.2) 40%,rgba(227,223,216,.6))}
+.mani__card{position:relative;background:var(--paper);max-width:980px;margin:0 auto;padding:clamp(40px,6vw,96px) clamp(28px,6vw,96px);text-align:center;box-shadow:0 40px 90px -50px rgba(38,35,31,.5)}
+.mani__card .caps{color:var(--sage);display:block;margin-bottom:34px}
+.mani__q{font:italic 400 clamp(30px,3.9vw,58px)/1.16 var(--disp);letter-spacing:-.015em;margin-bottom:30px}
+.mani__by{font:500 12.5px/1 var(--disp);letter-spacing:.42em;text-transform:uppercase;color:var(--muted)}
+.mani__p{max-width:40em;margin:40px auto 0;color:var(--muted)}
+
+/* tour (signature) */
+.tour{padding-block:var(--sec)}
+.tour__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,104px);align-items:start}
+.tour__side{position:sticky;top:calc(var(--navh) + 28px)}
+.tour__side .kicker{margin-bottom:22px}
+.tour__side .kicker{margin-bottom:16px}
+.tour__side .h2{font-size:clamp(36px,3.8vw,60px);margin-bottom:16px}
+.tour__intro{color:var(--muted);max-width:30em;margin-bottom:24px;font-size:15.5px}
+.plan{width:100%;max-width:min(520px,calc((100svh - var(--navh) - 480px) * 1.42));height:auto;display:block;overflow:visible}
+.plan .pl{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:0;vector-effect:non-scaling-stroke}
+.plan .pl--wall{stroke-width:3.4}
+.plan .pl--f{stroke:var(--muted);stroke-width:1}
+.plan .rm{cursor:pointer;outline:none}
+.plan .rm__fill{fill:transparent;transition:fill .5s var(--ease)}
+.plan .rm:hover .rm__fill{fill:rgba(142,154,122,.18)}
+.plan .rm.on .rm__fill{fill:var(--sage-f)}
+.plan .rm__n{font:500 15px var(--disp);letter-spacing:.08em;fill:var(--ink);text-anchor:middle;dominant-baseline:middle;transition:fill .4s;pointer-events:none}
+.plan .rm.on .rm__n{fill:var(--white)}
+.plan .rm.on .pl--f{stroke:rgba(248,247,244,.75)}
+.plan .rm:focus-visible .rm__fill{fill:rgba(142,154,122,.35);stroke:var(--sage);stroke-width:2}
+.tour__index{list-style:none;margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;max-width:520px}
+.tour__index button{all:unset;cursor:pointer;display:flex;gap:12px;align-items:baseline;padding:5px 0;font-size:14.5px;color:var(--muted);transition:color .3s;width:100%;border-bottom:1px solid transparent}
+.tour__index button span{font:500 12px var(--disp);letter-spacing:.12em;color:var(--sage);min-width:22px}
+.tour__index button:hover{color:var(--ink)}
+.tour__index button[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tour__index button:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.tour__bar{display:none}
+.tour__rooms{display:flex;flex-direction:column;gap:clamp(72px,9vw,140px);padding-top:8px}
+.room{display:grid;grid-template-columns:1fr;gap:22px;width:min(100%,560px)}
+.room:nth-child(even){margin-left:auto}
+.room__img{aspect-ratio:4/5;overflow:hidden;background:var(--cob)}
+.room:nth-child(3n+1) .room__img{border-radius:999px 999px 0 0}
+.room__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.room:hover .room__img img{transform:scale(1.03)}
+.room__txt{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline}
+.room__n{font:400 15px var(--disp);letter-spacing:.14em;color:var(--sage)}
+.room h3{font:400 clamp(26px,2.4vw,36px)/1.1 var(--disp);letter-spacing:-.01em}
+.room p{grid-column:2;color:var(--muted);font-size:16px;max-width:30em}
+
+/* band */
+.band{position:relative;height:min(78vh,760px);overflow:hidden;display:grid;place-items:center;color:var(--white)}
+.band img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,35,31,.15),rgba(38,35,31,.45))}
+.band p{position:relative;z-index:1;font:italic 400 clamp(40px,6.4vw,104px)/1 var(--disp);letter-spacing:-.02em;text-align:center;padding-inline:var(--gut);text-shadow:0 2px 30px rgba(0,0,0,.25)}
+
+/* projects */
+.proj{padding-block:var(--sec)}
+.proj__head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:clamp(40px,5vw,72px)}
+.proj__head .kicker{margin-bottom:20px}
+.proj__head p{color:var(--muted);max-width:26em}
+.proj__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.card{text-decoration:none;display:block}
+.card__img{aspect-ratio:4/5;overflow:hidden;background:var(--cob);margin-bottom:22px}
+.card:nth-child(2) .card__img{border-radius:999px 999px 0 0}
+.card__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover .card__img img{transform:scale(1.03)}
+.card .caps{color:var(--sage);display:block;margin-bottom:10px;font-size:11.5px}
+.card h3{font:400 clamp(24px,2vw,30px)/1.15 var(--disp);margin-bottom:8px}
+.card p{color:var(--muted);font-size:15.5px}
+
+/* process */
+.steps{background:var(--ink);color:var(--on-dark);padding-block:var(--sec)}
+.steps .kicker{color:var(--sage-l)}
+.steps .kicker::before{background:var(--sage-f);box-shadow:inset 0 0 0 2px var(--ink),0 0 0 1px var(--sage-f)}
+.steps .h2 em{color:var(--sage-l)}
+.steps__head{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.steps__head p{color:var(--on-dark-m);max-width:28em;justify-self:end}
+.steps__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(239,237,232,.16)}
+.step{padding:34px 28px 8px 0;border-right:1px solid rgba(239,237,232,.12)}
+.step + .step{padding-left:28px}
+.step:last-child{border-right:0}
+.step__n{font:400 46px/1 var(--disp);color:var(--sage-l);letter-spacing:.06em;display:block;margin-bottom:26px}
+.step h3{font:400 24px/1.2 var(--disp);margin-bottom:12px}
+.step p{color:var(--on-dark-m);font-size:15.5px}
+
+/* about */
+.about{padding-block:var(--sec)}
+.about__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,120px);align-items:center}
+.about__media{position:relative}
+.about__main{aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;background:var(--cob)}
+.about__main img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.about__small{position:absolute;right:-12%;bottom:-8%;width:44%;aspect-ratio:1;overflow:hidden;border:10px solid var(--paper);background:var(--cob)}
+.about__small img{width:100%;height:100%;object-fit:cover;object-position:35% 45%}
+.about .kicker{margin-bottom:22px}
+.about .h2{margin-bottom:28px}
+.about__txt p{color:var(--muted);margin-bottom:18px;max-width:33em}
+.about__facts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);max-width:520px}
+.about__facts b{display:block;font:400 30px/1 var(--disp);margin-bottom:6px}
+.about__facts span{font-size:14px;color:var(--muted)}
+
+/* recognition */
+.rec{background:var(--stone);padding-block:var(--sec)}
+.rec__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(40px,7vw,120px);align-items:center}
+.rec .kicker{margin-bottom:22px}
+.rec .h2{margin-bottom:40px}
+.rec__list{list-style:none;border-top:1px solid var(--line)}
+.rec__list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.rec__list b{font:400 clamp(21px,1.8vw,26px)/1.2 var(--disp)}
+.rec__list span{font-size:14.5px;color:var(--muted);text-align:right}
+.rec__img{aspect-ratio:4/5;overflow:hidden;background:var(--cob);max-width:460px;justify-self:end;width:100%}
+.rec__img img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+/* contact */
+.contact{background:var(--stone) var(--cobogo);background-size:96px;padding-block:var(--sec);position:relative}
+.contact__card{position:relative;background:var(--paper);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);padding:clamp(32px,5vw,80px);box-shadow:0 40px 90px -50px rgba(38,35,31,.5)}
+.contact .kicker{margin-bottom:22px}
+.contact .h2{margin-bottom:24px;font-size:clamp(38px,4.6vw,72px)}
+.contact__info{color:var(--muted)}
+.contact__info dl{margin-top:36px;display:grid;gap:22px}
+.contact__info dt{font:500 11.5px/1 var(--disp);letter-spacing:.38em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.contact__info dd{color:var(--ink)}
+.form{display:grid;gap:22px}
+.field label, .field legend{display:block;font-size:13.5px;font-weight:500;margin-bottom:8px;letter-spacing:.02em}
+.field input[type=text], .field select{width:100%;min-height:52px;padding:0 16px;border:1px solid var(--line);background:var(--white);border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2326231f' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.field input:focus, .field select:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(142,154,122,.25)}
+.field fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);font-size:14.5px;cursor:pointer;transition:background .3s,color .3s,border-color .3s;background:var(--white)}
+.chips input:checked + span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips input:focus-visible + span{outline:2px solid var(--sage);outline-offset:2px}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form__err{color:#9b3b2a;font-size:13.5px;margin-top:6px;display:none}
+.field.bad input{border-color:#9b3b2a}
+.field.bad .form__err{display:block}
+.form__note{font-size:13.5px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--ink);color:var(--paper);padding:14px 22px;border-radius:999px;font-size:14.5px;z-index:80;transition:transform .5s var(--ease),visibility 0s .5s;max-width:calc(100% - 32px);text-align:center}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .5s var(--ease)}
+
+/* footer */
+.foot{background:var(--ink);color:var(--on-dark);padding:clamp(72px,9vw,120px) 0 36px;overflow:hidden}
+.foot__word{font:400 clamp(34px,8.6vw,150px)/1 var(--disp);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;margin-bottom:clamp(48px,6vw,88px);display:block}
+.foot__cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(239,237,232,.14)}
+.foot__cols h4{font:500 11.5px/1 var(--disp);letter-spacing:.38em;text-transform:uppercase;color:var(--sage-l);margin-bottom:16px}
+.foot__cols p, .foot__cols a{color:var(--on-dark-m);font-size:15px}
+.foot__cols a{display:block;text-decoration:none;margin-bottom:6px}
+.foot__cols a:hover{color:var(--on-dark)}
+.foot__base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:13px;color:var(--on-dark-m)}
+
+/* phone action bar */
+.abar{display:none}
+
+/* motion initial states (only with .m) */
+html.m [data-rise]{opacity:0;transform:translateY(28px)}
+html.m .line > span{transform:translateY(106%)}
+html.m .clip{clip-path:inset(0 0 100% 0)}
+html.m .hero__media{clip-path:inset(100% 0 0 0)}
+html.m .hero__tag{opacity:0;transform:translateY(20px)}
+html.m .plan .pl{stroke-dashoffset:1}
+html.m .plan .rm__n{opacity:0}
+
+/* responsive */
+@media (max-width:1100px){
+  .nav__links{display:none}
+  .hero__meta{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  :root{--navh:64px}
+  .hero{min-height:auto;padding-top:calc(var(--navh) + 20px)}
+  .hero__grid{grid-template-columns:1fr;gap:36px}
+  .hero__wrap{order:-1;justify-self:center;width:min(100%,460px)}
+  .hero__tag{left:auto;right:-6px;bottom:22px;padding:12px 16px}
+  .hero__tag b{font-size:26px}
+  .hero__actions{margin-bottom:40px}
+  .tour__grid{grid-template-columns:1fr;gap:28px}
+  .tour__side{position:static}
+  .tour__index{display:none}
+  .plan{max-width:420px;margin-inline:auto}
+  .tour__bar{display:flex;position:sticky;top:calc(var(--navh) - 1px);z-index:20;align-items:center;justify-content:space-between;gap:14px;background:rgba(239,237,232,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-inline:calc(var(--gut) * -1);padding:12px var(--gut);border-bottom:1px solid var(--line)}
+  .tour__bar b{font:400 19px/1.2 var(--disp)}
+  .tour__bar span{font:500 12px var(--disp);letter-spacing:.16em;color:var(--sage)}
+  .tour__bar svg.plan--mini{width:92px;max-width:92px;height:auto;flex:none;margin:0}
+  .plan--mini .rm__n, .plan--mini .pl--f{display:none}
+  .tour__bar .rm{pointer-events:none}
+  .room, .room:nth-child(even){width:100%;margin-left:0}
+  .proj__head{flex-direction:column;align-items:start}
+  .proj__grid{grid-template-columns:1fr;gap:48px}
+  .steps__head{grid-template-columns:1fr}
+  .steps__head p{justify-self:start}
+  .steps__grid{grid-template-columns:1fr 1fr}
+  .step{border-right:0;padding:28px 0 20px;border-bottom:1px solid rgba(239,237,232,.12)}
+  .step + .step{padding-left:0}
+  .steps__grid .step:nth-child(odd){padding-right:20px}
+  .about__grid, .rec__grid, .contact__card{grid-template-columns:1fr}
+  .about__media{max-width:440px;width:88%}
+  .about__small{right:-14%}
+  .rec__img{justify-self:start;max-width:420px}
+  .foot__cols{grid-template-columns:1fr 1fr}
+  .abar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;transition:transform .45s var(--ease)}
+  .abar .btn{width:100%;justify-content:center;box-shadow:0 14px 34px -14px rgba(38,35,31,.6)}
+  .abar.is-off{transform:translateY(150%)}
+  body{padding-bottom:84px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .brand b{font-size:16px;letter-spacing:.32em}
+  .nav .btn--sm{display:none}
+  .hero__meta{grid-template-columns:1fr 1fr;gap:20px}
+  .hero__meta div:last-child{grid-column:1 / -1}
+  .steps__grid{grid-template-columns:1fr}
+  .steps__grid .step:nth-child(odd){padding-right:0}
+  .form__row{grid-template-columns:1fr}
+  .rec__list li{grid-template-columns:1fr;gap:4px}
+  .rec__list span{text-align:left}
+  .foot__cols{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<!-- Prévia FC Design. Fotos e textos do Instagram @magdacuri. Os ambientes são projetos (renders) da Magda.
+     Contato: ela não divulga WhatsApp; o formulário monta a mensagem e abre o direct. Com o número, o pedido vai direto pro WhatsApp. -->
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Magda Curi, início">
+      <b>Magda Curi</b>
+      <small>Interiores e arquitetura</small>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#ambientes">Ambientes</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#reconhecimento">Reconhecimento</a></li>
+    </ul>
+    <a class="btn btn--sm" href="#orcamento">Pedir orçamento</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker caps" data-rise>Designer de interiores · Icaraí, Niterói</p>
+        <h1 class="h1" aria-label="Interiores que parecem com quem mora.">
+          <span class="line"><span>Interiores que</span></span>
+          <span class="line"><span>parecem com</span></span>
+          <span class="line"><span><em>quem mora.</em></span></span>
+        </h1>
+        <p class="lede hero__lede" data-rise>Projetos para apartamentos, casas, clínicas e áreas comuns de condomínio em Niterói. Luz, madeira e pedra pensadas para a rotina de cada família.</p>
+        <div class="hero__actions" data-rise>
+          <a class="btn" href="#orcamento">Pedir um orçamento <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a class="link" href="#ambientes">Passear pelos ambientes</a>
+        </div>
+        <div class="hero__meta" data-rise>
+          <div><b>Desde 2006</b><span>no mercado de design de interiores</span></div>
+          <div><b>The Book</b><span>em todas as edições do anuário do CADN</span></div>
+          <div><b>Milão 2026</b><span>premiação CADN e Salone del Mobile</span></div>
+        </div>
+      </div>
+      <div class="hero__wrap">
+        <div class="hero__media">
+          <img src="img/hero.jpg" width="1206" height="1508" alt="Sala integrada com painel de madeira, parede de pedra em relevo, adega iluminada e mesa de jantar para oito lugares.">
+        </div>
+        <div class="hero__tag"><b>13 mil</b><span>pessoas acompanham os projetos no Instagram</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marq" aria-hidden="true">
+    <div class="marq__track">
+      <span>Sala integrada</span><span>Cozinha</span><span>Varanda gourmet</span><span>Suíte</span><span>Closet</span><span>Home office</span><span>Quarto do bebê</span><span>Lavabo</span><span>Consultórios</span><span>Áreas comuns</span>
+      <span>Sala integrada</span><span>Cozinha</span><span>Varanda gourmet</span><span>Suíte</span><span>Closet</span><span>Home office</span><span>Quarto do bebê</span><span>Lavabo</span><span>Consultórios</span><span>Áreas comuns</span>
+    </div>
+  </div>
+
+  <section class="mani" aria-label="Como a Magda pensa os projetos">
+    <div class="wrap">
+      <div class="mani__card">
+        <span class="caps">O jeito de projetar</span>
+        <p class="mani__q">
+          <span class="line"><span>“A vida não é sobre ser perfeita,</span></span>
+          <span class="line"><span>é sobre ser verdadeira.”</span></span>
+        </p>
+        <p class="mani__by" data-rise>Magda Curi</p>
+        <p class="mani__p" data-rise>Cada projeto começa ouvindo como a família vive: quem cozinha, quem trabalha em casa, onde as crianças brincam. Depois vêm a luz, a madeira e os detalhes que fazem a casa parecer sua, e não de catálogo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tour" id="ambientes">
+    <div class="wrap tour__grid">
+      <aside class="tour__side">
+        <p class="kicker caps">Ambientes</p>
+        <h2 class="h2"><span class="line"><span>Uma casa inteira,</span></span><span class="line"><span><em>cômodo por cômodo.</em></span></span></h2>
+        <p class="tour__intro" data-rise>Uma seleção de projetos recentes, montada como uma planta. Role para passear pela casa ou toque num cômodo para ir direto até ele.</p>
+        <svg class="plan" id="plan" viewBox="-4 -4 608 428" role="group" aria-label="Planta dos ambientes. Escolha um cômodo.">
+          <g class="rm" data-i="3" role="button" tabindex="0" aria-label="04 Varanda gourmet">
+            <rect class="rm__fill" x="0" y="0" width="150" height="170"/>
+            <rect class="pl" pathLength="1" x="0" y="0" width="150" height="170"/>
+            <rect class="pl pl--f" pathLength="1" x="35" y="38" width="80" height="44" rx="4"/>
+            <rect class="pl pl--f" pathLength="1" x="12" y="104" width="30" height="50"/>
+            <text class="rm__n" x="95" y="130">04</text>
+          </g>
+          <g class="rm" data-i="0" role="button" tabindex="0" aria-label="01 Sala integrada">
+            <rect class="rm__fill" x="150" y="0" width="250" height="170"/>
+            <rect class="pl" pathLength="1" x="150" y="0" width="250" height="170"/>
+            <rect class="pl pl--f" pathLength="1" x="172" y="104" width="112" height="40" rx="8"/>
+            <circle class="pl pl--f" pathLength="1" cx="322" cy="122" r="15"/>
+            <circle class="pl pl--f" pathLength="1" cx="364" cy="122" r="15"/>
+            <text class="rm__n" x="275" y="52">01</text>
+          </g>
+          <g class="rm" data-i="1" role="button" tabindex="0" aria-label="02 Copa">
+            <rect class="rm__fill" x="400" y="0" width="200" height="80"/>
+            <rect class="pl" pathLength="1" x="400" y="0" width="200" height="80"/>
+            <ellipse class="pl pl--f" pathLength="1" cx="530" cy="40" rx="40" ry="20"/>
+            <text class="rm__n" x="440" y="41">02</text>
+          </g>
+          <g class="rm" data-i="2" role="button" tabindex="0" aria-label="03 Cozinha">
+            <rect class="rm__fill" x="400" y="80" width="200" height="90"/>
+            <rect class="pl" pathLength="1" x="400" y="80" width="200" height="90"/>
+            <rect class="pl pl--f" pathLength="1" x="412" y="148" width="176" height="12"/>
+            <text class="rm__n" x="500" y="118">03</text>
+          </g>
+          <g class="rm" data-i="5" role="button" tabindex="0" aria-label="06 Home office">
+            <rect class="rm__fill" x="0" y="210" width="130" height="210"/>
+            <rect class="pl" pathLength="1" x="0" y="210" width="130" height="210"/>
+            <path class="pl pl--f" pathLength="1" d="M18 392h80q14 0 14-14"/>
+            <circle class="pl pl--f" pathLength="1" cx="58" cy="370" r="10"/>
+            <text class="rm__n" x="65" y="290">06</text>
+          </g>
+          <g class="rm" data-i="6" role="button" tabindex="0" aria-label="07 Quarto do bebê">
+            <rect class="rm__fill" x="130" y="210" width="140" height="210"/>
+            <rect class="pl" pathLength="1" x="130" y="210" width="140" height="210"/>
+            <rect class="pl pl--f" pathLength="1" x="160" y="378" width="64" height="32" rx="3"/>
+            <circle class="pl pl--f" pathLength="1" cx="246" cy="240" r="13"/>
+            <text class="rm__n" x="200" y="306">07</text>
+          </g>
+          <g class="rm" data-i="7" role="button" tabindex="0" aria-label="08 Quarto da filha">
+            <rect class="rm__fill" x="270" y="210" width="140" height="210"/>
+            <rect class="pl" pathLength="1" x="270" y="210" width="140" height="210"/>
+            <rect class="pl pl--f" pathLength="1" x="300" y="312" width="80" height="98" rx="10"/>
+            <text class="rm__n" x="340" y="262">08</text>
+          </g>
+          <g class="rm" data-i="8" role="button" tabindex="0" aria-label="09 Suíte">
+            <rect class="rm__fill" x="410" y="210" width="120" height="210"/>
+            <rect class="pl" pathLength="1" x="410" y="210" width="120" height="210"/>
+            <rect class="pl pl--f" pathLength="1" x="424" y="300" width="92" height="110" rx="10"/>
+            <text class="rm__n" x="470" y="256">09</text>
+          </g>
+          <g class="rm" data-i="9" role="button" tabindex="0" aria-label="10 Closet">
+            <rect class="rm__fill" x="530" y="210" width="70" height="120"/>
+            <rect class="pl" pathLength="1" x="530" y="210" width="70" height="120"/>
+            <path class="pl pl--f" pathLength="1" d="M540 222v96M590 222v96"/>
+            <text class="rm__n" x="565" y="270">10</text>
+          </g>
+          <g class="rm" data-i="4" role="button" tabindex="0" aria-label="05 Lavabo">
+            <rect class="rm__fill" x="530" y="330" width="70" height="90"/>
+            <rect class="pl" pathLength="1" x="530" y="330" width="70" height="90"/>
+            <circle class="pl pl--f" pathLength="1" cx="565" cy="352" r="10"/>
+            <text class="rm__n" x="565" y="396">05</text>
+          </g>
+          <rect class="pl pl--wall" pathLength="1" x="0" y="0" width="600" height="420"/>
+          <path class="pl pl--wall" pathLength="1" d="M0 170h150M400 170h200M0 210h130M270 210h260"/>
+        </svg>
+        <ol class="tour__index" id="tour-index">
+          <li><button type="button" data-i="0"><span>01</span>Sala integrada</button></li>
+          <li><button type="button" data-i="1"><span>02</span>Copa</button></li>
+          <li><button type="button" data-i="2"><span>03</span>Cozinha</button></li>
+          <li><button type="button" data-i="3"><span>04</span>Varanda gourmet</button></li>
+          <li><button type="button" data-i="4"><span>05</span>Lavabo</button></li>
+          <li><button type="button" data-i="5"><span>06</span>Home office</button></li>
+          <li><button type="button" data-i="6"><span>07</span>Quarto do bebê</button></li>
+          <li><button type="button" data-i="7"><span>08</span>Quarto da filha</button></li>
+          <li><button type="button" data-i="8"><span>09</span>Suíte</button></li>
+          <li><button type="button" data-i="9"><span>10</span>Closet</button></li>
+        </ol>
+      </aside>
+
+      <div class="tour__rooms">
+        <div class="tour__bar" id="tour-bar" aria-live="polite">
+          <div><span id="bar-n">01 / 10</span><br><b id="bar-name">Sala integrada</b></div>
+          <svg id="bar-plan" class="plan plan--mini" viewBox="-4 -4 608 428" aria-hidden="true"></svg>
+        </div>
+
+        <article class="room" data-i="0" id="sala">
+          <figure class="room__img clip"><img src="img/sala.jpg" width="756" height="945" loading="lazy" alt="Sala com poltronas brancas, cobogó de madeira, estante e espelho redondo sobre a mesa de jantar."></figure>
+          <div class="room__txt"><span class="room__n">01</span><h3>Sala integrada</h3><p>Um cobogó de madeira separa o estar do jantar sem fechar o espaço. O espelho redondo leva a luz até o fundo da sala.</p></div>
+        </article>
+        <article class="room" data-i="1" id="copa">
+          <figure class="room__img clip"><img src="img/cozinha.jpg" width="756" height="945" loading="lazy" alt="Copa com mesa orgânica de madeira, cadeiras estofadas, cristaleira iluminada e nichos com cerâmicas."></figure>
+          <div class="room__txt"><span class="room__n">02</span><h3>Copa</h3><p>Mesa orgânica em madeira, cristaleira com luz interna e nichos para as peças que contam a história da casa.</p></div>
+        </article>
+        <article class="room" data-i="2" id="cozinha">
+          <figure class="room__img clip"><img src="img/cozinha-2.jpg" width="756" height="945" loading="lazy" alt="Cozinha em corredor com fornos embutidos, vitrine iluminada e adega com frutas ao fundo."></figure>
+          <div class="room__txt"><span class="room__n">03</span><h3>Cozinha</h3><p>Cozinha em corredor, com eletros embutidos, vitrine iluminada e a adega com frutas e verduras à vista no fundo.</p></div>
+        </article>
+        <article class="room" data-i="3" id="varanda">
+          <figure class="room__img clip"><img src="img/gourmet.jpg" width="756" height="945" loading="lazy" alt="Varanda gourmet com mesa de pedra, cadeiras claras, churrasqueira embutida e pendentes de madeira."></figure>
+          <div class="room__txt"><span class="room__n">04</span><h3>Varanda gourmet</h3><p>Churrasqueira, bancada em pedra e mesa para oito, de frente para o verde. A varanda vira a sala de receber.</p></div>
+        </article>
+        <article class="room" data-i="4" id="lavabo">
+          <figure class="room__img clip"><img src="img/banho.jpg" width="756" height="945" loading="lazy" alt="Lavabo com espelhos redondos iluminados, cuba de apoio e pendentes dourados em forma de gota."></figure>
+          <div class="room__txt"><span class="room__n">05</span><h3>Lavabo</h3><p>Espelhos redondos com luz por trás, cuba de apoio e pendentes em gota dourada. Pequeno, mas o cômodo que todo convidado vê.</p></div>
+        </article>
+        <article class="room" data-i="5" id="office">
+          <figure class="room__img clip"><img src="img/office.jpg" width="756" height="945" loading="lazy" alt="Home office com mesa branca em curva, cadeira de couro e prateleiras iluminadas sobre parede de pedra."></figure>
+          <div class="room__txt"><span class="room__n">06</span><h3>Home office</h3><p>Mesa em curva, prateleiras sobre fundo de pedra e luz embutida para trabalhar em casa o dia inteiro.</p></div>
+        </article>
+        <article class="room" data-i="6" id="bebe">
+          <figure class="room__img clip"><img src="img/bebe.jpg" width="756" height="945" loading="lazy" alt="Quarto de bebê com mural de girafa e árvores, berço de madeira com verde-sálvia e poltrona."></figure>
+          <div class="room__txt"><span class="room__n">07</span><h3>Quarto do bebê</h3><p>Mural de savana com girafa, berço em madeira e verde-sálvia e uma poltrona para as madrugadas.</p></div>
+        </article>
+        <article class="room" data-i="7" id="filha">
+          <figure class="room__img clip"><img src="img/filha.jpg" width="756" height="945" loading="lazy" alt="Quarto rosa com flores em relevo na parede, cabeceira em curva, tapete orgânico e penteadeira com espelho iluminado."></figure>
+          <div class="room__txt"><span class="room__n">08</span><h3>Quarto da filha</h3><p>Galhos e flores em relevo na parede, cabeceira em curva e penteadeira com espelho iluminado.</p></div>
+        </article>
+        <article class="room" data-i="8" id="suite">
+          <figure class="room__img clip"><img src="img/suite.jpg" width="756" height="945" loading="lazy" alt="Suíte com cabeceira estofada, painel de madeira, parede de pedra iluminada e janela para o verde."></figure>
+          <div class="room__txt"><span class="room__n">09</span><h3>Suíte</h3><p>Cabeceira estofada, painel de madeira e pedra iluminada por trás. Tudo em tons de areia para descansar de verdade.</p></div>
+        </article>
+        <article class="room" data-i="9" id="closet">
+          <figure class="room__img clip"><img src="img/closet.jpg" width="756" height="945" loading="lazy" alt="Closet com portas de vidro, prateleiras iluminadas, bolsas e sapatos expostos e banco de madeira no centro."></figure>
+          <div class="room__txt"><span class="room__n">10</span><h3>Closet</h3><p>Portas de vidro, luz em cada prateleira e um banco no centro para se arrumar com calma.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Luz, madeira e pedra">
+    <img src="img/gourmet-wide.jpg" width="1362" height="890" loading="lazy" alt="" data-speed="-10">
+    <p>Luz, madeira e pedra.</p>
+  </section>
+
+  <section class="proj" id="projetos">
+    <div class="wrap">
+      <div class="proj__head">
+        <div>
+          <p class="kicker caps">Projetos</p>
+          <h2 class="h2"><span class="line"><span>Do apartamento</span></span><span class="line"><span>ao <em>consultório.</em></span></span></h2>
+        </div>
+        <p data-rise>O mesmo cuidado com luz e acabamento vale para quem mora, para quem atende pacientes e para quem divide o prédio.</p>
+      </div>
+      <div class="proj__grid">
+        <a class="card" href="#orcamento" data-rise>
+          <div class="card__img"><img src="img/sala-wide.jpg" width="1135" height="860" loading="lazy" alt="Sala de estar com sofá branco, painel de madeira, cobogó e poltronas, integrada ao jantar." style="object-position:30% 50%"></div>
+          <span class="caps">Residencial</span>
+          <h3>Apartamentos e casas</h3>
+          <p>Da reforma de um cômodo ao projeto completo, com marcenaria e iluminação.</p>
+        </a>
+        <a class="card" href="#orcamento" data-rise>
+          <div class="card__img"><img src="img/consultorio.jpg" width="756" height="925" loading="lazy" alt="Recepção de consultório odontológico com balcão branco iluminado, painel ripado e vasos de cerâmica."></div>
+          <span class="caps">Comercial</span>
+          <h3>Clínicas e consultórios</h3>
+          <p>Recepções que passam calma e confiança desde a porta, com a marca da clínica na parede.</p>
+        </a>
+        <a class="card" href="#orcamento" data-rise>
+          <div class="card__img"><img src="img/kids.jpg" width="756" height="945" loading="lazy" alt="Espaço kids de condomínio com árvore de madeira, casinha, escorregador verde e piscina de bolinhas."></div>
+          <span class="caps">Condomínios</span>
+          <h3>Áreas comuns</h3>
+          <p>Espaço kids, salão de festas e áreas de convivência que valorizam o prédio inteiro.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="como">
+    <div class="wrap">
+      <div class="steps__head">
+        <div>
+          <p class="kicker caps">Como funciona</p>
+          <h2 class="h2"><span class="line"><span>Você vê a casa pronta</span></span><span class="line"><span><em>antes da obra.</em></span></span></h2>
+        </div>
+        <p data-rise>Cada ambiente é apresentado em imagens realistas, com móveis, cores e iluminação. Assim dá para ajustar tudo no projeto, e não na obra.</p>
+      </div>
+      <div class="steps__grid">
+        <div class="step" data-rise><span class="step__n">I</span><h3>Conversa</h3><p>Um encontro para entender a rotina da família, o estilo e o orçamento disponível.</p></div>
+        <div class="step" data-rise><span class="step__n">II</span><h3>Projeto em 3D</h3><p>Os ambientes aparecem prontos, com móveis, materiais e luz, para você aprovar cada detalhe.</p></div>
+        <div class="step" data-rise><span class="step__n">III</span><h3>Detalhamento</h3><p>Plantas, marcenaria e especificações para fornecedores e obra trabalharem sem dúvida.</p></div>
+        <div class="step" data-rise><span class="step__n">IV</span><h3>Execução</h3><p>Indicação de fornecedores parceiros e apoio para a casa sair do jeito que foi desenhada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="wrap about__grid">
+      <div class="about__media">
+        <div class="about__main clip"><img src="img/magda.jpg" width="756" height="945" loading="lazy" alt="Magda Curi sorrindo de braços cruzados num mirante de Niterói, com o mar e o pôr do sol ao fundo."></div>
+        <div class="about__small" data-rise><img src="img/magda-niemeyer.jpg" width="756" height="775" loading="lazy" alt="Magda Curi de terno claro diante de um painel de azulejos com desenho e assinatura de Oscar Niemeyer."></div>
+      </div>
+      <div class="about__txt">
+        <p class="kicker caps">Sobre</p>
+        <h2 class="h2"><span class="line"><span>Magda Curi</span></span></h2>
+        <p data-rise>Designer de interiores e arquitetura, atua no mercado desde 2006. O escritório fica em Icaraí, na Rua Mem de Sá, e desenha apartamentos, casas, clínicas e áreas comuns de condomínio em Niterói.</p>
+        <p data-rise>Os ambientes dela já estiveram na Mostra Casa Design Niterói e aparecem em todas as edições do The Book, o anuário do Clube de Arquitetura e Design de Niterói, o CADN.</p>
+        <div class="about__facts" data-rise>
+          <div><b>20 anos</b><span>de projetos de interiores</span></div>
+          <div><b>Icaraí</b><span>escritório na Rua Mem de Sá</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rec" id="reconhecimento">
+    <div class="wrap rec__grid">
+      <div>
+        <p class="kicker caps">Reconhecimento</p>
+        <h2 class="h2"><span class="line"><span>Um trabalho que</span></span><span class="line"><span><em>Niterói conhece.</em></span></span></h2>
+        <ul class="rec__list">
+          <li data-rise><b>The Book · CADN</b><span>Em todas as edições do anuário</span></li>
+          <li data-rise><b>Premiação CADN 2026</b><span>Troféu Milão 2026</span></li>
+          <li data-rise><b>Salone del Mobile</b><span>Milão, 2026</span></li>
+          <li data-rise><b>Mostra Casa Design Niterói</b><span>Ambientes assinados na mostra</span></li>
+        </ul>
+      </div>
+      <div class="rec__img clip"><img src="img/thebook.jpg" width="756" height="945" loading="lazy" alt="Magda Curi segurando o troféu Milão 2026 e a edição do The Book com a sua foto na capa."></div>
+    </div>
+  </section>
+
+  <section class="contact" id="orcamento">
+    <div class="wrap">
+      <div class="contact__card">
+        <div class="contact__info">
+          <p class="kicker caps">Orçamento</p>
+          <h2 class="h2"><span class="line"><span>Vamos desenhar</span></span><span class="line"><span><em>a sua casa?</em></span></span></h2>
+          <p data-rise>Conte um pouco do projeto. A mensagem sai pronta para a Magda, e ela responde com os próximos passos.</p>
+          <dl data-rise>
+            <div><dt>Escritório</dt><dd>Rua Mem de Sá, 34 · Icaraí, Niterói</dd></div>
+            <div><dt>Instagram</dt><dd><a class="link" href="https://www.instagram.com/magdacuri/" target="_blank" rel="noopener">@magdacuri</a> · <a class="link" href="https://www.instagram.com/escritoriomagdacuri/" target="_blank" rel="noopener">@escritoriomagdacuri</a></dd></div>
+          </dl>
+        </div>
+        <form class="form" id="form" novalidate>
+          <div class="field" id="f-nome">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required>
+            <p class="form__err">Escreva seu nome para a Magda saber com quem está falando.</p>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="tipo">Tipo de projeto</label>
+              <select id="tipo" name="tipo">
+                <option>Apartamento</option><option>Casa</option><option>Clínica ou consultório</option><option>Área comum de condomínio</option><option>Outro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bairro">Bairro ou cidade</label>
+              <input type="text" id="bairro" name="bairro" placeholder="Ex.: Icaraí" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="field">
+            <fieldset>
+              <legend>Quais ambientes?</legend>
+              <div class="chips">
+                <label><input type="checkbox" name="amb" value="Casa inteira"><span>Casa inteira</span></label>
+                <label><input type="checkbox" name="amb" value="Sala"><span>Sala</span></label>
+                <label><input type="checkbox" name="amb" value="Cozinha"><span>Cozinha</span></label>
+                <label><input type="checkbox" name="amb" value="Quartos"><span>Quartos</span></label>
+                <label><input type="checkbox" name="amb" value="Banheiros"><span>Banheiros</span></label>
+                <label><input type="checkbox" name="amb" value="Varanda"><span>Varanda</span></label>
+                <label><input type="checkbox" name="amb" value="Home office"><span>Home office</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="field">
+            <label for="quando">Quando quer começar?</label>
+            <select id="quando" name="quando">
+              <option>Ainda estou pesquisando</option><option>Nos próximos 3 meses</option><option>Este mês</option><option>Já peguei as chaves</option>
+            </select>
+          </div>
+          <div>
+            <button class="btn" type="submit">Enviar pelo Instagram <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </div>
+          <p class="form__note">A mensagem é copiada e o direct da Magda abre. É só colar e enviar.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot__word" aria-hidden="true">Magda Curi</span>
+    <div class="foot__cols">
+      <div>
+        <h4>Escritório</h4>
+        <p>Rua Mem de Sá, 34 · Icaraí<br>Niterói, Rio de Janeiro</p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <a href="#ambientes">Ambientes</a><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#orcamento">Orçamento</a>
+      </div>
+      <div>
+        <h4>Instagram</h4>
+        <a href="https://www.instagram.com/magdacuri/" target="_blank" rel="noopener">@magdacuri</a>
+        <a href="https://www.instagram.com/escritoriomagdacuri/" target="_blank" rel="noopener">@escritoriomagdacuri</a>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>© 2026 Magda Curi · Design de interiores e arquitetura</span>
+      <span>Prévia criada por FC Design</span>
+    </div>
+  </div>
+</footer>
+
+<div class="abar" id="abar"><a class="btn" href="#orcamento">Pedir orçamento</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var nav=document.getElementById('nav');
+  function setNavH(){ html.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  var onScroll=function(){ nav.classList.toggle('is-solid', scrollY>24); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // phone action bar hides near the form
+  var abar=document.getElementById('abar'), form=document.getElementById('form');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ abar.classList.toggle('is-off', e.isIntersecting); }); },{threshold:.1}).observe(document.getElementById('orcamento'));
+  }
+
+  // ---- signature: the floor plan follows the tour ----
+  var plan=document.getElementById('plan');
+  var rooms=[].slice.call(document.querySelectorAll('.room'));
+  var idx=[].slice.call(document.querySelectorAll('#tour-index button'));
+  var barPlan=document.getElementById('bar-plan');
+  barPlan.innerHTML=plan.innerHTML;
+  [].forEach.call(barPlan.querySelectorAll('[tabindex]'),function(g){ g.removeAttribute('tabindex'); g.removeAttribute('role'); g.removeAttribute('aria-label'); });
+  var names=rooms.map(function(r){ return r.querySelector('h3').textContent; });
+  var cur=-1;
+  function setActive(i){
+    if(i===cur) return; cur=i;
+    [plan, barPlan].forEach(function(svg){
+      [].forEach.call(svg.querySelectorAll('.rm'),function(g){ g.classList.toggle('on', +g.dataset.i===i); });
+    });
+    idx.forEach(function(b){ b.setAttribute('aria-current', +b.dataset.i===i ? 'true':'false'); });
+    document.getElementById('bar-n').textContent=('0'+(i+1)).slice(-2)+' / 10';
+    document.getElementById('bar-name').textContent=names[i];
+  }
+  setActive(0);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) setActive(+e.target.dataset.i); });
+    },{rootMargin:'-45% 0px -45% 0px'});
+    rooms.forEach(function(r){ io.observe(r); });
+  }
+  function go(i){
+    var r=rooms[i]; if(!r) return;
+    var y=r.getBoundingClientRect().top+scrollY-(innerHeight-r.offsetHeight)/2;
+    if(innerWidth<=900) y=r.getBoundingClientRect().top+scrollY-nav.offsetHeight-90;
+    scrollTo({top:Math.max(0,y),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    setActive(i);
+  }
+  [].forEach.call(plan.querySelectorAll('.rm'),function(g){
+    g.addEventListener('click',function(){ go(+g.dataset.i); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(+g.dataset.i); } });
+  });
+  idx.forEach(function(b){ b.addEventListener('click',function(){ go(+b.dataset.i); }); });
+
+  // ---- form: builds the message, copies it and opens Instagram direct ----
+  var toast=document.getElementById('toast'), tt;
+  function say(t){ toast.textContent=t; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){ toast.classList.remove('show'); },5200); }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nome=form.nome.value.trim(), f=document.getElementById('f-nome');
+    if(!nome){ f.classList.add('bad'); form.nome.focus(); return; }
+    f.classList.remove('bad');
+    var amb=[].slice.call(form.querySelectorAll('input[name=amb]:checked')).map(function(c){ return c.value; });
+    var msg='Olá, Magda! Vi seu site e quero um orçamento.\n\nNome: '+nome+'\nProjeto: '+form.tipo.value+
+      (form.bairro.value.trim()?'\nBairro: '+form.bairro.value.trim():'')+
+      (amb.length?'\nAmbientes: '+amb.join(', '):'')+'\nQuando: '+form.quando.value;
+    var done=function(){ say('Mensagem copiada. Cole no direct da Magda e envie.'); };
+    try{ navigator.clipboard.writeText(msg).then(done,function(){ say('Abra o direct e conte sobre o seu projeto.'); }); }catch(err){ say('Abra o direct e conte sobre o seu projeto.'); }
+    window.open('https://ig.me/m/magdacuri','_blank','noopener');
+  });
+  form.nome.addEventListener('input',function(){ document.getElementById('f-nome').classList.remove('bad'); });
+
+  // ---- motion ----
+  function hasMotion(){ return html.classList.contains('m') && window.gsap && window.ScrollTrigger; }
+  function motion(){
+    setNavH(); addEventListener('resize', setNavH);
+    if(!hasMotion()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var E='expo.out';
+    gsap.timeline({defaults:{ease:E}})
+      .to('.hero__media',{clipPath:'inset(0% 0 0 0)',duration:1.5,ease:'expo.inOut'},0)
+      .from('.hero__media img',{scale:1.18,duration:2.2,ease:'power3.out'},0.1)
+      .to('.hero .kicker',{opacity:1,y:0,duration:.9},0.15)
+      .to('.hero .line > span',{y:0,duration:1.2,stagger:.1},0.2)
+      .to('.hero__lede, .hero__actions, .hero__meta',{opacity:1,y:0,duration:1,stagger:.08},0.55)
+      .to('.hero__tag',{opacity:1,y:0,duration:1},1.0);
+    gsap.to('.hero__media img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+    gsap.utils.toArray('main section:not(.hero) .line').forEach(function(l){
+      gsap.to(l.querySelector('span'),{y:0,duration:1.25,ease:E,scrollTrigger:{trigger:l,start:'top 90%'}});
+    });
+    var rise=function(els){ gsap.to(els,{opacity:1,y:0,duration:1.1,stagger:.08,ease:E,overwrite:true}); };
+    ScrollTrigger.batch('main section:not(.hero) [data-rise]',{start:'top 92%',once:true,onEnter:rise,onLeave:rise});
+    gsap.utils.toArray('.clip').forEach(function(f){
+      var img=f.querySelector('img');
+      gsap.timeline({scrollTrigger:{trigger:f,start:'top 86%'}})
+        .to(f,{clipPath:'inset(0 0 0% 0)',duration:1.4,ease:'expo.inOut'})
+        .from(img,{scale:1.18,duration:1.9,ease:'power3.out'},0);
+    });
+    gsap.utils.toArray('[data-speed]').forEach(function(el){
+      gsap.to(el,{yPercent:+el.dataset.speed,ease:'none',scrollTrigger:{trigger:el.closest('section'),start:'top bottom',end:'bottom top',scrub:true}});
+    });
+    // the plan draws itself, line by line
+    var pls=plan.querySelectorAll('.pl');
+    gsap.timeline({scrollTrigger:{trigger:plan,start:'top 85%'}})
+      .to(plan.querySelectorAll('.pl--wall'),{strokeDashoffset:0,duration:1.4,ease:'power2.inOut'})
+      .to(plan.querySelectorAll('.rm > .pl:not(.pl--f)'),{strokeDashoffset:0,duration:1,stagger:.06,ease:'power2.inOut'},0.3)
+      .to(plan.querySelectorAll('.pl--f'),{strokeDashoffset:0,duration:.9,stagger:.03,ease:'power2.out'},0.9)
+      .to(plan.querySelectorAll('.rm__n'),{opacity:1,duration:.6,stagger:.04},1.2);
+    gsap.set(barPlan.querySelectorAll('.pl'),{strokeDashoffset:0});
+    gsap.set(barPlan.querySelectorAll('.rm__n'),{opacity:1});
+    // footer wordmark slides in
+    gsap.from('.foot__word',{xPercent:-8,opacity:0,duration:1.6,ease:E,scrollTrigger:{trigger:'.foot',start:'top 85%'}});
+
+    addEventListener('load', function(){ ScrollTrigger.refresh(); });
+    // safety net: if the browser stops painting frames, show everything statically
+    var f0=gsap.ticker.frame;
+    setTimeout(function(){
+      if(gsap.ticker.frame-f0 > 20) return;
+      ScrollTrigger.getAll().forEach(function(t){ t.kill(); });
+      gsap.globalTimeline.clear();
+      html.classList.remove('m');
+      gsap.set('[data-rise],.line > span,.clip,.clip img,.hero__media,.hero__media img,.hero__tag,.plan .pl,.plan .rm__n,[data-speed],.foot__word',{clearProps:'all'});
+    }, 3500);
+  }
+  if(document.readyState!=='loading') motion(); else addEventListener('DOMContentLoaded', motion);
+})();
+</script>
+</body>
+</html>
