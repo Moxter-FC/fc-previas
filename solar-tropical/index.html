@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pousada Solar Tropical · Pousada com piscina em Saquarema, RJ</title>
+<meta name="description" content="Pousada em Saquarema com piscina, jardim com redes e café da manhã com bolos caseiros, a 13 minutos a pé da Praia do Boqueirão. Peça sua reserva direto pelo WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6EEDF">
+<meta property="og:title" content="Pousada Solar Tropical · Saquarema, RJ">
+<meta property="og:description" content="Piscina, jardim com redes e café com bolos caseiros. Quem recebe são a Dona Tânia e o Seu Gérard.">
+<meta property="og:image" content="https://suporteskoupa-coder.github.io/fc-previas/solar-tropical/img/share.jpg">
+<meta property="og:url" content="https://suporteskoupa-coder.github.io/fc-previas/solar-tropical/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Pousada Solar Tropical",
+ "address":{"@type":"PostalAddress","streetAddress":"Rua São Gonçalo, 2780","addressLocality":"Saquarema","addressRegion":"RJ","postalCode":"28990-552","addressCountry":"BR"},
+ "telephone":"+55 21 98182-4468","sameAs":["https://www.instagram.com/pousadasolartropical/"]}
+</script>
+<script>
+  // Motion only when the visitor allows it; if GSAP never loads, everything shows statically.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('m');
+    setTimeout(function(){ if(!window.gsap || !window.ScrollTrigger) document.documentElement.classList.remove('m'); }, 2500);
+  }
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --sand:#F6EEDF; --sand-2:#EFE3CE; --sand-3:#E6D5B8;
+  --terra:#C0532C; --terra-d:#93391A; --navy:#14304A; --navy-2:#0E2236; --sun:#EFB43F; --leaf:#24503A; --leaf-2:#1B3F2D;
+  --ink:#14304A; --ink-2:#3E5266;
+  --serif:'Young Serif', Georgia, serif; --sans:'Karla', system-ui, sans-serif;
+  --g:clamp(20px,5vw,64px); --wrap:min(1280px, 100% - 2*var(--g));
+  --navh:72px; --r:22px;
+  --E:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--sand);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:var(--sand);padding:10px 16px;border-radius:10px;z-index:100}
+.skip:focus{left:8px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.012em}
+h2{font-size:clamp(38px,4.8vw,72px)}
+h3{font-size:clamp(26px,2.4vw,36px)}
+.lede{font-size:clamp(18px,1.35vw,21px);color:var(--ink-2);max-width:34em}
+.line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.line > span{display:block}
+em.hl{font-style:normal;color:var(--terra)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .35s var(--E),background .3s,box-shadow .35s var(--E)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn--terra{background:var(--terra);color:#FFF8EE;box-shadow:0 10px 24px -12px rgba(147,57,26,.7)}
+.btn--terra:hover{background:var(--terra-d)}
+.btn--ghost{color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(20,48,74,.35)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn--wa{background:#1F7A4D;color:#fff;width:100%;justify-content:center;min-height:58px;font-size:17px}
+.btn--wa:hover{background:#17623D}
+.btn svg{width:20px;height:20px;flex:none}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .4s var(--E)}
+.ul:hover{background-size:100% 1.5px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--navh);z-index:50;display:flex;align-items:center;transition:background .35s,box-shadow .35s}
+.nav.is-solid{background:rgba(246,238,223,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(20,48,74,.1)}
+.nav__in{width:var(--wrap);margin-inline:auto;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:21px;line-height:1;white-space:nowrap}
+.brand svg{width:34px;height:34px;flex:none}
+.nav__links{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:15px}
+.nav__links a{text-decoration:none}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media (max-width:900px){.nav__links{display:none}.nav .btn{margin-left:auto}}
+
+/* hero */
+.hero{min-height:min(100svh,940px);padding:calc(var(--navh) + clamp(24px,4vw,56px)) 0 clamp(40px,5vw,72px);position:relative;overflow:hidden}
+.hero__in{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(32px,5vw,80px);align-items:center;min-height:calc(min(100svh,940px) - var(--navh) - 110px)}
+.hero h1{font-size:clamp(46px,6.3vw,100px);margin:18px 0 26px}
+.hero .kicker{color:var(--terra-d);display:flex;align-items:center;gap:10px}
+.hero .kicker::before{content:"";width:28px;height:2px;background:currentColor}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__meta{display:flex;align-items:center;gap:14px;margin-top:38px;font-size:15px;color:var(--ink-2)}
+.score{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:14px 14px 14px 4px;background:var(--navy);color:var(--sand);font-weight:700;font-size:19px;flex:none}
+.hero__meta b{color:var(--ink);display:block;font-size:16px}
+.hero__art{position:relative;justify-self:center;width:min(520px,100%)}
+.hero__glow{position:absolute;width:150%;aspect-ratio:1;left:-25%;top:-18%;border-radius:50%;background:radial-gradient(closest-side,rgba(239,180,63,.38),rgba(239,180,63,0));z-index:-1}
+.arch{position:relative;border-radius:999px 999px var(--r) var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--sand-3);box-shadow:0 40px 80px -40px rgba(20,48,74,.45)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:28% 50%}
+.hero__round{position:absolute;width:34%;aspect-ratio:1;border-radius:50%;overflow:hidden;left:-14%;bottom:9%;border:6px solid var(--sand);box-shadow:0 20px 40px -20px rgba(20,48,74,.5)}
+.hero__round img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;width:31%;aspect-ratio:1;right:-9%;top:6%;color:var(--navy)}
+.badge svg{width:100%;height:100%;overflow:visible}
+.badge__ring{transform-origin:50% 50%;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.badge__ring{animation:none}}
+@media (max-width:860px){
+  .hero{min-height:0}
+  .hero__in{grid-template-columns:1fr;min-height:0}
+  .hero__art{width:min(520px,100%);order:-1}
+  .arch{aspect-ratio:1/1;border-radius:999px 999px 18px 18px}
+  .hero__round{display:none}
+  .badge{width:26%;right:-2%;top:2%}
+  .hero h1{font-size:clamp(40px,11vw,64px);margin:12px 0 18px}
+  .hero__actions{margin-top:24px}
+  .hero__meta{margin-top:26px}
+}
+
+/* fact strip */
+.strip{background:var(--navy);color:var(--sand)}
+.strip ul{list-style:none;width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.strip li{display:flex;align-items:center;gap:14px;padding:26px 18px;font-weight:600;font-size:16px;line-height:1.3}
+.strip li + li{border-left:1px solid rgba(246,238,223,.16)}
+.strip svg{width:30px;height:30px;flex:none;color:var(--sun)}
+@media (max-width:900px){.strip ul{grid-template-columns:1fr 1fr}.strip li:nth-child(3){border-left:0}.strip li:nth-child(n+3){border-top:1px solid rgba(246,238,223,.16)}}
+@media (max-width:420px){.strip li{padding:20px 10px;font-size:15px;gap:10px}.strip svg{width:26px;height:26px}}
+
+/* section shell */
+.sec{padding:clamp(80px,10vw,150px) 0}
+.sec__head{display:grid;grid-template-columns:7fr 5fr;gap:24px 64px;align-items:end;margin-bottom:clamp(40px,5vw,72px)}
+.sec__head .kicker{grid-column:1/-1;color:var(--terra-d)}
+@media (max-width:860px){.sec__head{grid-template-columns:1fr}}
+
+/* ===== Um dia na Solar ===== */
+.day__intro{padding:clamp(80px,10vw,140px) 0 clamp(40px,5vw,64px)}
+.day__stage{position:relative}
+.day__sky{display:none}
+.s1{--sky:#F8E4CB;--ink-s:#14304A}.s2{--sky:#D4E9EF;--ink-s:#14304A}.s3{--sky:#F3D493;--ink-s:#14304A}.s4{--sky:#B8492A;--ink-s:#FFF4E6}.s5{--sky:#10243A;--ink-s:#F3EADB}
+.day__step{background:var(--sky);color:var(--ink-s);padding:clamp(56px,7vw,96px) var(--g)}
+.day__grid{width:min(1280px,100%);margin-inline:auto;display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
+.day__time{font-family:var(--serif);font-size:clamp(84px,11vw,176px);line-height:.9;letter-spacing:-.03em;display:flex;align-items:flex-start}
+.day__time small{font-size:.32em;margin:.18em 0 0 .06em;letter-spacing:0}
+.day__step h3{margin:18px 0 14px}
+.day__step p{font-size:clamp(17px,1.3vw,20px);max-width:28em;opacity:.88}
+.day__media{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;width:100%;background:rgba(0,0,0,.08);box-shadow:0 40px 80px -48px rgba(14,34,54,.6)}
+.day__media img{width:100%;height:100%;object-fit:cover}
+.sunset{width:100%;height:100%;display:block}
+@media (max-width:767px){.day__grid{grid-template-columns:1fr}.day__media{order:-1}}
+
+/* pinned mode (added by JS only on wide screens with motion) */
+.day.is-pinned .day__stage{height:100vh;height:100svh;overflow:hidden;background:#F8E4CB;color:var(--navy)}
+.day.is-pinned .day__sky{display:block;position:absolute;left:0;right:0;top:calc(var(--navh) + 8px);height:clamp(110px,17vh,170px);z-index:1;pointer-events:none}
+.day.is-pinned .day__sky svg{width:100%;height:100%;overflow:visible}
+.day.is-pinned .day__step{position:absolute;left:0;right:0;bottom:0;top:calc(var(--navh) + clamp(110px,17vh,170px));display:flex;align-items:center;background:none;color:inherit;padding-top:0;padding-bottom:clamp(24px,4vh,48px)}
+.day.is-pinned .day__media{width:min(100%, calc((100svh - var(--navh) - clamp(110px,17vh,170px) - 80px) * 4 / 3));justify-self:end}
+.arc-path{fill:none;stroke:currentColor;stroke-opacity:.38;stroke-width:1.5;stroke-dasharray:3 7}
+.arc-tick text{font-family:var(--sans);font-weight:700;font-size:15px;fill:currentColor;text-anchor:middle}
+.arc-tick circle{fill:currentColor;opacity:.5}
+.arc-horizon{stroke:currentColor;stroke-opacity:.25;stroke-width:1}
+
+/* ===== quartos ===== */
+.rooms__grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:start}
+.ph{border-radius:var(--r);overflow:hidden;background:var(--sand-3);position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--E)}
+.ph:hover img{transform:scale(1.03)}
+.rooms__tall{aspect-ratio:3/4}
+.rooms__pair{display:grid;grid-template-columns:4fr 5fr;gap:clamp(14px,2vw,24px);margin-top:clamp(28px,3vw,44px)}
+.rooms__pair .ph{aspect-ratio:4/5}
+.rooms__pair .ph:last-child{aspect-ratio:auto}
+.amen{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin-top:34px}
+.amen li{display:flex;gap:14px;align-items:center;font-weight:600}
+.amen svg{width:44px;height:44px;padding:10px;border-radius:12px;background:var(--sand-2);color:var(--terra-d);flex:none}
+@media (max-width:860px){.rooms__grid{grid-template-columns:1fr}.rooms__tall{aspect-ratio:4/5;max-height:560px}}
+@media (max-width:480px){.amen{grid-template-columns:1fr}}
+
+/* ===== jardim ===== */
+.garden{background:var(--leaf);color:var(--sand)}
+.garden .kicker{color:var(--sun)}
+.garden .lede{color:rgba(246,238,223,.82)}
+.collage{display:grid;grid-template-columns:4fr 5fr 3fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px);height:clamp(520px,58vw,780px)}
+.collage .ph{background:var(--leaf-2)}
+.c-a{grid-row:1/3}
+.c-b{grid-column:2/4}
+@media (max-width:760px){
+  .collage{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .collage .ph{aspect-ratio:1}
+  .c-a{grid-row:auto;grid-column:1/3;aspect-ratio:4/5!important}
+  .c-b{grid-column:1/3;aspect-ratio:16/10!important}
+}
+
+/* ===== café ===== */
+.cafe{background:var(--terra-d);color:#FFF4E6}
+.cafe .kicker{color:var(--sun)}
+.cafe .lede{color:rgba(255,244,230,.86)}
+.cafe__grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,22px)}
+.cafe__grid .ph{background:rgba(0,0,0,.15)}
+.k1{grid-column:1/8;aspect-ratio:16/10}
+.k2{grid-column:8/13;aspect-ratio:auto}
+.k3{grid-column:1/5;aspect-ratio:4/3}
+.k4{grid-column:5/9;aspect-ratio:4/3}
+.cafe__note{grid-column:9/13;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:8px 4px}
+.cafe__note p{font-family:var(--serif);font-size:clamp(24px,2.2vw,32px);line-height:1.15}
+.cafe__note span{font-size:15px;opacity:.8}
+@media (max-width:860px){
+  .k1,.k2,.k3,.k4,.cafe__note{grid-column:1/-1}
+  .k2{aspect-ratio:16/10}
+  .k3,.k4{grid-column:span 6}
+}
+
+/* ===== anfitriões ===== */
+.hosts__top{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.hosts h2{font-size:clamp(40px,5.4vw,84px)}
+.bars{list-style:none;display:grid;gap:18px}
+.bars li{display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-weight:600}
+.bars b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1}
+.bar{grid-column:1/-1;height:8px;border-radius:9px;background:var(--sand-3);overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);border-radius:9px;background:var(--terra);transform-origin:0 50%}
+.bars__src{font-size:14px;color:var(--ink-2);margin-top:6px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+.q{background:#FFF9EF;border-radius:var(--r);padding:clamp(26px,2.6vw,38px);display:flex;flex-direction:column;gap:22px;box-shadow:0 1px 0 rgba(20,48,74,.06);transition:transform .45s var(--E),box-shadow .45s var(--E)}
+.q:hover{transform:translateY(-2px);box-shadow:0 24px 50px -30px rgba(20,48,74,.35)}
+.q svg{width:34px;height:34px;color:var(--terra)}
+.q blockquote{font-size:18px;line-height:1.55;flex:1}
+.q cite{font-style:normal;font-weight:700;display:flex;align-items:center;gap:12px}
+.q cite span{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:var(--navy);font-family:var(--serif);font-size:18px}
+@media (max-width:960px){.hosts__top{grid-template-columns:1fr}.quotes{grid-template-columns:1fr}}
+
+/* ===== saquarema ===== */
+.town{background:var(--navy);color:var(--sand)}
+.town .kicker{color:var(--sun)}
+.town__grid{display:grid;grid-template-columns:6fr 6fr;gap:clamp(32px,5vw,80px);align-items:start}
+.town h2{margin:18px 0 26px}
+.town .lede{color:rgba(246,238,223,.8)}
+.places{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.places h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--sun);margin-bottom:14px}
+.places ul{list-style:none;display:grid;gap:12px}
+.places li{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(246,238,223,.14);font-weight:600}
+.places li small{font-weight:400;opacity:.75;white-space:nowrap}
+.town__media{display:grid;gap:clamp(14px,2vw,22px)}
+.town__media .ph{aspect-ratio:4/3;background:var(--navy-2)}
+.map{border-radius:var(--r);overflow:hidden;background:var(--navy-2);aspect-ratio:16/9;position:relative;display:grid;place-items:center;text-align:center}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map__btn{display:grid;gap:10px;justify-items:center;padding:24px;background:none;border:0;cursor:pointer;color:var(--sand)}
+.map__btn svg{width:40px;height:40px;color:var(--sun)}
+.map__btn b{font-size:18px}
+.map__btn span{opacity:.75;font-size:15px}
+.map__dots{position:absolute;inset:0;background-image:radial-gradient(rgba(246,238,223,.12) 1px,transparent 1.5px);background-size:18px 18px}
+@media (max-width:900px){.town__grid{grid-template-columns:1fr}}
+@media (max-width:480px){.places{grid-template-columns:1fr}}
+
+/* ===== reserva ===== */
+.book{background:var(--sand-2)}
+.book__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,5vw,88px);align-items:center}
+.book h2{margin:18px 0 22px;font-size:clamp(38px,4.3vw,64px)}
+.book__photo{margin-top:36px;aspect-ratio:4/3;max-width:520px}
+.book__photo img{object-position:50% 30%}
+.plan{background:#FFFAF2;border-radius:28px;padding:clamp(22px,3vw,40px);box-shadow:0 40px 90px -50px rgba(20,48,74,.45);display:grid;gap:20px}
+.plan__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:8px;border:0;min-width:0}
+.field > span,.field legend{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.field legend{margin-bottom:8px}
+.field input[type=date]{width:100%;min-height:54px;border-radius:14px;border:1.5px solid rgba(20,48,74,.2);background:#fff;padding:0 14px;font-size:17px;font-weight:600}
+.field input[type=date]:focus{border-color:var(--navy);outline:none;box-shadow:0 0 0 3px rgba(239,180,63,.55)}
+.stepper{display:flex;align-items:center;justify-content:space-between;min-height:54px;border-radius:14px;border:1.5px solid rgba(20,48,74,.2);background:#fff;padding:0 6px}
+.stepper button{width:44px;height:44px;border-radius:10px;border:0;background:var(--sand-2);font-size:22px;font-weight:700;cursor:pointer;line-height:1;transition:background .2s,transform .2s}
+.stepper button:hover{background:var(--sand-3)}
+.stepper button:active{transform:scale(.94)}
+.stepper button:disabled{opacity:.35;cursor:default}
+.stepper output{font-weight:700;font-size:19px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid rgba(20,48,74,.2);font-weight:600;transition:all .25s}
+.chips input:checked + span{background:var(--navy);border-color:var(--navy);color:var(--sand)}
+.chips input:focus-visible + span{outline:3px solid var(--sun);outline-offset:2px}
+.plan__sum{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.15;min-height:1.2em}
+.plan__sum small{font-family:var(--sans);font-size:15px;color:var(--ink-2)}
+.plan__msg{background:#E9F3EC;border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:15px;line-height:1.5;white-space:pre-line;color:#163B2A;max-height:260px;overflow:auto}
+.plan__msg::before{content:"Prévia da mensagem";display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:6px}
+.plan__err{color:#A0261A;font-weight:600;font-size:15px;min-height:0}
+.plan__err:empty{display:none}
+.plan__note{font-size:14px;color:var(--ink-2);text-align:center}
+@media (max-width:900px){.book__grid{grid-template-columns:1fr}.book__photo{display:none}}
+@media (max-width:400px){.plan__row{grid-template-columns:1fr}}
+
+/* ===== footer ===== */
+.foot{background:var(--navy-2);color:var(--sand);padding:clamp(72px,8vw,120px) 0 40px;overflow:hidden}
+.foot__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.foot h2{font-size:clamp(34px,3.6vw,52px);max-width:12em}
+.foot h3{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sun);margin-bottom:14px}
+.foot p,.foot a{font-size:16px;line-height:1.8}
+.foot__word{font-family:var(--serif);font-size:min(12.6vw,196px);line-height:.85;letter-spacing:-.04em;margin-top:clamp(56px,7vw,100px);white-space:nowrap;color:var(--sand)}
+.foot__word span{color:var(--sun)}
+.foot__base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(246,238,223,.14);margin-top:28px;padding-top:22px;font-size:14px;opacity:.7}
+@media (max-width:860px){.foot__grid{grid-template-columns:1fr}}
+
+/* mobile booking bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;transform:translateY(140%);transition:transform .5s var(--E)}
+.mbar.is-on{transform:none}
+.mbar .btn{width:100%;justify-content:center;box-shadow:0 18px 40px -14px rgba(14,34,54,.6)}
+@media (max-width:760px){.mbar{display:block}}
+
+/* motion initial states (only with .m) */
+html.m [data-rise]{opacity:0;transform:translateY(28px)}
+html.m .line > span{transform:translateY(106%)}
+html.m .clip{clip-path:inset(100% 0 0 0)}
+html.m .hero .arch{clip-path:inset(100% 0 0 0 round 999px 999px 22px 22px)}
+html.m .hero__round, html.m .badge{opacity:0;transform:scale(.6)}
+html.m [data-hero]{opacity:0;transform:translateY(24px)}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#topo" aria-label="Pousada Solar Tropical, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#14304A"/><circle cx="32" cy="38" r="14" fill="#EFB43F"/><rect x="6" y="38" width="52" height="20" fill="#14304A"/><path d="M10 44c6 0 6-3 11-3s5 3 11 3 6-3 11-3 5 3 11 3" fill="none" stroke="#F6EEDF" stroke-width="3" stroke-linecap="round"/><path d="M14 52c6 0 6-3 11-3s5 3 11 3 6-3 11-3" fill="none" stroke="#C0532C" stroke-width="3" stroke-linecap="round"/></svg>
+      Solar Tropical
+    </a>
+    <nav class="nav__links" aria-label="Seções">
+      <a class="ul" href="#dia">O dia</a>
+      <a class="ul" href="#quartos">Quartos</a>
+      <a class="ul" href="#cafe">Café</a>
+      <a class="ul" href="#anfitrioes">Anfitriões</a>
+      <a class="ul" href="#saquarema">Saquarema</a>
+    </nav>
+    <a class="btn btn--terra" href="#reserva">Reservar</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero__in">
+    <div>
+      <p class="kicker" data-hero>Pousada em Saquarema · RJ</p>
+      <h1><span class="line"><span>Um lugar gostoso</span></span><span class="line"><span>que <em class="hl">abraça</em></span></span><span class="line"><span>a gente.</span></span></h1>
+      <p class="lede" data-hero>Piscina, jardim com redes e café da manhã com bolos caseiros, a 13 minutos a pé da Praia do Boqueirão. Quem recebe são a Dona Tânia e o Seu Gérard.</p>
+      <div class="hero__actions" data-hero>
+        <a class="btn btn--terra" href="#reserva">Pedir minha reserva
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#dia">Ver um dia aqui</a>
+      </div>
+      <div class="hero__meta" data-hero>
+        <span class="score">9,6</span>
+        <span><b>Excepcional no Booking</b>nota de 49 avaliações de hóspedes</span>
+      </div>
+    </div>
+    <div class="hero__art">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="arch"><img src="img/hero.jpg" width="1200" height="900" alt="Piscina da pousada com guarda-sóis coloridos, palmeiras e os quartos de telhado colonial em volta"></div>
+      <div class="hero__round"><img src="img/flores2.jpg" width="512" height="768" alt="Flores do jardim da pousada"></div>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <circle cx="100" cy="100" r="98" fill="#F6EEDF"/>
+          <g class="badge__ring"><text font-family="Karla, sans-serif" font-weight="700" font-size="16" fill="#14304A"><textPath href="#ring" textLength="486" lengthAdjust="spacing">PISCINA • JARDIM • CAFÉ • SAQUAREMA •</textPath></text></g>
+          <circle cx="100" cy="100" r="34" fill="#EFB43F"/>
+          <g stroke="#C0532C" stroke-width="5" stroke-linecap="round"><path d="M100 50v-8M100 158v-8M50 100h-8M158 100h-8"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACT STRIP -->
+<section class="strip" aria-label="Destaques">
+  <ul>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><path d="M2 22c2 0 2-1.5 4-1.5S8 22 10 22s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><circle cx="12" cy="8" r="4"/><path d="M12 1v1M5 8H4M20 8h-1M7 3l.7.7M17 3l-.7.7"/></svg>13 min a pé da Praia do Boqueirão</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 17V5a2 2 0 0 1 4 0M16 17V5a2 2 0 0 0-2-2"/><path d="M8 9h8M8 13h8"/><path d="M2 20c2 0 2-1.5 4-1.5S8 20 10 20s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg>Piscina ao ar livre e jardim</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 12h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg>Café com bolos caseiros</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>Estacionamento grátis</li>
+  </ul>
+</section>
+
+<!-- UM DIA NA SOLAR (signature) -->
+<section class="day" id="dia" aria-labelledby="dia-t">
+  <div class="day__intro wrap">
+    <div class="sec__head" style="margin-bottom:0">
+      <p class="kicker">Um dia aqui</p>
+      <h2 id="dia-t"><span class="line"><span>Do café da manhã</span></span><span class="line"><span>ao céu estrelado.</span></span></h2>
+      <p class="lede" data-rise>Role a página e acompanhe o sol. É assim que passa um dia de quem se hospeda na Solar Tropical.</p>
+    </div>
+  </div>
+
+  <div class="day__stage" id="dayStage">
+    <div class="day__sky" aria-hidden="true">
+      <svg viewBox="0 0 1000 170" preserveAspectRatio="xMidYMax meet">
+        <line class="arc-horizon" x1="0" y1="160" x2="1000" y2="160"/>
+        <path id="arcPath" class="arc-path" d="M90 160 C 250 -20, 750 -20, 910 160"/>
+        <g id="arcTicks"></g>
+        <g id="moon" opacity="0"><path d="M842 40a22 22 0 1 0 22 30 17 17 0 1 1-22-30z" fill="#F3EADB"/><circle cx="700" cy="30" r="2" fill="#F3EADB"/><circle cx="620" cy="70" r="1.6" fill="#F3EADB"/><circle cx="760" cy="96" r="1.4" fill="#F3EADB"/><circle cx="540" cy="36" r="1.8" fill="#F3EADB"/><circle cx="905" cy="104" r="1.5" fill="#F3EADB"/></g>
+        <g id="sun"><circle r="30" fill="#EFB43F" opacity=".28"/><circle r="17" fill="#EFB43F"/></g>
+      </svg>
+    </div>
+
+    <article class="day__step s1">
+      <div class="day__grid">
+        <div><div class="day__time">8<small>h</small></div><h3>Café da manhã</h3><p>Mesa posta com bolos caseiros, pães, frios e sucos, servida no salão da pousada. Fresquinho, como em casa.</p></div>
+        <div class="day__media"><img src="img/cafe.jpg" width="1280" height="720" loading="lazy" alt="Mesa do café da manhã com garrafas de café, sucos, pães e bolos"></div>
+      </div>
+    </article>
+    <article class="day__step s2">
+      <div class="day__grid">
+        <div><div class="day__time">11<small>h</small></div><h3>Piscina e jardim</h3><p>Guarda-sol, espreguiçadeira e mergulho. Depois, uma rede na varanda, de frente pro verde.</p></div>
+        <div class="day__media"><img src="img/piscina.jpg" width="1200" height="900" loading="lazy" alt="Piscina da pousada com deck de pedra e guarda-sóis"></div>
+      </div>
+    </article>
+    <article class="day__step s3">
+      <div class="day__grid">
+        <div><div class="day__time">15<small>h</small></div><h3>Praia</h3><p>A Praia do Boqueirão fica a 13 minutos a pé. Itaúna e a Praia da Vila também estão pertinho.</p></div>
+        <div class="day__media"><img src="img/praia.jpg" width="1024" height="585" loading="lazy" alt="Onda quebrando no mar de Saquarema com a Igreja de Nazareth ao fundo"></div>
+      </div>
+    </article>
+    <article class="day__step s4">
+      <div class="day__grid">
+        <div><div class="day__time">18<small>h</small></div><h3>Pôr do sol no Morro da Cruz</h3><p>Suba o Mirante do Morro da Cruz. Quem é de Saquarema garante: é o pôr do sol mais bonito do planeta.</p></div>
+        <div class="day__media">
+          <svg class="sunset" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração do sol se pondo atrás do Morro da Cruz">
+            <defs>
+              <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B2150"/><stop offset=".45" stop-color="#C2456A"/><stop offset=".78" stop-color="#F08A3C"/><stop offset="1" stop-color="#F7C25A"/></linearGradient>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B2E52"/><stop offset="1" stop-color="#1A2340"/></linearGradient>
+            </defs>
+            <rect width="400" height="210" fill="url(#sk)"/>
+            <circle id="setSun" cx="318" cy="168" r="40" fill="#FFD27A"/>
+            <path d="M0 210 L0 168 C 40 160 70 150 100 132 C 122 119 138 112 152 112 C 168 112 184 124 204 142 C 226 160 250 176 290 186 L400 196 L400 210 Z" fill="#2A1636"/>
+            <g stroke="#2A1636" stroke-width="3.2" stroke-linecap="round"><path d="M152 112 V 88 M144 96 H160"/></g>
+            <rect y="210" width="400" height="90" fill="url(#sea)"/>
+            <g stroke="#FFD27A" stroke-linecap="round" opacity=".75"><path d="M268 222h100" stroke-width="3"/><path d="M283 236h70" stroke-width="2.5"/><path d="M296 250h44" stroke-width="2"/><path d="M306 264h24" stroke-width="2"/></g>
+          </svg>
+        </div>
+      </div>
+    </article>
+    <article class="day__step s5">
+      <div class="day__grid">
+        <div><div class="day__time">21<small>h</small></div><h3>Noite na pousada</h3><p>A piscina iluminada, o jardim em silêncio e o quarto fresquinho no ar-condicionado. Amanhã tem café de novo.</p></div>
+        <div class="day__media"><img src="img/noite.jpg" width="1200" height="900" loading="lazy" alt="A piscina da pousada iluminada à noite"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- QUARTOS -->
+<section class="sec" id="quartos" aria-labelledby="q-t">
+  <div class="wrap rooms__grid">
+    <div class="ph rooms__tall clip"><img src="img/q-amarelo.jpg" width="686" height="900" loading="lazy" alt="Quarto de casal com cama arrumada, almofadas amarelas e azuis e toalhas dobradas"></div>
+    <div>
+      <p class="kicker" style="color:var(--terra-d)">Quartos</p>
+      <h2 id="q-t" style="margin:18px 0 24px"><span class="line"><span>Pra casal</span></span><span class="line"><span>e pra família toda.</span></span></h2>
+      <p class="lede" data-rise>Quartos no térreo, com varanda de frente pro jardim ou pra piscina. Tem quarto de casal e quarto família com beliche, pra quem vem com as crianças.</p>
+      <ul class="amen" data-rise>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M4.9 6l14.2 12M4.9 18L19.1 6"/><path d="M9 3l3 2 3-2M9 21l3-2 3 2"/></svg>Ar-condicionado</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg>TV de tela plana</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 10h12M9 6v1.5M9 13v3"/></svg>Frigobar</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12V5a2 2 0 0 1 4 0"/><path d="M3 12h18v2a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M7 20l-1 2M17 20l1 2"/></svg>Banheiro privativo</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18V8M22 18v-5H2"/><path d="M6 13V10h5v3"/><path d="M2 16h20"/></svg>Roupa de cama e toalhas</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M2 10l10-6 10 6"/><path d="M9 21v-5a3 3 0 0 1 6 0v5"/></svg>Varanda no térreo</li>
+      </ul>
+      <div class="rooms__pair">
+        <div class="ph clip"><img src="img/q-familia.jpg" width="675" height="900" loading="lazy" alt="Quarto família com cama de casal e beliche"></div>
+        <div class="ph clip"><img src="img/q-laranja.jpg" width="1280" height="720" loading="lazy" alt="Quarto com cama de casal e cama de solteiro, paredes laranja e quadros"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JARDIM -->
+<section class="sec garden" id="jardim" aria-labelledby="j-t">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Natureza</p>
+      <h2 id="j-t"><span class="line"><span>Rede na varanda,</span></span><span class="line"><span>flor no jardim.</span></span></h2>
+      <p class="lede" data-rise>Natureza, conforto e muita paz pra curtir e dar um reset na alma. Os quartos abrem pra uma varanda com redes e cadeiras, e o jardim vai até a piscina.</p>
+    </div>
+    <div class="collage">
+      <div class="ph c-a clip"><img src="img/varanda.jpg" width="675" height="900" loading="lazy" alt="Varanda com redes, cadeiras amarelas e o jardim ao fundo"></div>
+      <div class="ph c-b clip"><img src="img/fachada.jpg" width="1280" height="720" loading="lazy" alt="Fachada dos quartos com palmeiras, gramado e caminho de pedras"></div>
+      <div class="ph clip"><img src="img/flores.jpg" width="1024" height="683" loading="lazy" alt="Flores cor-de-rosa no jardim da pousada"></div>
+      <div class="ph clip"><img src="img/varanda2.jpg" width="675" height="900" loading="lazy" alt="Rede pendurada na varanda, entre palmeiras"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAFÉ -->
+<section class="sec cafe" id="cafe" aria-labelledby="c-t">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="kicker">Café da manhã</p>
+      <h2 id="c-t"><span class="line"><span>Bolo caseiro</span></span><span class="line"><span>todo dia de manhã.</span></span></h2>
+      <p class="lede" data-rise>O café da manhã é um dos pontos que os hóspedes mais elogiam: bolos caseiros, pão, frios, sucos e café, numa mesa farta.</p>
+    </div>
+    <div class="cafe__grid">
+      <div class="ph k1 clip"><img src="img/cafe-pao.jpg" width="1280" height="720" loading="lazy" alt="Cestas de pão e sucos de laranja e maracujá no café da manhã"></div>
+      <div class="ph k2 clip"><img src="img/cafe-mesa.jpg" width="1280" height="720" loading="lazy" alt="Mesa do café com bolos, pães e garrafas de café"></div>
+      <div class="ph k3 clip"><img src="img/cafe-bolo.jpg" width="1280" height="720" loading="lazy" alt="Bolo de chocolate, queijo e presunto no café da manhã"></div>
+      <div class="ph k4 clip"><img src="img/cafe-xicaras.jpg" width="1280" height="720" loading="lazy" alt="Mesa posta com xícaras, pratos e flores"></div>
+      <div class="cafe__note" data-rise>
+        <p>“Café da manhã maravilhoso.”</p>
+        <span>Patuca, hóspede</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANFITRIÕES -->
+<section class="sec hosts" id="anfitrioes" aria-labelledby="a-t">
+  <div class="wrap">
+    <div class="hosts__top">
+      <div>
+        <p class="kicker" style="color:var(--terra-d)">Anfitriões</p>
+        <h2 id="a-t" style="margin-top:18px"><span class="line"><span>Quem recebe você</span></span><span class="line"><span>é a <em class="hl">Dona Tânia</em></span></span><span class="line"><span>e o <em class="hl">Seu Gérard</em>.</span></span></h2>
+      </div>
+      <div data-rise>
+        <p class="lede" style="margin-bottom:30px">Eles são os donos da pousada, e é o nome deles que aparece nas avaliações. Não à toa, a nota mais alta no Booking é a dos funcionários.</p>
+        <ul class="bars" id="bars">
+          <li>Funcionários <b>9,8</b><span class="bar"><i style="--w:98%"></i></span></li>
+          <li>Limpeza <b>9,7</b><span class="bar"><i style="--w:97%"></i></span></li>
+          <li>Conforto <b>9,6</b><span class="bar"><i style="--w:96%"></i></span></li>
+        </ul>
+        <p class="bars__src">Notas de 0 a 10 no Booking.com, 49 avaliações.</p>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="q" data-rise>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v4h5v5H3M21 7h-4a3 3 0 0 0-3 3v4h5v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <blockquote>Minha experiência com a minha família foi MARAVILHOSA, uma recepção incrível. Quartos limpos aconchegantes. Café da manhã uma delicia. Dona Tânia e o senhor Gérard excelentes anfitriões. Voltaremos mais vezes com certeza.</blockquote>
+        <figcaption><cite><span>L</span>Luana Sa</cite></figcaption>
+      </figure>
+      <figure class="q" data-rise>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v4h5v5H3M21 7h-4a3 3 0 0 0-3 3v4h5v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <blockquote>Pousada mto confortável, recepção nota Mil, td mto limpinho, roupas de cama limpinha, café da manhã maravilhoso, piscina limpa […] Dona Tânia e seu Gerard são os donos da Pousada, duas pessoas amorosas... Super Indico o local.</blockquote>
+        <figcaption><cite><span>P</span>Patuca</cite></figcaption>
+      </figure>
+      <figure class="q" data-rise>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v4h5v5H3M21 7h-4a3 3 0 0 0-3 3v4h5v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <blockquote>Tratamento excelente! Ambiente limpo, confortável, agradável e tranquilo! Amei e recomendo! Um toque de carinho que nos deixa feliz ☺️</blockquote>
+        <figcaption><cite><span>J</span>Jaqueline Lima</cite></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SAQUAREMA -->
+<section class="sec town" id="saquarema" aria-labelledby="s-t">
+  <div class="wrap town__grid">
+    <div>
+      <p class="kicker">Onde fica</p>
+      <h2 id="s-t"><span class="line"><span>Saquarema,</span></span><span class="line"><span>capital nacional</span></span><span class="line"><span>do surfe.</span></span></h2>
+      <p class="lede" data-rise>A pousada fica na Rua São Gonçalo, perto do Centro, das praias e dos principais pontos turísticos da cidade, na Região dos Lagos.</p>
+      <div class="places" data-rise>
+        <div>
+          <h3>Praias</h3>
+          <ul><li>Praia do Boqueirão <small>13 min a pé</small></li><li>Praia de Itaúna</li><li>Praia da Vila</li></ul>
+        </div>
+        <div>
+          <h3>Passeios</h3>
+          <ul><li>Mirante do Morro da Cruz</li><li>Igreja N. S. de Nazareth</li><li>Praça da Casa da Pedra</li><li>Gruta N. S. de Lourdes</li><li>Museu do Sambaqui da Beirada</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="town__media">
+      <div class="ph clip"><img src="img/saquarema.jpg" width="1024" height="768" loading="lazy" alt="Letreiro Eu amo Saquarema, Capital Nacional do Surf, à beira da lagoa"></div>
+      <div class="map" id="map" data-rise>
+        <div class="map__dots" aria-hidden="true"></div>
+        <button class="map__btn" type="button" id="mapBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <b>Rua São Gonçalo, 2780 · Saquarema</b>
+          <span>Toque para abrir o mapa</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section class="sec book" id="reserva" aria-labelledby="r-t">
+  <div class="wrap book__grid">
+    <div>
+      <p class="kicker" style="color:var(--terra-d)">Reserva</p>
+      <h2 id="r-t"><span class="line"><span>Peça sua reserva</span></span><span class="line"><span>direto com a gente.</span></span></h2>
+      <p class="lede" data-rise>Escolha as datas e quem vem. A mensagem já chega pronta no WhatsApp da pousada, e a gente responde com a disponibilidade e os valores.</p>
+      <div class="ph book__photo clip"><img src="img/palmeira.jpg" width="680" height="900" loading="lazy" alt="Piscina vista entre folhas de palmeira, com guarda-sóis coloridos"></div>
+    </div>
+    <form class="plan" id="planner" novalidate data-rise>
+      <div class="plan__row">
+        <label class="field"><span>Entrada</span><input type="date" id="dIn" required></label>
+        <label class="field"><span>Saída</span><input type="date" id="dOut" required></label>
+      </div>
+      <div class="plan__row">
+        <div class="field"><span id="l-ad">Adultos</span>
+          <div class="stepper" role="group" aria-labelledby="l-ad">
+            <button type="button" data-k="ad" data-d="-1" aria-label="Menos um adulto">−</button>
+            <output id="ad" aria-live="polite">2</output>
+            <button type="button" data-k="ad" data-d="1" aria-label="Mais um adulto">+</button>
+          </div>
+        </div>
+        <div class="field"><span id="l-ch">Crianças</span>
+          <div class="stepper" role="group" aria-labelledby="l-ch">
+            <button type="button" data-k="ch" data-d="-1" aria-label="Menos uma criança">−</button>
+            <output id="ch" aria-live="polite">0</output>
+            <button type="button" data-k="ch" data-d="1" aria-label="Mais uma criança">+</button>
+          </div>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend>Quarto</legend>
+        <div class="chips">
+          <label><input type="radio" name="room" value="casal"><span>Casal</span></label>
+          <label><input type="radio" name="room" value="família"><span>Família</span></label>
+          <label><input type="radio" name="room" value="" checked><span>Tanto faz</span></label>
+        </div>
+      </fieldset>
+      <div class="plan__sum" id="sum" aria-live="polite">Escolha as datas</div>
+      <div class="plan__msg" id="msg"></div>
+      <p class="plan__err" id="err" role="alert"></p>
+      <button class="btn btn--wa" type="submit">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3a.5.5 0 0 0 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
+        Pedir reserva pelo WhatsApp
+      </button>
+      <p class="plan__note">Nada é cobrado aqui. A pousada confirma tudo com você pelo WhatsApp.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <h2>Sabe aquele lugar gostoso que abraça a gente? É aqui.</h2>
+      <div>
+        <h3>Contato</h3>
+        <p><a class="ul" href="https://wa.me/5521981824468" target="_blank" rel="noopener">WhatsApp (21) 98182-4468</a><br>
+        <a class="ul" href="https://www.instagram.com/pousadasolartropical/" target="_blank" rel="noopener">@pousadasolartropical</a></p>
+      </div>
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua São Gonçalo, 2780<br>Saquarema, RJ</p>
+      </div>
+    </div>
+    <div class="foot__word" aria-hidden="true">Solar Tropical<span>.</span></div>
+    <div class="foot__base"><span>© 2026 Pousada Solar Tropical</span><span>Prévia criada por FC Design</span></div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="btn btn--terra" href="#reserva">Pedir reserva</a></div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var WA='5521981824468';
+
+  /* nav */
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('is-solid', scrollY>30); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* mobile bar: after the hero, hidden over the booking form */
+  var mbar=document.getElementById('mbar'), heroOut=false, bookIn=false;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ heroOut=!e[0].isIntersecting; upd(); }).observe(document.querySelector('.hero'));
+    var hide={};
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ hide[e.target.id||'f']=e.isIntersecting; }); bookIn=hide.reserva||hide.f; upd(); });
+    io.observe(document.getElementById('reserva')); io.observe(document.querySelector('.foot'));
+  }
+  function upd(){ mbar.classList.toggle('is-on', heroOut && !bookIn); }
+
+  /* map: load only when asked */
+  document.getElementById('mapBtn').addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.google.com/maps?q='+encodeURIComponent('Rua São Gonçalo, 2780, Saquarema - RJ')+'&output=embed';
+    f.title='Mapa: Pousada Solar Tropical, Rua São Gonçalo, 2780, Saquarema'; f.loading='lazy';
+    document.getElementById('map').appendChild(f); this.remove();
+  });
+
+  /* stay planner -> WhatsApp */
+  var dIn=document.getElementById('dIn'), dOut=document.getElementById('dOut');
+  var cnt={ad:2,ch:0}, lim={ad:[1,8],ch:[0,6]};
+  var sum=document.getElementById('sum'), msgEl=document.getElementById('msg'), err=document.getElementById('err');
+  var DAYS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  function iso(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  function parse(s){ if(!s) return null; var p=s.split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
+  function br(d){ return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear(); }
+  var today=new Date(); today.setHours(0,0,0,0);
+  dIn.min=iso(today); var t1=new Date(today); t1.setDate(t1.getDate()+1); dOut.min=iso(t1);
+  function nights(){ var a=parse(dIn.value), b=parse(dOut.value); if(!a||!b) return 0; return Math.round((Date.UTC(b.getFullYear(),b.getMonth(),b.getDate())-Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()))/864e5); }
+  function people(){ var s=cnt.ad+(cnt.ad>1?' adultos':' adulto'); if(cnt.ch) s+=' e '+cnt.ch+(cnt.ch>1?' crianças':' criança'); return s; }
+  function room(){ var r=document.querySelector('input[name=room]:checked'); return r?r.value:''; }
+  function build(){
+    var a=parse(dIn.value), b=parse(dOut.value), n=nights();
+    var m='Olá! Vim pelo site e queria pedir uma reserva na Pousada Solar Tropical.\n\n';
+    if(a) m+='Entrada: '+br(a)+' ('+DAYS[a.getDay()]+')\n';
+    if(b) m+='Saída: '+br(b)+' ('+DAYS[b.getDay()]+')\n';
+    if(n>0) m+=n+(n>1?' noites':' noite')+'\n';
+    m+=people()+'\n';
+    if(room()) m+='Quarto: '+room()+'\n';
+    m+='\nTem disponibilidade? Qual o valor?';
+    return m;
+  }
+  function render(){
+    var n=nights();
+    sum.innerHTML = n>0 ? n+(n>1?' noites':' noite')+' <small>· '+people()+'</small>' : 'Escolha as datas <small>· '+people()+'</small>';
+    msgEl.textContent=build();
+    document.querySelectorAll('.stepper button').forEach(function(b){
+      var k=b.dataset.k, d=+b.dataset.d; b.disabled = d<0 ? cnt[k]<=lim[k][0] : cnt[k]>=lim[k][1];
+    });
+  }
+  dIn.addEventListener('change',function(){
+    err.textContent='';
+    var a=parse(dIn.value); if(!a) return render();
+    var mn=new Date(a); mn.setDate(mn.getDate()+1); dOut.min=iso(mn);
+    var b=parse(dOut.value);
+    if(!b || b<=a){ var d=new Date(a); d.setDate(d.getDate()+2); dOut.value=iso(d); }
+    render();
+  });
+  dOut.addEventListener('change',function(){ err.textContent=''; render(); });
+  document.querySelectorAll('.stepper button').forEach(function(b){
+    b.addEventListener('click',function(){ var k=b.dataset.k; cnt[k]=Math.min(lim[k][1],Math.max(lim[k][0],cnt[k]+(+b.dataset.d))); document.getElementById(k).textContent=cnt[k]; render(); });
+  });
+  document.querySelectorAll('input[name=room]').forEach(function(r){ r.addEventListener('change',render); });
+  document.getElementById('planner').addEventListener('submit',function(e){
+    e.preventDefault();
+    var a=parse(dIn.value), b=parse(dOut.value);
+    if(!a){ err.textContent='Escolha a data de entrada.'; dIn.focus(); return; }
+    if(a<today){ err.textContent='A data de entrada já passou. Escolha uma data a partir de hoje.'; dIn.focus(); return; }
+    if(!b){ err.textContent='Escolha a data de saída.'; dOut.focus(); return; }
+    if(b<=a){ err.textContent='A saída precisa ser depois da entrada.'; dOut.focus(); return; }
+    err.textContent='';
+    var url='https://wa.me/'+WA+'?text='+encodeURIComponent(build());
+    if(matchMedia('(pointer:fine)').matches){ var w=window.open(url,'_blank'); if(w){ w.opener=null; return; } }
+    location.href=url;
+  });
+  render();
+
+  /* motion */
+  function hasMotion(){ return html.classList.contains('m') && window.gsap && window.ScrollTrigger; }
+  function motion(){
+    if(!hasMotion()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var E='expo.out';
+
+    gsap.timeline({defaults:{ease:E}})
+      .to('.hero .line > span',{y:0,duration:1.25,stagger:.1},0.1)
+      .to('[data-hero]',{opacity:1,y:0,duration:1,stagger:.08},0.35)
+      .to('.hero .arch',{clipPath:'inset(0% 0 0 0 round 999px 999px 22px 22px)',duration:1.5,ease:'expo.inOut'},0)
+      .from('.hero .arch img',{scale:1.18,duration:2.2,ease:'power3.out'},0.05)
+      .to('.hero__round, .badge',{opacity:1,scale:1,duration:1.1,stagger:.12,ease:'back.out(1.6)'},0.9);
+    gsap.to('.hero__glow',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+    gsap.utils.toArray('main section:not(.hero) .line').forEach(function(l){
+      gsap.to(l.querySelector('span'),{y:0,duration:1.2,ease:E,scrollTrigger:{trigger:l,start:'top 90%'}});
+    });
+    var rise=function(els){ gsap.to(els,{opacity:1,y:0,duration:1.05,stagger:.08,ease:E,overwrite:true}); };
+    ScrollTrigger.batch('main [data-rise]',{start:'top 92%',once:true,onEnter:rise,onLeave:rise});
+    gsap.utils.toArray('.clip').forEach(function(f){
+      gsap.timeline({scrollTrigger:{trigger:f,start:'top 88%'}})
+        .to(f,{clipPath:'inset(0% 0 0 0)',duration:1.3,ease:'expo.inOut'})
+        .from(f.querySelector('img'),{scale:1.16,duration:1.8,ease:'power3.out'},0);
+    });
+    gsap.from('#bars i',{scaleX:0,duration:1.6,stagger:.15,ease:'expo.out',scrollTrigger:{trigger:'#bars',start:'top 85%'}});
+    gsap.from('.foot__word',{xPercent:-6,opacity:0,duration:1.6,ease:E,scrollTrigger:{trigger:'.foot',start:'top 85%'}});
+
+    /* signature: the day, pinned on wide screens only */
+    var day=document.getElementById('dia');
+    ScrollTrigger.matchMedia({
+      '(min-width: 768px) and (min-height: 600px)': function(){
+        day.classList.add('is-pinned');
+        var stage=document.getElementById('dayStage');
+        var steps=gsap.utils.toArray('.day__step');
+        var sky=['#F8E4CB','#D4E9EF','#F3D493','#B8492A','#10243A'];
+        var ink=['#14304A','#14304A','#14304A','#FFF4E6','#F3EADB'];
+        var path=document.getElementById('arcPath'), len=path.getTotalLength();
+        var sun=document.getElementById('sun'), ticks=document.getElementById('arcTicks');
+        var labels=['8h','11h','15h','18h'], svgNS='http://www.w3.org/2000/svg';
+        ticks.innerHTML='';
+        labels.forEach(function(t,i){
+          var p=path.getPointAtLength(len*i/3), g=document.createElementNS(svgNS,'g'); g.setAttribute('class','arc-tick');
+          var c=document.createElementNS(svgNS,'circle'); c.setAttribute('cx',p.x); c.setAttribute('cy',p.y); c.setAttribute('r',3.5);
+          var tx=document.createElementNS(svgNS,'text'); tx.setAttribute('x',p.x); tx.setAttribute('y',p.y-(i===0||i===3?14:16)); tx.textContent=t;
+          if(i===0) tx.setAttribute('x',p.x-26); if(i===3) tx.setAttribute('x',p.x+28);
+          g.appendChild(c); g.appendChild(tx); ticks.appendChild(g);
+        });
+        var s={p:0};
+        function place(){ var pt=path.getPointAtLength(len*Math.min(1,s.p)); sun.setAttribute('transform','translate('+pt.x+','+pt.y+')'); }
+        place();
+        gsap.set(stage,{backgroundColor:sky[0],color:ink[0]});
+        gsap.set(steps.slice(1),{autoAlpha:0,y:40});
+        var tl=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:stage,pin:true,start:'top top',end:function(){return '+='+innerHeight*4.2;},scrub:.7,anticipatePin:1,invalidateOnRefresh:true}});
+        for(var i=1;i<steps.length;i++){
+          var at=i-.5;
+          tl.to(steps[i-1],{autoAlpha:0,y:-40,duration:.4},at)
+            .to(steps[i],{autoAlpha:1,y:0,duration:.45},at+.25)
+            .to(stage,{backgroundColor:sky[i],color:ink[i],duration:.6},at);
+        }
+        tl.to(s,{p:1,duration:3,ease:'none',onUpdate:place},0.5)
+          .to(sun,{opacity:0,duration:.35},3.55)
+          .to('#moon',{opacity:1,duration:.5},3.75)
+          .fromTo('#setSun',{attr:{cy:130}},{attr:{cy:214},duration:1.3,ease:'none'},2.4)
+          .to({},{duration:.4},4.6);
+        return function(){
+          day.classList.remove('is-pinned');
+          gsap.set([stage].concat(steps),{clearProps:'all'});
+          gsap.set(['#sun','#moon','#setSun'],{clearProps:'all'});
+        };
+      }
+    });
+
+    addEventListener('load',function(){ ScrollTrigger.refresh(); });
+    // safety net: if the browser stops painting frames, show everything statically
+    var f0=gsap.ticker.frame;
+    setTimeout(function(){
+      if(gsap.ticker.frame-f0 > 20) return;
+      ScrollTrigger.getAll().forEach(function(t){ t.kill(true); });
+      gsap.globalTimeline.clear();
+      html.classList.remove('m');
+      day.classList.remove('is-pinned');
+      gsap.set('[data-rise],[data-hero],.line > span,.clip,.clip img,.hero .arch,.hero .arch img,.hero__round,.badge,.hero__glow,#bars i,.foot__word,.day__step,#dayStage,#sun,#moon,#setSun',{clearProps:'all'});
+    },3500);
+  }
+  if(document.readyState!=='loading') motion(); else addEventListener('DOMContentLoaded',motion);
+})();
+</script>
+</body>
+</html>
