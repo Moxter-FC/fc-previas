@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juliana Leal · Fisioterapia Pélvica em Icaraí, Niterói</title>
+<meta name="description" content="JL Fisioterapia Pélvica: atendimento individual com a fisioterapeuta Juliana Leal em Icaraí, Niterói. Gestação, pós-parto, incontinência, dor pélvica e menopausa. Agende pelo WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f3ee">
+<meta property="og:title" content="Juliana Leal · Fisioterapia Pélvica em Icaraí">
+<meta property="og:description" content="Seu corpo, sem tabu, com cuidado. Atendimento individual em Icaraí, Niterói.">
+<meta property="og:url" content="https://suporteskoupa-coder.github.io/fc-previas/juliana-leal/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Physiotherapy","name":"JL Fisioterapia Pélvica",
+ "address":{"@type":"PostalAddress","streetAddress":"Rua Miguel de Frias, 206, sala 904","addressLocality":"Niterói","addressRegion":"RJ","addressCountry":"BR"},
+ "telephone":"+55 21 99900-4239","openingHours":"Mo-Fr 10:00-17:00",
+ "sameAs":["https://www.instagram.com/julianalealfisioterapeuta_/"]}
+</script>
+<script>
+  // Motion only when the visitor allows it; if GSAP never loads, everything shows statically.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('m');
+    setTimeout(function(){ if(!window.gsap || !window.ScrollTrigger) document.documentElement.classList.remove('m'); }, 2500);
+  }
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --paper:#f7f3ee; --sage:#dde8e2; --sage-2:#c3d6cd; --sage-d:#4c6b5f; --forest:#2f4840; --forest-2:#243832;
+  --terra:#c0643f; --terra-d:#9c4b2c; --ink:#23302b; --muted:#5f6b66; --line:rgba(35,48,43,.14);
+  --serif:'Fraunces', Georgia, serif; --sans:'Figtree', system-ui, sans-serif;
+  --wrap:1240px; --gut:clamp(20px,4vw,48px); --navh:76px; --r:18px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--navh) + 12px)}
+body{background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--forest);color:#fff;padding:10px 16px;border-radius:10px;z-index:100}
+.skip:focus{left:12px}
+.kicker{font:600 13px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
+.h2{font:400 clamp(36px,4.4vw,64px)/1.04 var(--serif);letter-spacing:-.02em;font-variation-settings:'opsz' 120}
+.h2 em,.h1 em{font-style:italic;color:var(--terra);font-weight:300}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line > span{display:inline-block}
+.lead{font-size:clamp(18px,1.4vw,20px);color:var(--muted);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--sans);text-decoration:none;border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)} .btn:active{transform:translateY(0) scale(.98)}
+.btn--terra{background:var(--terra);color:#fff}
+.btn--terra:hover{background:var(--terra-d)}
+.btn--ghost{border-color:var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:20px;height:20px;flex:none}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease)}
+.ul:hover{background-size:100% 1.5px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav.is-solid{background:rgba(247,243,238,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:var(--navh)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand__mark{width:42px;height:42px}
+.brand__t{font:500 15px/1.1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.brand__t small{display:block;font-size:11px;letter-spacing:.24em;color:var(--muted);margin-top:3px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{font-size:15px;font-weight:500;text-decoration:none}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{min-height:100svh;padding:calc(var(--navh) + 28px) 0 40px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12vw;top:-10vw;width:58vw;aspect-ratio:1;border-radius:50%;background:var(--sage);z-index:-1}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center;width:100%}
+.hero .kicker{margin-bottom:22px}
+.h1{font:400 clamp(48px,6vw,96px)/.98 var(--serif);letter-spacing:-.025em;font-variation-settings:'opsz' 144}
+.h1 .line > span{white-space:nowrap}
+.hero__lede{margin:26px 0 32px;font-size:clamp(18px,1.35vw,20px);color:var(--muted);max-width:48ch}
+.hero__lede b{color:var(--ink);font-weight:600}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-size:15px;color:var(--muted)}
+.hero__meta span{display:flex;align-items:center;gap:8px}
+.hero__meta svg{width:18px;height:18px;color:var(--terra)}
+
+/* hero visual: an arch (the pelvis, the logo's circle) with the JL seal */
+.arch{position:relative;justify-self:end;width:min(100%,500px);aspect-ratio:4/5.2}
+.arch__ph{position:absolute;inset:0;border-radius:999px 999px 28px 28px;overflow:hidden;background:
+  radial-gradient(110% 70% at 40% 18%,#fff 0,transparent 60%),linear-gradient(170deg,var(--sage-2),#a9c4b8);display:flex;align-items:flex-end;justify-content:center}
+.arch__ph::before{content:"";position:absolute;left:50%;top:24%;width:36%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.45)}
+.arch__ph::after{content:"";position:absolute;left:50%;bottom:-10%;width:74%;height:44%;border-radius:50% 50% 0 0;transform:translateX(-50%);background:rgba(255,255,255,.38)}
+.arch__note{position:relative;z-index:2;margin:0 18px 18px;background:rgba(247,243,238,.95);border:1px dashed var(--sage-d);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.35;color:var(--muted);text-align:center}
+.arch__note b{display:block;font:500 16px/1.2 var(--serif);color:var(--ink);margin-bottom:2px}
+.seal{position:absolute;left:-9%;top:8%;width:34%;aspect-ratio:1;z-index:3}
+.seal svg{width:100%;height:100%;filter:drop-shadow(0 18px 30px rgba(35,48,43,.22))}
+.seal .ring{font:600 8.6px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;fill:var(--sage-d)}
+.arch__tag{position:absolute;right:-16px;bottom:22%;z-index:3;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -24px rgba(35,48,43,.45);font-size:14px;line-height:1.3}
+.arch__tag svg{width:26px;height:26px;color:var(--terra);flex:none}
+.arch__tag b{display:block;font:500 16px/1.15 var(--serif)}
+
+/* marquee */
+.band{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--forest);color:var(--paper)}
+.band__track{display:flex;gap:44px;width:max-content;animation:mq 50s linear infinite}
+.band span{font:400 22px/1 var(--serif);font-style:italic;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.band span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--terra)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(88px,11vw,150px) 0}
+.sec__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec__head .kicker{margin-bottom:18px}
+
+/* signature: "Como posso te ajudar?" with a discreet message */
+.help__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px);align-items:start}
+.grp + .grp{margin-top:30px}
+.grp h3{font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.grp h3 i{width:10px;height:10px;border-radius:50%;background:var(--sage-d)}
+.grp--b h3 i{background:var(--terra)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{min-height:48px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:16px;font-weight:500;text-align:left;transition:transform .2s var(--ease),border-color .2s,background .2s,color .2s}
+.chip:hover{transform:translateY(-2px);border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.help__note{margin-top:28px;font-size:15px;color:var(--muted);max-width:60ch}
+.card{position:sticky;top:calc(var(--navh) + 20px);background:#fff;border-radius:26px;padding:28px;box-shadow:0 30px 60px -30px rgba(35,48,43,.3);border:1px solid var(--line);min-height:440px;overflow:hidden}
+.card::before{content:"";position:absolute;right:-70px;top:-70px;width:140px;height:140px;border-radius:50%;background:var(--sage)}
+.card > *{position:relative}
+.card__k{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
+.card__h{font:400 30px/1.1 var(--serif);margin:12px 0 14px;letter-spacing:-.01em}
+.card__p{font-size:16.5px;color:var(--muted)}
+.card__body{transition:opacity .25s;min-height:210px}
+.card.is-swap .card__body{opacity:0}
+.disc{display:flex;gap:14px;align-items:flex-start;margin:22px 0 4px;padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line);cursor:pointer}
+.disc input{appearance:none;width:46px;height:28px;border-radius:999px;background:var(--sage-2);position:relative;flex:none;transition:background .25s;cursor:pointer;margin-top:2px}
+.disc input::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18);transition:transform .25s var(--ease)}
+.disc input:checked{background:var(--forest)}
+.disc input:checked::after{transform:translateX(18px)}
+.disc b{display:block;font-size:16px}
+.disc small{display:block;font-size:14px;color:var(--muted);line-height:1.4;margin-top:2px}
+.preview{margin-top:14px;padding:12px 14px;border-radius:14px 14px 14px 4px;background:#e2efe6;border:1px solid #cfe2d5;font-size:14.5px;line-height:1.4}
+.preview small{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.card .btn{width:100%;justify-content:center;margin-top:16px}
+
+/* first visit */
+.fv{background:var(--sage)}
+.fv__steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:f}
+.fv__steps li{background:#fff;border-radius:24px;padding:28px 24px;border:1px solid var(--line);position:relative;min-height:280px}
+.fv__steps li::before{counter-increment:f;content:"0" counter(f);font:300 64px/1 var(--serif);font-style:italic;color:var(--sage-2);display:block;margin-bottom:22px}
+.fv__steps h3{font:400 24px/1.15 var(--serif)}
+.fv__steps p{margin-top:10px;font-size:16px;color:var(--muted)}
+.fv__promise{margin-top:28px;display:flex;gap:18px;align-items:center;padding:22px 26px;border-radius:22px;background:var(--forest);color:var(--paper)}
+.fv__promise svg{width:34px;height:34px;flex:none;color:var(--sage-2)}
+.fv__promise p{font:400 clamp(20px,1.8vw,24px)/1.35 var(--serif)}
+.fv__promise em{color:#f0b597;font-style:italic}
+
+/* about */
+.ab__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,80px);align-items:center}
+.ab__ph{aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(170deg,var(--sage),var(--sage-2));position:relative;display:flex;align-items:flex-end}
+.ab__ph::before{content:"";position:absolute;left:50%;top:22%;width:34%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.45)}
+.ab__ph::after{content:"";position:absolute;left:50%;bottom:-8%;width:70%;height:42%;border-radius:50% 50% 0 0;transform:translateX(-50%);background:rgba(255,255,255,.38)}
+.ab__ph .arch__note{width:100%}
+.ab__text p{margin-top:20px;color:var(--muted);max-width:54ch}
+.ab__text p b{color:var(--ink);font-weight:600}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.creds span{font:600 13px/1 var(--sans);letter-spacing:.04em;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.creds .todo{border-style:dashed;color:var(--terra-d);background:transparent}
+.fill{margin-top:26px;border-top:1px solid var(--line)}
+.fill li{list-style:none;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16.5px}
+.fill li::before{content:"";width:8px;height:8px;margin-top:10px;border-radius:50%;background:var(--terra);flex:none}
+.fill .todo{color:var(--terra-d);font-style:italic}
+
+/* the office */
+.of{background:var(--forest);color:var(--paper)}
+.of .kicker{color:#f0b597}
+.of .h2 em{color:#f0b597}
+.of__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:start}
+.big{font:400 clamp(44px,5.4vw,82px)/1 var(--serif);letter-spacing:-.025em;margin-top:22px}
+.big em{font-style:italic;color:#f0b597;font-weight:300}
+.of__text{margin-top:22px;color:rgba(247,243,238,.75);max-width:46ch}
+.hours{background:var(--forest-2);border:1px solid rgba(247,243,238,.12);border-radius:24px;padding:28px}
+.hours h3{font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,238,.6);margin-bottom:10px}
+.day{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(247,243,238,.12);font-size:16.5px}
+.day:last-of-type{border-bottom:0}
+.day span:last-child{color:rgba(247,243,238,.75)}
+.day.is-off span:last-child{color:rgba(247,243,238,.4)}
+.day.is-today{font-weight:600}
+.day.is-today span:first-child::after{content:"hoje";margin-left:10px;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:6px;background:var(--terra);color:#fff;vertical-align:2px}
+.now{display:flex;gap:10px;align-items:center;margin-top:16px;font-size:15px;color:rgba(247,243,238,.8)}
+.now i{width:10px;height:10px;border-radius:50%;background:#7fb08f;flex:none}
+.now.is-closed i{background:rgba(247,243,238,.35)}
+.hours .btn{width:100%;justify-content:center;margin-top:20px}
+.hours .btn--ghost{border-color:rgba(247,243,238,.6);color:var(--paper);margin-top:10px}
+.hours .btn--ghost:hover{background:var(--paper);color:var(--forest)}
+
+/* faq */
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:400 22px/1.3 var(--serif)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 28px/1 var(--sans);color:var(--terra);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);max-width:62ch}
+
+/* footer */
+.foot{background:var(--ink);color:rgba(247,243,238,.75);padding:70px 0 110px;font-size:15px;overflow:hidden}
+.foot__word{font:300 clamp(64px,12vw,196px)/.9 var(--serif);color:var(--paper);letter-spacing:-.03em;white-space:nowrap}
+.foot__word em{font-style:italic;color:var(--terra)}
+.foot__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px;padding-top:30px;border-top:1px solid rgba(247,243,238,.16)}
+.foot b{color:var(--paper);font-weight:600;display:block;margin-bottom:6px}
+.foot a{color:var(--paper)}
+.foot__credit{display:flex;justify-content:space-between;gap:8px 24px;margin-top:40px;padding-top:22px;border-top:1px solid rgba(247,243,238,.16);font-size:14px;color:rgba(247,243,238,.55)}
+.foot__credit b{display:inline;margin:0;color:var(--paper);letter-spacing:.08em}
+
+/* phone action bar */
+.abar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;transition:transform .35s var(--ease),opacity .35s}
+.abar .btn{width:100%;justify-content:center;box-shadow:0 14px 30px -10px rgba(35,48,43,.5)}
+.abar.is-off{transform:translateY(140%);opacity:0}
+
+/* motion gates (removed by the fallbacks) */
+html.m [data-rise]{opacity:0;transform:translateY(28px)}
+html.m .line > span{transform:translateY(106%)}
+html.m .arch__ph{clip-path:inset(100% 0 0 0)}
+html.m .seal{transform:scale(.5) rotate(-60deg);opacity:0}
+
+@media (max-width:1100px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+  .fv__steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:960px){
+  .hero{min-height:0;padding-top:calc(var(--navh) + 18px)}
+  .hero::before{width:90vw;right:-30vw;top:-20vw}
+  .hero__grid,.help__grid,.ab__grid,.of__grid,.faq__grid,.sec__head{grid-template-columns:1fr}
+  .arch{justify-self:center;width:min(100%,420px)}
+  .card{position:relative;top:0}
+  .sec__head{gap:16px;margin-bottom:40px}
+  .ab__ph{max-width:420px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  :root{--navh:66px}
+  .brand__t small{display:none}
+  .brand__t{font-size:13px;letter-spacing:.16em}
+  .nav .btn{display:none}
+  .h1{font-size:clamp(44px,12vw,54px)}
+  .h1 .line > span{white-space:normal}
+  .hero__actions .btn{width:100%;justify-content:center}
+  .hero__grid{gap:30px}
+  .arch{order:-1;width:80%;margin-top:10px}
+  .seal{left:-12%;width:38%}
+  .arch__tag{right:-12px;font-size:12.5px;padding:10px 12px}
+  .fv__steps{grid-template-columns:1fr}
+  .fv__steps li{min-height:0}
+  .fv__promise{flex-direction:column;align-items:flex-start}
+  .foot__grid{grid-template-columns:1fr}
+  .foot__credit{flex-direction:column}
+  .abar{display:block}
+}
+@media (prefers-reduced-motion:reduce){
+  .band__track{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<!-- Prévia FC Design para JL Fisioterapia Pélvica (Juliana Leal). Dados: perfil público no Google, Instagram e WhatsApp do consultório. Sem fotos reais: espaços marcados. -->
+<!-- COFFITO: incluir o número do CREFITO-2 em todas as peças (campos marcados). Sem antes e depois, sem preço, sem promessa de resultado. -->
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#topo" aria-label="JL Fisioterapia Pélvica, início">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#c3d6cd"/><path d="M27 17v22a6 6 0 0 1-6 6" fill="none" stroke="#c0643f" stroke-width="3.4" stroke-linecap="round"/><path d="M35 17v28h10" fill="none" stroke="#c0643f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand__t">Juliana Leal<small>Fisioterapia pélvica</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a class="ul" href="#ajuda">Como posso ajudar</a></li>
+      <li><a class="ul" href="#primeira-consulta">Primeira consulta</a></li>
+      <li><a class="ul" href="#juliana">Sobre a Juliana</a></li>
+      <li><a class="ul" href="#consultorio">Consultório</a></li>
+    </ul>
+    <a class="btn btn--terra" href="https://wa.me/5521999004239?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20com%20a%20Juliana." target="_blank" rel="noopener">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="kicker" data-rise>Fisioterapia pélvica · Icaraí, Niterói</p>
+      <h1 class="h1">
+        <span class="line"><span>Seu corpo,</span></span>
+        <span class="line"><span>sem tabu,</span></span>
+        <span class="line"><span><em>com cuidado.</em></span></span>
+      </h1>
+      <p class="hero__lede" data-rise>Fisioterapia pélvica com a <b>Juliana Leal</b> para mulheres em todas as fases: gestação, pós-parto, menopausa e o dia a dia. Atendimento individual, com hora marcada, num consultório reservado em Icaraí.</p>
+      <div class="hero__actions" data-rise>
+        <a class="btn btn--terra" href="https://wa.me/5521999004239?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20com%20a%20Juliana." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="#ajuda">Como posso te ajudar?</a>
+      </div>
+      <div class="hero__meta" data-rise>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Rua Miguel de Frias, 206 · sala 904</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Atendimento individual e reservado</span>
+      </div>
+    </div>
+
+    <div class="arch" aria-label="Espaço para a foto da Juliana">
+      <div class="arch__ph"><p class="arch__note"><b>Sua foto profissional aqui</b>Retrato vertical, no consultório</p></div>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+          <circle cx="100" cy="100" r="98" fill="#f7f3ee"/>
+          <circle cx="100" cy="100" r="60" fill="#c3d6cd"/>
+          <text class="ring"><textPath href="#ring">Juliana Leal · Fisioterapia pélvica · </textPath></text>
+          <path d="M92 70v38a11 11 0 0 1-11 11" fill="none" stroke="#c0643f" stroke-width="5" stroke-linecap="round"/>
+          <path d="M106 70v48h17" fill="none" stroke="#c0643f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="arch__tag" data-rise><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg><span><b>Com acolhimento</b>Do primeiro contato à alta</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Incontinência urinária</span><span>Gestação</span><span>Preparo para o parto</span><span>Pós-parto</span><span>Dor pélvica</span><span>Endometriose</span><span>Dor na relação</span><span>Menopausa</span><span>Intestino preso</span>
+    <span>Incontinência urinária</span><span>Gestação</span><span>Preparo para o parto</span><span>Pós-parto</span><span>Dor pélvica</span><span>Endometriose</span><span>Dor na relação</span><span>Menopausa</span><span>Intestino preso</span>
+  </div>
+</div>
+
+<!-- signature: the visitor picks what she is going through; the booking message can stay discreet -->
+<section class="sec" id="ajuda">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>Como posso te ajudar</p>
+        <h2 class="h2"><span class="line"><span>Não precisa</span></span><span class="line"><span><em>explicar tudo agora.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Toque no que está acontecendo com você e veja como a fisioterapia pélvica atua nisso. Na hora de agendar, a mensagem pode ir sem detalhes: você conta o resto na consulta.</p>
+    </div>
+
+    <div class="help__grid">
+      <div data-rise>
+        <div class="grp">
+          <h3><i></i>No dia a dia</h3>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false" data-k="perda">Perco xixi ao tossir, rir ou correr</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="urgencia">Vontade urgente de ir ao banheiro</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="intestino">Intestino preso</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="dor">Dor pélvica ou endometriose</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="relacao">Dor na relação</button>
+          </div>
+        </div>
+        <div class="grp grp--b">
+          <h3><i></i>Fases da vida</h3>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false" data-k="gestacao">Estou grávida</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="pos">Tive bebê há pouco tempo</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="meno">Menopausa</button>
+          </div>
+        </div>
+        <p class="help__note">Isso não é diagnóstico e não substitui a avaliação. Serve para você saber que não está sozinha e que existe tratamento para conversar.</p>
+      </div>
+
+      <aside class="card" id="card" aria-live="polite" data-rise>
+        <div class="card__body" id="card-body">
+          <p class="card__k">Escolha ao lado</p>
+          <p class="card__h">Muita coisa que parece “normal” tem cuidado.</p>
+          <p class="card__p">Perder xixi depois do parto, sentir dor na relação, ir ao banheiro toda hora. É comum, mas não precisa ser para sempre. O primeiro passo é uma avaliação.</p>
+        </div>
+        <label class="disc">
+          <input type="checkbox" id="disc" checked>
+          <span><b>Mensagem discreta</b><small>Agendar sem dizer o motivo. Você conta só na consulta.</small></span>
+        </label>
+        <p class="preview" id="preview"><small>Sua mensagem no WhatsApp</small><span id="preview-t"></span></p>
+        <a class="btn btn--terra" id="card-cta" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec fv" id="primeira-consulta">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>A primeira consulta</p>
+        <h2 class="h2"><span class="line"><span>Sem surpresa,</span></span><span class="line"><span><em>no seu tempo.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Muita gente adia a fisioterapia pélvica por não saber o que acontece na consulta. Então aqui vai, passo a passo.</p>
+    </div>
+    <ol class="fv__steps">
+      <li data-rise><h3>Uma conversa</h3><p>Você conta o que sente, desde quando e como isso afeta a sua rotina. Sem pressa e sem julgamento.</p></li>
+      <li data-rise><h3>Tudo explicado antes</h3><p>A Juliana explica cada etapa da avaliação antes de começar. Nada é feito sem o seu consentimento.</p></li>
+      <li data-rise><h3>A avaliação</h3><p>Com base no que você contou, ela entende o que está acontecendo e quais caminhos fazem sentido.</p></li>
+      <li data-rise><h3>O seu plano</h3><p>Vocês combinam o tratamento e o número de sessões. Você leva exercícios para fazer em casa.</p></li>
+    </ol>
+    <div class="fv__promise" data-rise>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+      <p>Você pode pausar ou parar a qualquer momento. <em>No consultório, quem decide o ritmo é você.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="juliana">
+  <div class="wrap ab__grid">
+    <div class="ab__ph" data-rise><p class="arch__note"><b>Foto da Juliana no consultório</b>Horizontal ou vertical, luz natural</p></div>
+    <div class="ab__text">
+      <p class="kicker" data-rise>Sobre a Juliana</p>
+      <h2 class="h2"><span class="line"><span>Uma fisioterapeuta</span></span><span class="line"><span><em>dedicada à saúde pélvica.</em></span></span></h2>
+      <p data-rise>A <b>Juliana Leal</b> é a fisioterapeuta à frente da JL Fisioterapia Pélvica, em Icaraí. No consultório, cada paciente é atendida individualmente, com a sessão inteira dedicada a ela.</p>
+      <div class="creds" data-rise><span>Fisioterapeuta</span><span class="todo">CREFITO-2 nº ______</span></div>
+      <ul class="fill" data-rise>
+        <li class="todo">Formação: graduação e instituição</li>
+        <li class="todo">Especialização em fisioterapia pélvica ou saúde da mulher</li>
+        <li class="todo">Cursos e formações complementares</li>
+        <li class="todo">Há quantos anos atende em saúde pélvica</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec of" id="consultorio">
+  <div class="wrap of__grid">
+    <div>
+      <p class="kicker" data-rise>O consultório</p>
+      <p class="big" data-rise>Rua Miguel<br>de Frias, 206<br><em>sala 904, Icaraí.</em></p>
+      <p class="of__text" data-rise>Um consultório reservado, com atendimento individual e hora marcada. A recepção e o agendamento ficam com a Anna Licia, pelo WhatsApp.</p>
+    </div>
+    <div class="hours" data-rise>
+      <h3>Atendimento da recepção</h3>
+      <div id="days">
+        <p class="day" data-d="1"><span>Segunda</span><span>10h às 17h</span></p>
+        <p class="day" data-d="2"><span>Terça</span><span>10h às 17h</span></p>
+        <p class="day" data-d="3"><span>Quarta</span><span>10h às 17h</span></p>
+        <p class="day" data-d="4"><span>Quinta</span><span>10h às 17h</span></p>
+        <p class="day" data-d="5"><span>Sexta</span><span>10h às 17h</span></p>
+        <p class="day is-off" data-d="6"><span>Sábado e domingo</span><span>Fechado</span></p>
+      </div>
+      <p class="now" id="now"><i></i><span>Horário de atendimento da recepção</span></p>
+      <a class="btn btn--terra" href="https://wa.me/5521999004239?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20com%20a%20Juliana." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Miguel+de+Frias+206+Icara%C3%AD+Niter%C3%B3i" target="_blank" rel="noopener">Abrir no mapa</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="duvidas">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="kicker" data-rise>Dúvidas</p>
+      <h2 class="h2"><span class="line"><span>O que costumam</span></span><span class="line"><span><em>perguntar.</em></span></span></h2>
+    </div>
+    <div data-rise>
+      <details open><summary>Preciso de pedido médico?</summary><p>Não é obrigatório para começar a avaliação. Se você tiver exames ou um encaminhamento do seu médico, leve na primeira consulta.</p></details>
+      <details><summary>A avaliação é desconfortável?</summary><p>Tudo é explicado antes, e cada etapa só acontece com o seu consentimento. Você pode pausar ou parar quando quiser.</p></details>
+      <details><summary>Grávidas podem fazer?</summary><p>Sim. A fisioterapia pélvica pode acompanhar a gestação e o preparo para o parto, em conjunto com o seu obstetra.</p></details>
+      <details><summary>Quantas sessões vou precisar?</summary><p>Depende do que for encontrado na avaliação. O número de sessões é combinado com você no plano de tratamento.</p></details>
+      <details><summary>Atende plano de saúde?</summary><p>Confirme as formas de atendimento e de pagamento pelo WhatsApp com a recepção.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__word">Juliana <em>Leal</em></p>
+    <div class="foot__grid">
+      <div><b>Juliana Leal</b>Fisioterapeuta · CREFITO-2 nº ______</div>
+      <div><b>JL Fisioterapia Pélvica</b>Rua Miguel de Frias, 206, sala 904 · Icaraí, Niterói/RJ</div>
+      <div><b>Contato</b><a class="ul" href="https://wa.me/5521999004239" target="_blank" rel="noopener">(21) 99900-4239</a> · <a class="ul" href="https://www.instagram.com/julianalealfisioterapeuta_/" target="_blank" rel="noopener">@julianalealfisioterapeuta_</a></div>
+    </div>
+    <div class="foot__credit"><span>© 2026 JL Fisioterapia Pélvica</span><span>Feito por <b>FC Design</b></span></div>
+  </div>
+</footer>
+
+<div class="abar" id="abar">
+  <a class="btn btn--terra" href="https://wa.me/5521999004239?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20com%20a%20Juliana." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var nav=document.getElementById('nav');
+  function setNavH(){ html.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  var onScroll=function(){ nav.classList.toggle('is-solid', scrollY>24); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  function hasMotion(){ return html.classList.contains('m') && window.gsap && window.ScrollTrigger; }
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // phone action bar steps aside at the booking card and the office block
+  var abar=document.getElementById('abar');
+  if('IntersectionObserver' in window){
+    var seen=new Set();
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+      abar.classList.toggle('is-off', seen.size>0);
+    },{rootMargin:'0px 0px -25% 0px'});
+    io.observe(document.getElementById('consultorio')); io.observe(document.getElementById('card'));
+  }
+
+  // ---- signature: "Como posso te ajudar?" ----
+  var WA='https://wa.me/5521999004239?text=';
+  var BASE='Olá! Gostaria de agendar uma avaliação de fisioterapia pélvica com a Juliana.';
+  var K={
+    perda:{k:'Incontinência urinária',h:'Perder xixi não é “coisa da idade”.',p:'A fisioterapia pélvica trabalha a musculatura do assoalho pélvico, que sustenta a bexiga. É um dos tratamentos mais procurados no consultório.',ask:'por perda de urina'},
+    urgencia:{k:'Bexiga e urgência',h:'Quando o banheiro manda na sua rotina.',p:'A avaliação ajuda a entender o que está por trás da urgência, e o tratamento trabalha músculos, hábitos e o controle da bexiga.',ask:'por urgência para urinar'},
+    intestino:{k:'Intestino',h:'O assoalho pélvico também participa.',p:'Em alguns casos de intestino preso, a musculatura pélvica não relaxa como deveria na hora de evacuar. A fisioterapia pode ajudar a reeducar esse movimento.',ask:'por intestino preso'},
+    dor:{k:'Dor pélvica',h:'Dor que não passa merece atenção.',p:'Na dor pélvica e na endometriose, a fisioterapia atua junto com o acompanhamento médico, trabalhando a musculatura e a forma como o corpo lida com a dor.',ask:'por dor pélvica'},
+    relacao:{k:'Dor na relação',h:'Dor na relação não é algo para aguentar.',p:'Tensão muscular na região pélvica é uma das causas possíveis. A avaliação é feita com calma, explicada antes e só com o seu consentimento.',ask:'por dor na relação'},
+    gestacao:{k:'Gestação',h:'Preparar o corpo para o parto.',p:'Durante a gestação, a fisioterapia pélvica trabalha a consciência do assoalho pélvico, a respiração e o preparo para o parto, junto com o seu obstetra.',ask:'durante a gestação'},
+    pos:{k:'Pós-parto',h:'Cuidar de você também faz parte.',p:'Depois do parto, normal ou cesárea, a avaliação ajuda na recuperação da musculatura pélvica e abdominal e no retorno às atividades.',ask:'no pós-parto'},
+    meno:{k:'Menopausa',h:'Uma fase nova, com cuidado.',p:'Na menopausa, mudanças hormonais podem afetar a bexiga, a lubrificação e a musculatura pélvica. A fisioterapia ajuda a manter essa região forte e funcionando.',ask:'na menopausa'}
+  };
+  var card=document.getElementById('card'), body=document.getElementById('card-body');
+  var disc=document.getElementById('disc'), prevT=document.getElementById('preview-t'), cta=document.getElementById('card-cta');
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var cur=null;
+  function msg(){
+    if(disc.checked || !cur) return BASE;
+    return 'Olá! Gostaria de agendar uma avaliação de fisioterapia pélvica com a Juliana, '+K[cur].ask+'.';
+  }
+  function sync(){ var m=msg(); prevT.textContent=m; cta.href=WA+encodeURIComponent(m); }
+  disc.addEventListener('change', sync); sync();
+  function pick(btn){
+    cur=btn.dataset.k; var k=K[cur];
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c===btn ? 'true':'false'); });
+    card.classList.add('is-swap');
+    setTimeout(function(){
+      body.innerHTML='<p class="card__k">'+k.k+'</p><p class="card__h">'+k.h+'</p><p class="card__p">'+k.p+'</p>';
+      card.classList.remove('is-swap'); sync();
+      var r=card.getBoundingClientRect();
+      if(innerWidth<960 && (r.top>innerHeight*.55 || r.bottom<0)) scrollTo({top:r.top+scrollY-(nav.offsetHeight+12),behavior:reduce?'auto':'smooth'});
+    },200);
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ pick(c); }); });
+
+  // ---- office hours: mark today and whether the front desk is answering now (Brasília time) ----
+  try{
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[parts.find(function(p){return p.type==='weekday';}).value];
+    var hr=parseInt(parts.find(function(p){return p.type==='hour';}).value,10)%24;
+    var row=document.querySelector('.day[data-d="'+(wd===0?6:wd)+'"]'); if(row) row.classList.add('is-today');
+    var open=wd>=1&&wd<=5&&hr>=10&&hr<17, now=document.getElementById('now');
+    now.classList.toggle('is-closed',!open);
+    now.querySelector('span').textContent= open ? 'Recepção atendendo agora' : 'Recepção fechada agora. Deixe sua mensagem, que ela responde no próximo horário.';
+  }catch(e){}
+
+  function motion(){
+    setNavH(); addEventListener('resize', setNavH);
+    if(!hasMotion()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var E='expo.out';
+    gsap.timeline({defaults:{ease:E}})
+      .to('.hero .kicker',{opacity:1,y:0,duration:.9},0)
+      .to('.hero .line > span',{y:0,duration:1.2,stagger:.1},0.1)
+      .to('.arch__ph',{clipPath:'inset(0% 0 0 0)',duration:1.4,ease:'expo.inOut'},0.1)
+      .to('.seal',{scale:1,rotate:0,opacity:1,duration:1.6},0.6)
+      .to('.hero__lede, .hero__actions, .hero__meta, .arch__tag',{opacity:1,y:0,duration:1,stagger:.08},0.5);
+    gsap.to('.seal svg .ring',{rotate:360,duration:60,repeat:-1,ease:'none',svgOrigin:'100 100'});
+
+    gsap.utils.toArray('main section:not(.hero) .line').forEach(function(l){
+      gsap.to(l.querySelector('span'),{y:0,duration:1.2,ease:E,scrollTrigger:{trigger:l,start:'top 90%'}});
+    });
+    var rise=function(els){ gsap.to(els,{opacity:1,y:0,duration:1.05,stagger:.08,ease:E,overwrite:true}); };
+    ScrollTrigger.batch('main section:not(.hero) [data-rise]',{start:'top 92%',once:true,onEnter:rise,onLeave:rise});
+    gsap.from('.foot__word',{xPercent:-8,opacity:0,duration:1.6,ease:E,scrollTrigger:{trigger:'.foot',start:'top 85%'}});
+
+    addEventListener('load', function(){ ScrollTrigger.refresh(); });
+    // safety net: if the browser stops painting frames, show everything statically
+    var f0=gsap.ticker.frame;
+    setTimeout(function(){
+      if(gsap.ticker.frame-f0 > 20) return;
+      ScrollTrigger.getAll().forEach(function(t){ t.kill(); });
+      gsap.globalTimeline.clear();
+      html.classList.remove('m');
+      gsap.set('[data-rise],.line > span,.arch__ph,.seal,.foot__word',{clearProps:'all'});
+    }, 3500);
+  }
+  if(document.readyState!=='loading') motion(); else addEventListener('DOMContentLoaded', motion);
+})();
+</script>
+</body>
+</html>
