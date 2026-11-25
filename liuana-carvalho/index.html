@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Liuana Carvalho · Saúde mental de adultos por teleconsulta</title>
+<meta name="description" content="Dra. Liuana Carvalho, médica (CRM-RJ 1195026). Atendimento em saúde mental de adultos por teleconsulta, com escuta, explicação de cada etapa e decisões compartilhadas. Agende pelo WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f4f1ec">
+<meta property="og:title" content="Dra. Liuana Carvalho · Saúde mental, com escuta e sem pressa">
+<meta property="og:description" content="Teleconsulta em saúde mental para adultos. Agende pelo WhatsApp.">
+<meta property="og:url" content="https://suporteskoupa-coder.github.io/fc-previas/liuana-carvalho/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Physician","name":"Dra. Liuana Carvalho",
+ "telephone":"+55 21 96774-1990","availableService":{"@type":"MedicalTherapy","name":"Teleconsulta em saúde mental"},
+ "sameAs":["https://www.instagram.com/dra.liuanacarvalho/","https://www.youtube.com/@draliuana.carvalho"]}
+</script>
+<script>
+  // Motion only when the visitor allows it; if GSAP never loads, everything shows statically.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('m');
+    setTimeout(function(){ if(!window.gsap || !window.ScrollTrigger) document.documentElement.classList.remove('m'); }, 2500);
+  }
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --paper:#f4f1ec; --stone:#e8e3da; --stone-2:#dcd5c9; --taupe:#a8927b; --taupe-d:#6e5b48;
+  --ink:#2a2826; --muted:#6b6560; --deep:#2a2826; --deep-2:#1f1d1b; --line:rgba(42,40,38,.14);
+  --serif:'Fraunces', Georgia, serif; --sans:'Figtree', system-ui, sans-serif;
+  --wrap:1240px; --gut:clamp(20px,4vw,48px); --navh:76px; --r:18px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--navh) + 12px)}
+body{background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--taupe-d);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--deep);color:#fff;padding:10px 16px;border-radius:10px;z-index:100}
+.skip:focus{left:12px}
+.kicker{font:600 13px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--taupe-d)}
+.h2{font:400 clamp(36px,4.4vw,64px)/1.04 var(--serif);letter-spacing:-.02em;font-variation-settings:'opsz' 120}
+.h2 em,.h1 em{font-style:italic;color:var(--taupe-d);font-weight:300}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line > span{display:inline-block}
+.lead{font-size:clamp(18px,1.4vw,20px);color:var(--muted);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--sans);text-decoration:none;border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)} .btn:active{transform:translateY(0) scale(.98)}
+.btn--ink{background:var(--ink);color:var(--paper)}
+.btn--ink:hover{background:#000}
+.btn--ghost{border-color:var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:20px;height:20px;flex:none}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease)}
+.ul:hover{background-size:100% 1.5px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav.is-solid{background:rgba(244,241,236,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:var(--navh)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand__mark{width:40px;height:40px}
+.brand__t{font:500 15px/1.1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.brand__t small{display:block;font-size:11px;letter-spacing:.24em;color:var(--muted);margin-top:3px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{font-size:15px;font-weight:500;text-decoration:none}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{min-height:100svh;padding:calc(var(--navh) + 28px) 0 40px;display:flex;align-items:center;position:relative}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center;width:100%}
+.hero .kicker{margin-bottom:22px}
+.h1{font:400 clamp(46px,5.8vw,92px)/1.0 var(--serif);letter-spacing:-.025em;font-variation-settings:'opsz' 144}
+.h1 .line > span{white-space:nowrap}
+.hero__lede{margin:26px 0 32px;font-size:clamp(18px,1.35vw,20px);color:var(--muted);max-width:48ch}
+.hero__lede b{color:var(--ink);font-weight:600}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-size:15px;color:var(--muted)}
+.hero__meta span{display:flex;align-items:center;gap:8px}
+.hero__meta svg{width:18px;height:18px;color:var(--taupe-d)}
+
+/* hero visual: portrait placeholder framed by the monogram circle of her logo */
+.port{position:relative;justify-self:end;width:min(100%,520px);aspect-ratio:4/5}
+.port__ring{position:absolute;inset:-6% -8% auto auto;width:62%;aspect-ratio:1;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--paper);z-index:2;box-shadow:0 30px 60px -34px rgba(42,40,38,.4)}
+.port__ring svg{width:100%;height:100%}
+.port__ring .mono{font:300 clamp(64px,7vw,104px)/1 var(--serif);font-style:italic;fill:var(--ink)}
+.port__ring .arc{font:600 9.5px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;fill:var(--muted)}
+.port__ph{position:absolute;inset:14% 0 0 0;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:
+  radial-gradient(120% 80% at 30% 20%,#fff 0,transparent 55%),linear-gradient(160deg,var(--stone),var(--stone-2));display:flex;align-items:flex-end;justify-content:center}
+.port__ph::before{content:"";position:absolute;left:50%;top:26%;width:38%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.5)}
+.port__ph::after{content:"";position:absolute;left:50%;bottom:-10%;width:76%;height:46%;border-radius:50% 50% 0 0;transform:translateX(-50%);background:rgba(255,255,255,.42)}
+.port__note{position:relative;z-index:2;margin:0 16px 16px;background:rgba(244,241,236,.95);border:1px dashed var(--taupe);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.35;color:var(--muted);text-align:center}
+.port__note b{display:block;font:500 16px/1.2 var(--serif);color:var(--ink);margin-bottom:2px}
+.port__tag{position:absolute;left:-18px;bottom:18%;z-index:3;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -24px rgba(42,40,38,.45);font-size:14px;line-height:1.3}
+.port__tag i{width:10px;height:10px;border-radius:50%;background:#5f8a6a;box-shadow:0 0 0 0 rgba(95,138,106,.5);animation:pulse 2.4s infinite;flex:none}
+.port__tag b{display:block;font:500 16px/1.15 var(--serif)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,138,106,.5)}70%,100%{box-shadow:0 0 0 12px rgba(95,138,106,0)}}
+
+/* marquee */
+.band{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--stone)}
+.band__track{display:flex;gap:44px;width:max-content;animation:mq 50s linear infinite}
+.band span{font:400 22px/1 var(--serif);font-style:italic;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.band span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--taupe-d)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(88px,11vw,150px) 0}
+.sec__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec__head .kicker{margin-bottom:18px}
+
+/* approach */
+.ab__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;min-height:280px;display:flex;flex-direction:column}
+.pill__n{font:500 13px/1 var(--sans);letter-spacing:.12em;color:var(--taupe-d)}
+.pill svg{width:44px;height:44px;margin:26px 0 22px;color:var(--ink)}
+.pill h3{font:400 28px/1.1 var(--serif);letter-spacing:-.01em}
+.pill p{margin-top:12px;font-size:16px;color:var(--muted)}
+.who{margin-top:clamp(48px,6vw,72px);display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,4vw,56px);align-items:start;padding-top:40px;border-top:1px solid var(--line)}
+.who h3{font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif)}
+.who ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.who li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
+.who li::before{content:"";width:8px;height:8px;margin-top:10px;border-radius:50%;background:var(--taupe);flex:none}
+
+/* signature: how the online visit works */
+.how{background:var(--stone)}
+.how__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4vw,64px);align-items:start}
+.steps{list-style:none;counter-reset:s}
+.step{border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step button{width:100%;display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:22px 0;text-align:left}
+.step__n{font:500 14px/1 var(--sans);letter-spacing:.1em;color:var(--taupe-d)}
+.step__t{font:400 clamp(22px,2vw,28px)/1.2 var(--serif)}
+.step__arrow{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .25s,border-color .25s,transform .3s var(--ease)}
+.step__arrow svg{width:16px;height:16px}
+.step button:hover .step__arrow{border-color:var(--ink)}
+.step[aria-current="step"] .step__arrow{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:rotate(-45deg)}
+.step[aria-current="step"] .step__t{font-style:italic}
+.screen{position:sticky;top:calc(var(--navh) + 20px);background:#fff;border-radius:28px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(42,40,38,.3);overflow:hidden}
+.screen__bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.screen__bar i{width:9px;height:9px;border-radius:50%;background:var(--stone-2)}
+.screen__bar span{margin-left:8px}
+.screen__body{padding:clamp(22px,3vw,34px);min-height:430px;transition:opacity .25s}
+.screen.is-swap .screen__body{opacity:0}
+.screen__k{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--taupe-d)}
+.screen__h{font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);margin:10px 0 14px}
+.screen__p{color:var(--muted);font-size:16.5px;max-width:48ch}
+.screen .btn{margin-top:24px}
+/* step art */
+.art{margin:22px 0 4px;border-radius:18px;background:var(--paper);border:1px solid var(--line);padding:18px}
+.bubble{max-width:82%;padding:12px 14px;border-radius:16px 16px 16px 4px;background:#fff;border:1px solid var(--line);font-size:15px;line-height:1.4}
+.bubble + .bubble{margin:10px 0 0 auto;border-radius:16px 16px 4px 16px;background:#dfe9df;border-color:#cddccd}
+.bubble small{display:block;margin-top:4px;font-size:11.5px;color:var(--muted);text-align:right}
+.notif{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14.5px;line-height:1.35}
+.notif + .notif{margin-top:10px}
+.notif svg{width:28px;height:28px;flex:none;color:var(--taupe-d)}
+.notif b{display:block;font-weight:600}
+.call{position:relative;aspect-ratio:16/10;border-radius:14px;background:linear-gradient(160deg,#3a3734,#24221f);overflow:hidden}
+.call::before{content:"";position:absolute;left:50%;top:22%;width:22%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.14)}
+.call::after{content:"";position:absolute;left:50%;bottom:-12%;width:52%;height:42%;border-radius:50% 50% 0 0;transform:translateX(-50%);background:rgba(255,255,255,.1)}
+.call__me{position:absolute;right:10px;bottom:10px;width:26%;aspect-ratio:4/3;border-radius:8px;background:linear-gradient(160deg,var(--stone),var(--stone-2));border:2px solid rgba(255,255,255,.6);z-index:2}
+.call__lbl{position:absolute;left:12px;top:10px;z-index:2;font-size:12px;color:rgba(255,255,255,.8);display:flex;gap:6px;align-items:center}
+.call__lbl i{width:7px;height:7px;border-radius:50%;background:#e05a4f}
+.doclist{list-style:none;display:grid;gap:10px}
+.doclist li{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
+.doclist svg{width:22px;height:22px;flex:none;color:var(--taupe-d)}
+.doclist small{display:block;font-size:12.5px;color:var(--muted)}
+/* prep checklist */
+.prep{margin-top:28px}
+.prep h3{font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.prep label{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:16.5px;cursor:pointer}
+.prep input{appearance:none;width:24px;height:24px;border-radius:8px;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none;transition:background .2s}
+.prep input::after{content:"";width:10px;height:6px;border:2px solid var(--paper);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.prep input:checked{background:var(--ink)}
+.prep input:checked::after{opacity:1}
+.prep input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--taupe)}
+.prep__ok{margin-top:14px;font-size:15px;color:var(--taupe-d);min-height:1.6em}
+
+/* trajectory */
+.traj{background:var(--deep);color:var(--paper)}
+.traj .kicker{color:var(--taupe)}
+.traj .h2 em{color:var(--taupe)}
+.traj .lead{color:rgba(244,241,236,.72)}
+.traj__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,80px);align-items:start}
+.quote{margin-top:40px;padding:28px;border-radius:22px;background:var(--deep-2);border:1px solid rgba(244,241,236,.12)}
+.quote p{font:300 clamp(26px,2.4vw,34px)/1.2 var(--serif);font-style:italic}
+.quote small{display:block;margin-top:14px;font-size:14px;color:rgba(244,241,236,.6)}
+.tl{list-style:none;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:1.5px;background:rgba(244,241,236,.2)}
+.tl li{position:relative;padding:0 0 30px 40px}
+.tl li::before{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--deep);border:1.5px solid var(--taupe)}
+.tl li:last-child{padding-bottom:0}
+.tl li.is-now::before{background:var(--taupe)}
+.tl time{font:600 13px/1 var(--sans);letter-spacing:.12em;color:var(--taupe)}
+.tl b{display:block;font:400 24px/1.2 var(--serif);margin:8px 0 4px}
+.tl p{font-size:16px;color:rgba(244,241,236,.7);max-width:52ch}
+.tl .ne{display:inline-block;margin-top:8px;font:700 12px/1 var(--sans);letter-spacing:.1em;padding:6px 8px;border-radius:6px;border:1px solid rgba(244,241,236,.35)}
+
+/* faq + contact */
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:400 22px/1.3 var(--serif)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 28px/1 var(--sans);color:var(--taupe-d);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);max-width:62ch}
+.sos{margin-top:34px;display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.sos svg{width:28px;height:28px;flex:none;color:#a8443b}
+.sos p{font-size:16px;color:var(--muted)}
+.sos b{color:var(--ink)}
+.con{background:var(--stone)}
+.con__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,80px);align-items:start}
+.big{font:400 clamp(44px,5.4vw,82px)/1 var(--serif);letter-spacing:-.025em;margin-top:22px}
+.big em{font-style:italic;color:var(--taupe-d);font-weight:300}
+.con__card{background:#fff;border-radius:24px;border:1px solid var(--line);padding:30px}
+.con__row{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
+.con__row:last-of-type{border-bottom:0}
+.con__row svg{width:22px;height:22px;color:var(--taupe-d);margin-top:3px}
+.con__row small{display:block;font-size:14px;color:var(--muted)}
+.con__card .btn{width:100%;justify-content:center;margin-top:18px}
+
+/* footer */
+.foot{background:var(--deep-2);color:rgba(244,241,236,.75);padding:70px 0 110px;font-size:15px;overflow:hidden}
+.foot__word{font:300 clamp(64px,12vw,196px)/.9 var(--serif);color:var(--paper);letter-spacing:-.03em;white-space:nowrap}
+.foot__word em{font-style:italic;color:var(--taupe)}
+.foot__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px;padding-top:30px;border-top:1px solid rgba(244,241,236,.16)}
+.foot b{color:var(--paper);font-weight:600;display:block;margin-bottom:6px}
+.foot a{color:var(--paper)}
+
+/* phone action bar */
+.abar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;transition:transform .35s var(--ease),opacity .35s}
+.abar .btn{width:100%;justify-content:center;box-shadow:0 14px 30px -10px rgba(42,40,38,.5)}
+.abar.is-off{transform:translateY(140%);opacity:0}
+
+/* motion gates (removed by the fallbacks) */
+html.m [data-rise]{opacity:0;transform:translateY(28px)}
+html.m .line > span{transform:translateY(106%)}
+html.m .port__ph{clip-path:inset(100% 0 0 0)}
+html.m .port__ring{transform:scale(.6) rotate(-40deg);opacity:0}
+
+@media (max-width:1100px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+}
+@media (max-width:960px){
+  .hero{min-height:0;padding-top:calc(var(--navh) + 18px)}
+  .hero__grid,.how__grid,.traj__grid,.faq__grid,.con__grid,.sec__head,.who{grid-template-columns:1fr}
+  .port{justify-self:center;width:min(100%,440px)}
+  .ab__grid{grid-template-columns:1fr}
+  .pill{min-height:0}
+  .screen{position:relative;top:0}
+  .sec__head{gap:16px;margin-bottom:40px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  :root{--navh:66px}
+  .brand__t small{display:none}
+  .brand__t{font-size:13px;letter-spacing:.16em}
+  .nav .btn{display:none}
+  .h1{font-size:clamp(40px,11vw,50px)}
+  .h1 .line > span{white-space:normal}
+  .hero__actions .btn{width:100%;justify-content:center}
+  .hero__grid{gap:30px}
+  .port{order:-1;width:86%;margin-top:14px}
+  .port__ring{width:52%;inset:-2% -4% auto auto}
+  .port__tag{left:-6px;font-size:12.5px;padding:10px 12px}
+  .who ul{grid-template-columns:1fr}
+  .step button{grid-template-columns:40px 1fr auto}
+  .screen__body{min-height:0}
+  .foot__grid{grid-template-columns:1fr}
+  .abar{display:block}
+}
+@media (prefers-reduced-motion:reduce){
+  .band__track{animation:none}
+  .port__tag i{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<!-- Prévia FC Design para a Dra. Liuana Carvalho. Dados: perfil público no Doctoralia. Sem fotos reais: espaços marcados para a foto profissional. -->
+<!-- CFM (Res. 2.336/2023): sem RQE registrado, não anunciar "psiquiatra" nem "especialista". Pós lato sensu só em forma de currículo, seguida de NÃO ESPECIALISTA em caixa alta. Se ela tiver RQE, trocar o texto e incluir o número. -->
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#topo" aria-label="Dra. Liuana Carvalho, início">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="#fff" stroke="#2a2826" stroke-width="1.2"/><text x="20" y="26" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="18" fill="#2a2826">lc</text></svg>
+      <span class="brand__t">Dra. Liuana Carvalho<small>Saúde mental · online</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a class="ul" href="#atendimento">O atendimento</a></li>
+      <li><a class="ul" href="#como-funciona">Como funciona</a></li>
+      <li><a class="ul" href="#trajetoria">Trajetória</a></li>
+      <li><a class="ul" href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn--ink" href="https://wa.me/5521967741990?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20teleconsulta%20com%20a%20Dra.%20Liuana%20Carvalho." target="_blank" rel="noopener">Agendar consulta</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="kicker" data-rise>Teleconsulta para adultos · de onde você estiver</p>
+      <h1 class="h1">
+        <span class="line"><span>Saúde mental,</span></span>
+        <span class="line"><span>com escuta</span></span>
+        <span class="line"><span><em>e sem pressa.</em></span></span>
+      </h1>
+      <p class="hero__lede" data-rise>Consultas por vídeo com a <b>Dra. Liuana Carvalho</b>, médica. Um espaço para contar a sua história inteira, entender cada etapa do cuidado e decidir junto o próximo passo.</p>
+      <div class="hero__actions" data-rise>
+        <a class="btn btn--ink" href="https://wa.me/5521967741990?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20teleconsulta%20com%20a%20Dra.%20Liuana%20Carvalho." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="#como-funciona">Como é a consulta online</a>
+      </div>
+      <div class="hero__meta" data-rise>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>Consulta por vídeo</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>Médica · CRM-RJ 1195026</span>
+      </div>
+    </div>
+
+    <div class="port" aria-label="Espaço para a foto da Dra. Liuana">
+      <div class="port__ring" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="arc" d="M100,100 m-78,0 a78,78 0 1,1 156,0"/></defs>
+          <text class="arc"><textPath href="#arc" startOffset="50%" text-anchor="middle">Dra. Liuana Carvalho</textPath></text>
+          <text class="mono" x="100" y="122" text-anchor="middle">lc</text>
+        </svg>
+      </div>
+      <div class="port__ph">
+        <p class="port__note"><b>Sua foto profissional aqui</b>Retrato vertical, fundo claro</p>
+      </div>
+      <div class="port__tag" data-rise><i></i><span><b>Atendimento online</b>Agenda pelo WhatsApp</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Escuta ativa</span><span>Consulta por vídeo</span><span>Adultos</span><span>Pessoas neurodivergentes</span><span>Saúde mental da mulher</span><span>Acolhimento LGBTQIA+</span><span>Receita digital</span><span>Decisão compartilhada</span>
+    <span>Escuta ativa</span><span>Consulta por vídeo</span><span>Adultos</span><span>Pessoas neurodivergentes</span><span>Saúde mental da mulher</span><span>Acolhimento LGBTQIA+</span><span>Receita digital</span><span>Decisão compartilhada</span>
+  </div>
+</div>
+
+<section class="sec" id="atendimento">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>O atendimento</p>
+        <h2 class="h2"><span class="line"><span>Você não é</span></span><span class="line"><span><em>um diagnóstico.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Cada pessoa chega com uma história, e é por ela que a consulta começa. O cuidado é construído junto, com tempo para ouvir e para explicar.</p>
+    </div>
+    <div class="ab__grid">
+      <article class="pill" data-rise>
+        <span class="pill__n">01</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 30c-3-3-4-6-4-10a14 14 0 0 1 28 0c0 6-4 8-6 11s-1 7-6 7"/><path d="M18 20a6 6 0 0 1 12 0c0 3-3 4-4 6"/></svg>
+        <h3>Escuta de verdade</h3>
+        <p>A primeira consulta é longa de propósito. Antes de qualquer conduta, vem entender o que está acontecendo na sua vida.</p>
+      </article>
+      <article class="pill" data-rise>
+        <span class="pill__n">02</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="10" y="8" width="28" height="34" rx="4"/><path d="M17 18h14M17 25h14M17 32h8"/></svg>
+        <h3>Cada etapa explicada</h3>
+        <p>Por que um tratamento, o que esperar dele, quanto tempo leva. Você sai da consulta sabendo o porquê de cada escolha.</p>
+      </article>
+      <article class="pill" data-rise>
+        <span class="pill__n">03</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="20" r="6"/><circle cx="31" cy="20" r="6"/><path d="M8 38c1-6 5-9 9-9s8 3 9 6m-4 0c1-3 5-6 9-6s8 3 9 9"/></svg>
+        <h3>Decisão compartilhada</h3>
+        <p>O plano de cuidado é combinado com você, não imposto. Sua rotina, suas dúvidas e seu ritmo entram na conta.</p>
+      </article>
+    </div>
+
+    <div class="who">
+      <h3 data-rise>Quem costuma chegar ao consultório</h3>
+      <ul data-rise>
+        <li>Adultos em busca de acompanhamento em saúde mental</li>
+        <li>Pessoas neurodivergentes e suas particularidades</li>
+        <li>Mulheres, nas diferentes fases da vida</li>
+        <li>Pessoas LGBTQIA+, em um espaço livre de julgamento</li>
+        <li>Quem quer uma segunda opinião sobre o próprio cuidado</li>
+        <li>Quem nunca passou por consulta e não sabe por onde começar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- signature: the visitor walks through the online visit before booking it -->
+<section class="sec how" id="como-funciona">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <p class="kicker" data-rise>Como funciona</p>
+        <h2 class="h2"><span class="line"><span>A consulta online,</span></span><span class="line"><span><em>passo a passo.</em></span></span></h2>
+      </div>
+      <p class="lead" data-rise>Toque em cada etapa para ver como ela acontece. Sem aplicativo novo para instalar, sem sair de casa.</p>
+    </div>
+    <div class="how__grid">
+      <div data-rise>
+        <ol class="steps" id="steps">
+          <li class="step" aria-current="step"><button type="button" data-s="0"><span class="step__n">01</span><span class="step__t">Você agenda pelo WhatsApp</span><span class="step__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button></li>
+          <li class="step"><button type="button" data-s="1"><span class="step__n">02</span><span class="step__t">Recebe o link da consulta</span><span class="step__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button></li>
+          <li class="step"><button type="button" data-s="2"><span class="step__n">03</span><span class="step__t">Conversa por vídeo</span><span class="step__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button></li>
+          <li class="step"><button type="button" data-s="3"><span class="step__n">04</span><span class="step__t">Recebe os documentos</span><span class="step__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button></li>
+        </ol>
+        <div class="prep">
+          <h3>Antes da consulta</h3>
+          <label><input type="checkbox"><span>Um lugar reservado, onde você possa falar à vontade</span></label>
+          <label><input type="checkbox"><span>Fone de ouvido e internet estável</span></label>
+          <label><input type="checkbox"><span>Receitas e exames anteriores à mão, se tiver</span></label>
+          <label><input type="checkbox"><span>Uma lista com o que você quer contar ou perguntar</span></label>
+          <p class="prep__ok" id="prep-ok" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <aside class="screen" id="screen" aria-live="polite" data-rise>
+        <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span id="screen-bar">Agendamento</span></div>
+        <div class="screen__body" id="screen-body"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec traj" id="trajetoria">
+  <div class="wrap traj__grid">
+    <div>
+      <p class="kicker" data-rise>Trajetória</p>
+      <h2 class="h2"><span class="line"><span>Da biomedicina</span></span><span class="line"><span><em>ao cuidado da mente.</em></span></span></h2>
+      <p class="lead" data-rise style="margin-top:22px">Antes da medicina veio a biomedicina. Antes da saúde mental, anos de plantão, emergência e atenção primária. Tudo isso aparece hoje na forma de atender.</p>
+      <figure class="quote" data-rise>
+        <p>“O ouvir sempre será terapêutico.”</p>
+        <small>Dra. Liuana Carvalho</small>
+      </figure>
+    </div>
+    <ol class="tl" data-rise>
+      <li><time>2013</time><b>Biomedicina · UFF</b><p>A primeira formação, na Universidade Federal Fluminense, e a descoberta de que o que ela queria mesmo era cuidar de gente.</p></li>
+      <li><time>2020</time><b>Medicina · UNIFAMINAS</b><p>Graduação em Medicina e preceptoria de internato no ano seguinte.</p></li>
+      <li><time>2020 – 2022</time><b>Atenção primária e emergência</b><p>Saúde da família em Minas Gerais, UPA, hospitais do Rio e de Niterói e a linha de frente da COVID-19.</p></li>
+      <li><time>2022</time><b>Saúde mental</b><p>O encontro com a área que se tornaria o centro do trabalho, atendendo em clínicas do Rio e de Niterói.</p></li>
+      <li class="is-now"><time>2026</time><b>Pós-graduação em Psiquiatria</b><p>Hospital Israelita Albert Einstein.</p><span class="ne">NÃO ESPECIALISTA</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="duvidas">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="kicker" data-rise>Dúvidas</p>
+      <h2 class="h2"><span class="line"><span>Antes de</span></span><span class="line"><span><em>marcar.</em></span></span></h2>
+    </div>
+    <div data-rise>
+      <details open><summary>Como faço para agendar?</summary><p>Pelo WhatsApp (21) 96774-1990. A equipe passa os horários disponíveis e confirma a consulta.</p></details>
+      <details><summary>A consulta online vale tanto quanto a presencial?</summary><p>A teleconsulta é regulamentada pelo Conselho Federal de Medicina. A conversa, a avaliação e o acompanhamento acontecem por vídeo, com o mesmo cuidado.</p></details>
+      <details><summary>Atende plano de saúde?</summary><p>O atendimento é particular, com recibo para você pedir reembolso ao seu plano, se ele oferecer. Confirme as condições pelo WhatsApp.</p></details>
+      <details><summary>Como recebo receitas e atestados?</summary><p>Quando indicados, são emitidos em formato digital e enviados depois da consulta. Alguns medicamentos têm regras próprias de receita, que são explicadas durante o atendimento.</p></details>
+      <details><summary>Posso tirar dúvidas pelo WhatsApp?</summary><p>O WhatsApp é para agendamento e dúvidas sobre o atendimento. Avaliação e orientação de tratamento acontecem na consulta.</p></details>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="sos" role="note" data-rise>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg>
+      <p><b>Precisa de ajuda agora?</b> Este site não é um canal de urgência. Ligue <b>188</b> (CVV, 24 horas, gratuito) ou <b>192</b> (SAMU), ou procure a emergência mais próxima.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec con" id="contato">
+  <div class="wrap con__grid">
+    <div>
+      <p class="kicker" data-rise>Contato</p>
+      <p class="big" data-rise>Atendimento<br><em>online.</em></p>
+      <p class="lead" data-rise style="margin-top:22px">Consultas por vídeo, com hora marcada. Fale com a equipe pelo WhatsApp para ver os horários.</p>
+    </div>
+    <div class="con__card" data-rise>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div>(21) 96774-1990<small>WhatsApp para agendamento</small></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><div>Teleconsulta<small>Link enviado antes do horário marcado</small></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><div><a class="ul" href="https://www.instagram.com/dra.liuanacarvalho/" target="_blank" rel="noopener">@dra.liuanacarvalho</a><small>Instagram</small></div></div>
+      <div class="con__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg><div><a class="ul" href="https://www.youtube.com/@draliuana.carvalho" target="_blank" rel="noopener">@draliuana.carvalho</a><small>YouTube</small></div></div>
+      <a class="btn btn--ink" href="https://wa.me/5521967741990?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20teleconsulta%20com%20a%20Dra.%20Liuana%20Carvalho." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__word">Liuana <em>Carvalho</em></p>
+    <div class="foot__grid">
+      <div><b>Dra. Liuana Carvalho</b>MÉDICA · CRM-RJ 1195026</div>
+      <div><b>Formação</b>Pós-graduação em Psiquiatria (Hospital Israelita Albert Einstein) · NÃO ESPECIALISTA</div>
+      <div><b>Atendimento online</b><a class="ul" href="https://wa.me/5521967741990" target="_blank" rel="noopener">(21) 96774-1990</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="abar" id="abar">
+  <a class="btn btn--ink" href="https://wa.me/5521967741990?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20teleconsulta%20com%20a%20Dra.%20Liuana%20Carvalho." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var nav=document.getElementById('nav');
+  function setNavH(){ html.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  var onScroll=function(){ nav.classList.toggle('is-solid', scrollY>24); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  function hasMotion(){ return html.classList.contains('m') && window.gsap && window.ScrollTrigger; }
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // phone action bar steps aside at the contact block
+  var abar=document.getElementById('abar');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ abar.classList.toggle('is-off', e.isIntersecting); }); },{rootMargin:'0px 0px -25% 0px'});
+    io.observe(document.getElementById('contato'));
+  }
+
+  // ---- signature: "A consulta online, passo a passo" ----
+  var WA='https://wa.me/5521967741990?text='+encodeURIComponent('Olá! Gostaria de agendar uma teleconsulta com a Dra. Liuana Carvalho.');
+  var I={
+    doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg>',
+    sms:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg>',
+    mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
+  };
+  var S=[
+    {bar:'WhatsApp',k:'Etapa 1',h:'Você agenda pelo WhatsApp',p:'Mande uma mensagem dizendo que quer marcar. A equipe responde com os horários e confirma tudo por ali.',
+     art:'<div class="art"><p class="bubble">Olá! Gostaria de agendar uma teleconsulta com a Dra. Liuana.<small>10:02</small></p><p class="bubble">Claro! Temos horários na terça e na quinta. Qual fica melhor para você?<small>10:05</small></p></div>',cta:1},
+    {bar:'Lembrete',k:'Etapa 2',h:'Recebe o link da consulta',p:'Pelo menos 30 minutos antes do horário, o link da videochamada chega por SMS e por e-mail. É só tocar nele na hora.',
+     art:'<div class="art"><div class="notif">'+I.sms+'<span><b>SMS</b>Sua teleconsulta começa às 15h. Toque no link para entrar.</span></div><div class="notif">'+I.mail+'<span><b>E-mail</b>Link da consulta e orientações para o dia.</span></div></div>'},
+    {bar:'Videochamada',k:'Etapa 3',h:'Conversa por vídeo',p:'Do celular ou do computador, de onde você estiver. A consulta tem tempo para ouvir com calma e explicar cada passo.',
+     art:'<div class="art"><div class="call"><span class="call__lbl"><i></i>Em consulta</span><span class="call__me"></span></div></div>'},
+    {bar:'Documentos',k:'Etapa 4',h:'Recebe os documentos',p:'Quando indicados, receita e atestado são emitidos em formato digital e chegam depois da consulta. O próximo encontro já pode sair combinado.',
+     art:'<div class="art"><ul class="doclist"><li>'+I.doc+'<span>Receita digital<small>Quando indicada</small></span></li><li>'+I.doc+'<span>Atestado<small>Quando necessário</small></span></li><li>'+I.doc+'<span>Recibo para reembolso<small>Para pedir ao seu plano, se ele oferecer</small></span></li></ul></div>'}
+  ];
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var screen=document.getElementById('screen'), body=document.getElementById('screen-body'), bar=document.getElementById('screen-bar');
+  function render(i){
+    var s=S[i];
+    bar.textContent=s.bar;
+    body.innerHTML='<p class="screen__k">'+s.k+'</p><p class="screen__h">'+s.h+'</p><p class="screen__p">'+s.p+'</p>'+s.art+
+      (s.cta?'<a class="btn btn--ink" href="'+WA+'" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>':'');
+  }
+  function pick(i, user){
+    steps.forEach(function(li,j){ if(j===i) li.setAttribute('aria-current','step'); else li.removeAttribute('aria-current'); });
+    screen.classList.add('is-swap');
+    setTimeout(function(){
+      render(i); screen.classList.remove('is-swap');
+      if(hasMotion()) gsap.from(body.querySelectorAll('.art > *'),{y:16,opacity:0,duration:.6,stagger:.12,ease:'expo.out'});
+      if(user){
+        var r=screen.getBoundingClientRect();
+        if(innerWidth<960 && (r.top>innerHeight*.55 || r.bottom<0)) scrollTo({top:r.top+scrollY-(nav.offsetHeight+12),behavior:reduce?'auto':'smooth'});
+      }
+    },200);
+  }
+  render(0);
+  steps.forEach(function(li,i){ li.querySelector('button').addEventListener('click', function(){ pick(i,true); }); });
+
+  // prep checklist
+  var boxes=[].slice.call(document.querySelectorAll('.prep input')), ok=document.getElementById('prep-ok');
+  boxes.forEach(function(b){ b.addEventListener('change', function(){
+    var n=boxes.filter(function(x){return x.checked;}).length;
+    ok.textContent = n===boxes.length ? 'Tudo pronto. Agora é só entrar no link na hora marcada.' : (n ? (boxes.length-n)+' item'+(boxes.length-n>1?'s':'')+' para conferir.' : '');
+  }); });
+
+  function motion(){
+    setNavH(); addEventListener('resize', setNavH);
+    if(!hasMotion()) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var E='expo.out';
+    gsap.timeline({defaults:{ease:E}})
+      .to('.hero .kicker',{opacity:1,y:0,duration:.9},0)
+      .to('.hero .line > span',{y:0,duration:1.2,stagger:.1},0.1)
+      .to('.port__ph',{clipPath:'inset(0% 0 0 0)',duration:1.4,ease:'expo.inOut'},0.1)
+      .to('.port__ring',{scale:1,rotate:0,opacity:1,duration:1.6},0.5)
+      .to('.hero__lede, .hero__actions, .hero__meta, .port__tag',{opacity:1,y:0,duration:1,stagger:.08},0.5);
+    gsap.to('.port__ring svg',{rotate:360,duration:90,repeat:-1,ease:'none',transformOrigin:'50% 50%'});
+
+    gsap.utils.toArray('main section:not(.hero) .line').forEach(function(l){
+      gsap.to(l.querySelector('span'),{y:0,duration:1.2,ease:E,scrollTrigger:{trigger:l,start:'top 90%'}});
+    });
+    var rise=function(els){ gsap.to(els,{opacity:1,y:0,duration:1.05,stagger:.08,ease:E,overwrite:true}); };
+    ScrollTrigger.batch('main section:not(.hero) [data-rise]',{start:'top 92%',once:true,onEnter:rise,onLeave:rise});
+    gsap.from('.tl li',{x:-20,opacity:0,duration:1,stagger:.12,ease:E,scrollTrigger:{trigger:'.tl',start:'top 80%'}});
+    gsap.from('.foot__word',{xPercent:-8,opacity:0,duration:1.6,ease:E,scrollTrigger:{trigger:'.foot',start:'top 85%'}});
+
+    addEventListener('load', function(){ ScrollTrigger.refresh(); });
+    // safety net: if the browser stops painting frames, show everything statically
+    var f0=gsap.ticker.frame;
+    setTimeout(function(){
+      if(gsap.ticker.frame-f0 > 20) return;
+      ScrollTrigger.getAll().forEach(function(t){ t.kill(); });
+      gsap.globalTimeline.clear();
+      html.classList.remove('m');
+      gsap.set('[data-rise],.line > span,.port__ph,.port__ring,.tl li,.foot__word',{clearProps:'all'});
+    }, 3500);
+  }
+  if(document.readyState!=='loading') motion(); else addEventListener('DOMContentLoaded', motion);
+})();
+</script>
+</body>
+</html>
